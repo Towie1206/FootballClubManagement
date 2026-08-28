@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/phui_bg"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/phui_card"
+        android:padding="16dp"
+        android:text="TRỢ LÝ CHIẾN THUẬT (AI)"
+        android:textColor="@color/phui_text_primary"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:gravity="center"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerViewChat"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:padding="16dp"
+        android:clipToPadding="false"/>
+
+    <!-- GỢI Ý CÁ NHÂN HÓA (AI Use Cases) -->
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scrollbars="none"
+        android:paddingHorizontal="12dp"
+        android:layout_marginBottom="8dp"
+        android:clipToPadding="false">
+        
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnSuggest7"
+                android:layout_width="wrap_content"
+                android:layout_height="36dp"
+                android:background="@drawable/bg_input"
+                android:text="⚽ Gợi ý đội hình sân 7"
+                android:textColor="@color/phui_text_primary"
+                android:textSize="12sp"
+                android:textAllCaps="false"
+                android:layout_marginEnd="8dp"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnSuggestMVP"
+                android:layout_width="wrap_content"
+                android:layout_height="36dp"
+                android:background="@drawable/bg_input"
+                android:text="⭐ Ai đang phong độ cao?"
+                android:textColor="@color/phui_text_primary"
+                android:textSize="12sp"
+                android:textAllCaps="false"
+                android:layout_marginEnd="8dp"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnSuggestTactic"
+                android:layout_width="wrap_content"
+                android:layout_height="36dp"
+                android:background="@drawable/bg_input"
+                android:text="📋 Phân tích điểm yếu"
+                android:textColor="@color/phui_text_primary"
+                android:textSize="12sp"
+                android:textAllCaps="false"/>
+        </LinearLayout>
+    </HorizontalScrollView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_card"
+        android:orientation="horizontal"
+        android:padding="12dp"
+        android:gravity="center_vertical">
+
+        <EditText
+            android:id="@+id/etChatInput"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:background="@drawable/bg_input"
+            android:hint="Nhập chiến thuật cần tư vấn..."
+            android:textColorHint="@color/phui_text_secondary"
+            android:textColor="@color/phui_text_primary"
+            android:paddingHorizontal="16dp"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnSend"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_marginStart="8dp"
+            android:background="@drawable/bg_button_primary"
+            android:textColor="@color/phui_bg"
+            android:textStyle="bold"
+            android:text="GỬI"/>
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/phui_bg"
+    android:orientation="vertical"
+    android:padding="24dp">
+
+    <TextView
+        android:id="@+id/tvFormTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="32dp"
+        android:text="THÊM TÂN BINH"
+        android:textColor="@color/phui_text_primary"
+        android:textSize="26sp"
+        android:textStyle="bold"
+        android:gravity="center" />
+
+    <!-- Họ Tên -->
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tilPlayerName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="12dp"
+        app:hintTextColor="@color/phui_accent"
+        app:boxStrokeColor="@color/phui_accent"
+        app:boxBackgroundColor="#1AFFFFFF"
+        app:errorEnabled="true"
+        app:errorTextColor="@color/phui_error"
+        style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etPlayerName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Tên cầu thủ (VD: Quang Hải)"
+            android:textColor="@color/phui_text_primary"
+            android:textColorHint="@color/phui_text_secondary"
+            android:inputType="textPersonName"
+            android:maxLines="1" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <!-- Số Áo -->
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tilJerseyNumber"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="12dp"
+        app:hintTextColor="@color/phui_accent"
+        app:boxStrokeColor="@color/phui_accent"
+        app:boxBackgroundColor="#1AFFFFFF"
+        app:errorEnabled="true"
+        app:errorTextColor="@color/phui_error"
+        style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etJerseyNumber"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Số áo (1 - 99)"
+            android:textColor="@color/phui_text_primary"
+            android:textColorHint="@color/phui_text_secondary"
+            android:inputType="number"
+            android:maxLength="2"
+            android:maxLines="1" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <!-- Vị trí -->
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tilPosition"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="24dp"
+        app:hintTextColor="@color/phui_accent"
+        app:boxStrokeColor="@color/phui_accent"
+        app:boxBackgroundColor="#1AFFFFFF"
+        app:errorEnabled="true"
+        app:errorTextColor="@color/phui_error"
+        style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.ExposedDropdownMenu">
+
+        <AutoCompleteTextView
+            android:id="@+id/etPosition"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Vị trí thi đấu"
+            android:textColor="@color/phui_text_primary"
+            android:textColorHint="@color/phui_text_secondary"
+            android:inputType="none"
+            android:focusable="false" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnSavePlayer"
+        android:layout_width="match_parent"
+        android:layout_height="54dp"
+        android:background="@drawable/bg_button_primary"
+        android:text="LƯU HỒ SƠ"
+        android:textColor="@color/phui_bg"
+        android:textSize="16sp"
+        android:textStyle="bold" />
+
+</LinearLayout>

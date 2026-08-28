@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="phui_bg">#0A0F0C</color>
+    <color name="phui_accent">#ADE74E</color>
+    <color name="phui_card">#0D140F</color>
+    <color name="phui_border">#1A2820</color>
+    <color name="phui_border_light">#23342A</color>
+    <color name="phui_text_primary">#E8EFE9</color>
+    <color name="phui_text_secondary">#90A495</color>
+    <color name="phui_input_bg">#101A13</color>
+    <color name="phui_error">#DF2225</color>
+    <color name="phui_user_bubble">#ADE74E</color>
+</resources>

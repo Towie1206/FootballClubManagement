@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/phui_bg">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/bottomNavigation"
+        android:padding="16dp"
+        android:clipToPadding="false">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- Header -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginBottom="24dp">
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="TỔNG QUAN ĐỘI BÓNG"
+                    android:textColor="@color/phui_text_primary"
+                    android:textSize="22sp"
+                    android:textStyle="bold" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="⚽"
+                    android:textSize="32sp" />
+            </LinearLayout>
+
+            <!-- Thẻ Sổ Quỹ -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_card"
+                android:orientation="vertical"
+                android:padding="20dp"
+                android:layout_marginBottom="16dp">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="SỐ DƯ QUỸ HIỆN TẠI"
+                    android:textColor="@color/phui_text_secondary"
+                    android:textSize="12sp"
+                    android:textStyle="bold" />
+                <TextView
+                    android:id="@+id/tvDashFund"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Đang tải..."
+                    android:textColor="@color/phui_accent"
+                    android:textSize="36sp"
+                    android:textStyle="bold"
+                    android:layout_marginTop="8dp"/>
+            </LinearLayout>
+
+            <!-- 2 Thẻ ngang: Quân số & Phong độ -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="16dp"
+                android:baselineAligned="false">
+
+                <!-- Quân số -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/bg_input"
+                    android:orientation="vertical"
+                    android:padding="16dp"
+                    android:layout_marginEnd="8dp"
+                    android:gravity="center">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="QUÂN SỐ"
+                        android:textColor="@color/phui_text_secondary"
+                        android:textSize="12sp"
+                        android:textStyle="bold" />
+                    <TextView
+                        android:id="@+id/tvDashPlayers"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="--"
+                        android:textColor="@color/phui_text_primary"
+                        android:textSize="28sp"
+                        android:textStyle="bold"
+                        android:layout_marginTop="4dp"/>
+                </LinearLayout>
+
+                <!-- Vua phá lưới -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/bg_input"
+                    android:orientation="vertical"
+                    android:padding="16dp"
+                    android:layout_marginStart="8dp"
+                    android:gravity="center">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="GHI BÀN NHIỀU NHẤT"
+                        android:textColor="@color/phui_text_secondary"
+                        android:textSize="12sp"
+                        android:textStyle="bold"
+                        android:gravity="center"/>
+                    <TextView
+                        android:id="@+id/tvDashTopScorer"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="--"
+                        android:textColor="@color/phui_text_primary"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:layout_marginTop="4dp"
+                        android:gravity="center"/>
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- Lịch thi đấu / Chốt kèo -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_card"
+                android:orientation="vertical"
+                android:padding="20dp">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="LỊCH THI ĐẤU SẮP TỚI"
+                    android:textColor="@color/phui_text_secondary"
+                    android:textSize="12sp"
+                    android:textStyle="bold" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Chủ nhật, 18:00 - Sân Thành Phát"
+                    android:textColor="@color/phui_text_primary"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:layout_marginTop="8dp"/>
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btnQuickAttendance"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="16dp"
+                    android:background="@drawable/bg_button_primary"
+                    android:text="GỬI LINK ĐIỂM DANH"
+                    android:textColor="@color/phui_bg"
+                    android:textStyle="bold" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNavigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@color/phui_card"
+        app:itemIconTint="@color/phui_accent"
+        app:itemTextColor="@color/phui_text_primary"
+        app:menu="@menu/bottom_nav_menu" />
+</RelativeLayout>

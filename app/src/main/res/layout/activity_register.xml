@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/phui_bg"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:padding="32dp">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="32dp"
+        android:text="TẠO TÀI KHOẢN MỚI"
+        android:textColor="@color/phui_text_primary"
+        android:textSize="26sp"
+        android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/etRegUsername"
+        android:layout_width="match_parent"
+        android:layout_height="54dp"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/bg_input"
+        android:hint="Tên đăng nhập (hoặc Email)"
+        android:padding="16dp"
+        android:textColor="@color/phui_text_primary"
+        android:textColorHint="@color/phui_text_secondary" />
+
+    <EditText
+        android:id="@+id/etRegPassword"
+        android:layout_width="match_parent"
+        android:layout_height="54dp"
+        android:layout_marginBottom="24dp"
+        android:background="@drawable/bg_input"
+        android:hint="Mật khẩu (Tối thiểu 6 ký tự)"
+        android:inputType="textPassword"
+        android:padding="16dp"
+        android:textColor="@color/phui_text_primary"
+        android:textColorHint="@color/phui_text_secondary" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnRegisterSubmit"
+        android:layout_width="match_parent"
+        android:layout_height="54dp"
+        android:background="@drawable/bg_button_primary"
+        android:text="ĐĂNG KÝ NGAY"
+        android:textAllCaps="false"
+        android:textColor="@color/phui_bg"
+        android:textSize="17sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/tvBackToLogin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="Đã có tài khoản? Đăng nhập"
+        android:textColor="@color/phui_accent"
+        android:textSize="16sp"
+        android:textStyle="bold" />
+
+</LinearLayout>

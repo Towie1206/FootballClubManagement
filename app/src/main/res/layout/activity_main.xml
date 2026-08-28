@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/phui_bg">
+
+    <!-- Header & Search (Top) -->
+    <LinearLayout
+        android:id="@+id/layoutTopHeader"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingTop="32dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="20dp"
+            android:layout_marginBottom="16dp"
+            android:text="Danh sách đội"
+            android:textColor="@color/phui_text_primary"
+            android:textSize="28sp"
+            android:textStyle="bold" />
+
+        <!-- Cụm Tìm kiếm và Sắp xếp -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginBottom="12dp">
+            
+            <EditText
+                android:id="@+id/etSearch"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="48dp"
+                android:layout_marginEnd="8dp"
+                android:background="@drawable/bg_input"
+                android:hint="🔍 Tìm tên..."
+                android:textColorHint="@color/phui_text_secondary"
+                android:textColor="@color/phui_text_primary"
+                android:paddingHorizontal="16dp"
+                android:maxLines="1"
+                android:inputType="text"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnSort"
+                android:layout_width="wrap_content"
+                android:layout_height="48dp"
+                android:background="@drawable/bg_input"
+                android:text="↕ OVR"
+                android:textColor="@color/phui_accent"
+                android:textStyle="bold"
+                android:paddingHorizontal="16dp"/>
+        </LinearLayout>
+
+        <!-- Bộ lọc (Filter) theo Vị trí -->
+        <HorizontalScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scrollbars="none"
+            android:clipToPadding="false"
+            android:paddingHorizontal="20dp"
+            android:layout_marginBottom="16dp">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/filterAll"
+                    android:layout_width="wrap_content"
+                    android:layout_height="36dp"
+                    android:background="@drawable/bg_button_primary"
+                    android:text="Tất cả"
+                    android:textColor="@color/phui_bg"
+                    android:textSize="12sp"
+                    android:layout_marginEnd="8dp"/>
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/filterFW"
+                    android:layout_width="wrap_content"
+                    android:layout_height="36dp"
+                    android:background="@drawable/bg_input"
+                    android:text="Tiền đạo"
+                    android:textColor="@color/phui_text_primary"
+                    android:textSize="12sp"
+                    android:layout_marginEnd="8dp"/>
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/filterMF"
+                    android:layout_width="wrap_content"
+                    android:layout_height="36dp"
+                    android:background="@drawable/bg_input"
+                    android:text="Tiền vệ"
+                    android:textColor="@color/phui_text_primary"
+                    android:textSize="12sp"
+                    android:layout_marginEnd="8dp"/>
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/filterDF"
+                    android:layout_width="wrap_content"
+                    android:layout_height="36dp"
+                    android:background="@drawable/bg_input"
+                    android:text="Hậu vệ"
+                    android:textColor="@color/phui_text_primary"
+                    android:textSize="12sp"
+                    android:layout_marginEnd="8dp"/>
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/filterGK"
+                    android:layout_width="wrap_content"
+                    android:layout_height="36dp"
+                    android:background="@drawable/bg_input"
+                    android:text="Thủ môn"
+                    android:textColor="@color/phui_text_primary"
+                    android:textSize="12sp"/>
+            </LinearLayout>
+        </HorizontalScrollView>
+    </LinearLayout>
+
+    <!-- Danh sách cầu thủ (Giữa) -->
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/swipeRefreshLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/layoutTopHeader"
+        android:layout_above="@id/bottomNavigation">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <!-- Hiệu ứng Loading Shimmer -->
+            <com.facebook.shimmer.ShimmerFrameLayout
+                android:id="@+id/shimmerViewContainer"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                    <include layout="@layout/item_player_shimmer" />
+                    <include layout="@layout/item_player_shimmer" />
+                    <include layout="@layout/item_player_shimmer" />
+                    <include layout="@layout/item_player_shimmer" />
+                    <include layout="@layout/item_player_shimmer" />
+                </LinearLayout>
+            </com.facebook.shimmer.ShimmerFrameLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerViewPlayers"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:clipToPadding="false"
+                android:paddingBottom="20dp"
+                android:visibility="gone" /> <!-- Ẩn lúc mới vào -->
+
+            <!-- Trạng thái rỗng CỰC XỊN -->
+            <LinearLayout
+                android:id="@+id/layoutEmptyState"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <TextView
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:text="🤷"
+                    android:textSize="60sp"
+                    android:gravity="center"
+                    android:layout_marginBottom="16dp"/>
+                    
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Chưa có cầu thủ nào"
+                    android:textColor="@color/phui_text_primary"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="8dp"/>
+                    
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Bấm + THÊM để bắt đầu chiêu mộ Tân Binh ngay!"
+                    android:textColor="@color/phui_text_secondary"
+                    android:textSize="14sp"
+                    android:textAlignment="center"
+                    android:paddingHorizontal="32dp"/>
+            </LinearLayout>
+        </RelativeLayout>
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+    <!-- Nút Float Action Button chuẩn Material -->
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/btnAddPlayer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/bottomNavigation"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="24dp"
+        android:layout_marginBottom="24dp"
+        app:backgroundTint="@color/phui_accent"
+        app:tint="@color/phui_bg"
+        android:src="@android:drawable/ic_input_add"
+        app:fabSize="normal" />
+
+    <!-- Thanh điều hướng đáy chuẩn Enterprise -->
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNavigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="#121814"
+        app:itemIconTint="@color/phui_accent"
+        app:itemTextColor="@color/phui_text_primary"
+        app:menu="@menu/bottom_nav_menu" />
+
+</RelativeLayout>
