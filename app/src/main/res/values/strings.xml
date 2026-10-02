@@ -1,3 +1,59 @@
 <resources>
     <string name="app_name">Football Club Management</string>
+    <string name="authenticating">AUTHENTICATING…</string>
+    <string name="login_action">Sign In</string>
+    <string name="register_action">REGISTER NOW</string>
+    <string name="invalid_registration">Invalid registration details</string>
+    <string name="register_success">Registered and signed in successfully</string>
+    <string name="server_unreachable">Cannot connect to server</string>
+    <string name="account_default_name">Staff Member</string>
+    <string name="account_authenticated">Authenticated Account</string>
+    <string name="account_session_expired">Session expired</string>
+    <string name="free_agent">Free Agent</string>
+    <string name="edit_player_title">EDIT PROFILE</string>
+    <string name="position_fw">FW (Attacker)</string>
+    <string name="position_mf">MF (Midfielder)</string>
+    <string name="position_df">DF (Defender)</string>
+    <string name="position_gk">GK (Goalkeeper)</string>
+    <string-array name="player_positions">
+        <item>@string/position_fw</item>
+        <item>@string/position_mf</item>
+        <item>@string/position_df</item>
+        <item>@string/position_gk</item>
+    </string-array>
+    <string name="choose_position_first">Please choose a playing position first</string>
+    <string name="fix_form_errors">Please correct invalid form fields</string>
+    <string name="saving_player">SAVING…</string>
+    <string name="save_player">SAVE PLAYER</string>
+    <string name="player_added">Player added successfully</string>
+    <string name="player_updated">Player profile updated</string>
+    <string name="player_deleted">Player removed</string>
+    <string name="session_expired">Session expired. Please sign in again</string>
+    <string name="invalid_player">Player data not found</string>
+    <string name="jersey_number_format">Jersey: #%1$d</string>
+    <string name="club_format">Club: %1$s</string>
+    <string name="stat_value_format">%1$s: %2$d / 100</string>
+    <string name="delete_player_title">Confirm Deletion</string>
+    <string name="delete_player_message">Are you sure you want to delete player %1$s?</string>
+    <string name="delete_action">Delete</string>
+    <string name="cancel_action">Cancel</string>
+    <string name="deleting_player">DELETING…</string>
+    <string name="delete_player_action">DELETE PLAYER</string>
+    <string name="sort_position">📋 Position</string>
+    <string name="sort_ovr">⭐ OVR (High)</string>
+    <string name="sort_goals">⚽ Goals</string>
+    <string name="empty_players_title">No players found</string>
+    <string name="empty_players_message">Tap + to recruit and build your squad</string>
+    <string name="no_filter_results_title">No matching results</string>
+    <string name="no_filter_results_message">Try another search keyword or filter</string>
+    <string name="load_error_title">Failed to load data</string>
+    <string name="load_error_message">Check your connection and tap Retry</string>
+    <string name="retry_action">RETRY</string>
+    <string name="position_header_fw">Forwards (FW)</string>
+    <string name="position_header_mf">Midfielders (MF)</string>
+    <string name="position_header_df">Defenders (DF)</string>
+    <string name="position_header_gk">Goalkeepers (GK)</string>
+    <string name="position_header_other">Other Positions</string>
+    <string name="back_button_description">Back</string>
+    <string name="add_player_description">Add Player</string>
 </resources>

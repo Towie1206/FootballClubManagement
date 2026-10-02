@@ -1,0 +1,24 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<TriggerOraclev10g class="oracle.dbtools.crest.model.design.storage.oracle.v10g.TriggerOraclev10g" name="TRG_AFTER_MATCH_EVENT" directorySegmentName="seg_0" id="248E4E4D-4D3F-008C-2756-42738C069BB3">
+<sourceConnName>user</sourceConnName>
+<sourceObjSchema>SYSTEM</sourceObjSchema>
+<sourceObjName>TRG_AFTER_MATCH_EVENT</sourceObjName>
+<createdBy>Admin</createdBy>
+<createdTime>2026-09-15 02:27:38 UTC</createdTime>
+<ownerDesignName>aa</ownerDesignName>
+<actions>INSERT</actions>
+<body><![CDATA[BEGIN
+    -- Cập nhật thống kê cầu thủ tự động khi có sự kiện trận đấu
+    IF :NEW.event_type = 'Goal' THEN
+        UPDATE players SET goals = goals + 1 WHERE id = :NEW.player_id;
+    ELSIF :NEW.event_type = 'Assist' THEN
+        UPDATE players SET assists = assists + 1 WHERE id = :NEW.player_id;
+    ELSIF :NEW.event_type = 'MVP' THEN
+        UPDATE players SET mvp = mvp + 1 WHERE id = :NEW.player_id;
+    END IF;
+END;
+]]></body>
+<triggerTime>AFTER</triggerTime>
+<owner>F4B13E49-F9F3-E010-5581-99C334A7845A</owner>
+<table>44650D5C-AA92-377C-BF41-AFDD90A44ADD</table>
+</TriggerOraclev10g>

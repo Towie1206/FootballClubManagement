@@ -1,104 +1,397 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/phui_bg"
-    android:orientation="vertical"
-    android:padding="24dp">
+    android:fitsSystemWindows="true"
+    android:scrollbars="none">
 
-    <TextView
-        android:id="@+id/tvFormTitle"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="32dp"
-        android:text="THÊM TÂN BINH"
-        android:textColor="@color/phui_text_primary"
-        android:textSize="26sp"
-        android:textStyle="bold"
-        android:gravity="center" />
+        android:orientation="vertical"
+        android:padding="24dp">
 
-    <!-- Họ Tên -->
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/tilPlayerName"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="12dp"
-        app:hintTextColor="@color/phui_accent"
-        app:boxStrokeColor="@color/phui_accent"
-        app:boxBackgroundColor="#1AFFFFFF"
-        app:errorEnabled="true"
-        app:errorTextColor="@color/phui_error"
-        style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/etPlayerName"
+        <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Tên cầu thủ (VD: Quang Hải)"
-            android:textColor="@color/phui_text_primary"
-            android:textColorHint="@color/phui_text_secondary"
-            android:inputType="textPersonName"
-            android:maxLines="1" />
-    </com.google.android.material.textfield.TextInputLayout>
+            android:layout_marginBottom="24dp">
 
-    <!-- Số Áo -->
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/tilJerseyNumber"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="12dp"
-        app:hintTextColor="@color/phui_accent"
-        app:boxStrokeColor="@color/phui_accent"
-        app:boxBackgroundColor="#1AFFFFFF"
-        app:errorEnabled="true"
-        app:errorTextColor="@color/phui_error"
-        style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox">
+            <ImageView
+                android:id="@+id/btnBack"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:src="@android:drawable/ic_menu_revert"
+                android:contentDescription="@string/back_button_description"
+                app:tint="@color/phui_text_primary" />
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/etJerseyNumber"
+            <TextView
+                android:id="@+id/tvFormTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="NEW PLAYER SIGNING"
+                android:textColor="#FFFFFF"
+                android:textSize="22sp"
+                android:textStyle="bold" />
+        </RelativeLayout>
+
+        <!-- Thông tin cơ bản -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="BASIC INFORMATION"
+            android:textColor="@color/phui_accent"
+            android:textStyle="bold"
+            android:layout_marginBottom="8dp"/>
+
+        <!-- Họ Tên -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tilPlayerName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Số áo (1 - 99)"
-            android:textColor="@color/phui_text_primary"
-            android:textColorHint="@color/phui_text_secondary"
-            android:inputType="number"
-            android:maxLength="2"
-            android:maxLines="1" />
-    </com.google.android.material.textfield.TextInputLayout>
+            android:layout_marginBottom="12dp"
+            app:hintTextColor="@color/phui_accent"
+            app:boxStrokeColor="@color/phui_accent"
+            app:boxBackgroundColor="#333333"
+            app:errorEnabled="true"
+            app:errorTextColor="@color/phui_error"
+            style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox">
 
-    <!-- Vị trí -->
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/tilPosition"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="24dp"
-        app:hintTextColor="@color/phui_accent"
-        app:boxStrokeColor="@color/phui_accent"
-        app:boxBackgroundColor="#1AFFFFFF"
-        app:errorEnabled="true"
-        app:errorTextColor="@color/phui_error"
-        style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.ExposedDropdownMenu">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etPlayerName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Player Name (e.g. Quang Hai)"
+                android:textColor="#FFFFFF"
+                android:textColorHint="@color/phui_text_secondary"
+                android:inputType="textPersonName"
+                android:maxLines="1" />
+        </com.google.android.material.textfield.TextInputLayout>
 
-        <AutoCompleteTextView
-            android:id="@+id/etPosition"
+        <!-- Câu lạc bộ -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tilClub"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Vị trí thi đấu"
-            android:textColor="@color/phui_text_primary"
-            android:textColorHint="@color/phui_text_secondary"
-            android:inputType="none"
-            android:focusable="false" />
-    </com.google.android.material.textfield.TextInputLayout>
+            android:layout_marginBottom="12dp"
+            app:hintTextColor="@color/phui_accent"
+            app:boxStrokeColor="@color/phui_accent"
+            app:boxBackgroundColor="#333333"
+            style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox">
 
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/btnSavePlayer"
-        android:layout_width="match_parent"
-        android:layout_height="54dp"
-        android:background="@drawable/bg_button_primary"
-        android:text="LƯU HỒ SƠ"
-        android:textColor="@color/phui_bg"
-        android:textSize="16sp"
-        android:textStyle="bold" />
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etClub"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Club (e.g. FC Dong A)"
+                android:textColor="#FFFFFF"
+                android:textColorHint="@color/phui_text_secondary"
+                android:inputType="textPersonName"
+                android:maxLines="1" />
+        </com.google.android.material.textfield.TextInputLayout>
 
-</LinearLayout>
+        <!-- Số Áo & Vị trí -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:baselineAligned="false"
+            android:layout_marginBottom="24dp">
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tilJerseyNumber"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginEnd="8dp"
+                app:hintTextColor="@color/phui_accent"
+                app:boxStrokeColor="@color/phui_accent"
+                app:boxBackgroundColor="#333333"
+                app:errorEnabled="true"
+                style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etJerseyNumber"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Jersey # (e.g. 19)"
+                    android:textColor="#FFFFFF"
+                    android:textColorHint="@color/phui_text_secondary"
+                    android:inputType="number"
+                    android:maxLength="3" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tilPosition"
+                style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.ExposedDropdownMenu"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                app:boxBackgroundColor="#333333"
+                app:hintTextColor="@color/phui_accent"
+                app:boxStrokeColor="@color/phui_accent">
+
+                <AutoCompleteTextView
+                    android:id="@+id/etPosition"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Position"
+                    android:textColor="#FFFFFF"
+                    android:textColorHint="@color/phui_text_secondary"
+                    android:inputType="none" />
+            </com.google.android.material.textfield.TextInputLayout>
+        </LinearLayout>
+
+        <!-- THÀNH TÍCH THI ĐẤU -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="MATCH PERFORMANCE"
+            android:textColor="@color/phui_accent"
+            android:textStyle="bold"
+            android:layout_marginBottom="8dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="12dp">
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginEnd="4dp"
+                app:boxBackgroundColor="#333333"
+                style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etMatches"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Matches"
+                    android:textColor="#FFFFFF"
+                    android:inputType="number" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginStart="4dp"
+                app:boxBackgroundColor="#333333"
+                style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etGoals"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Goals"
+                    android:textColor="#FFFFFF"
+                    android:inputType="number" />
+            </com.google.android.material.textfield.TextInputLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="24dp">
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginEnd="4dp"
+                app:boxBackgroundColor="#333333"
+                style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etAssists"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Assists"
+                    android:textColor="#FFFFFF"
+                    android:inputType="number" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginStart="4dp"
+                app:boxBackgroundColor="#333333"
+                style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etMvp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="MVP Awards"
+                    android:textColor="#FFFFFF"
+                    android:inputType="number" />
+            </com.google.android.material.textfield.TextInputLayout>
+        </LinearLayout>
+
+        <!-- CHỈ SỐ FIFA -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="12dp">
+            
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="FIFA 25 ATTRIBUTES"
+                android:textColor="@color/phui_accent"
+                android:textStyle="bold" />
+                
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnRandomStats"
+                android:layout_width="wrap_content"
+                android:layout_height="32dp"
+                android:background="@drawable/bg_input"
+                android:text="🎲 Random"
+                android:textColor="#FFFFFF"
+                android:textSize="12sp"
+                android:textAllCaps="false"/>
+        </LinearLayout>
+
+        <GridLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:columnCount="2"
+            android:rowCount="3"
+            android:layout_marginBottom="24dp">
+
+            <!-- PAC -->
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:layout_marginEnd="4dp"
+                android:layout_marginBottom="8dp"
+                app:boxBackgroundColor="#333333"
+                style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etPac"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="PAC (Pace)"
+                    android:textColor="#FFFFFF"
+                    android:inputType="number"
+                    android:maxLength="3" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!-- SHO -->
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:layout_marginStart="4dp"
+                android:layout_marginBottom="8dp"
+                app:boxBackgroundColor="#333333"
+                style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etSho"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="SHO (Shooting)"
+                    android:textColor="#FFFFFF"
+                    android:inputType="number"
+                    android:maxLength="3" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!-- PAS -->
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:layout_marginEnd="4dp"
+                android:layout_marginBottom="8dp"
+                app:boxBackgroundColor="#333333"
+                style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etPas"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="PAS (Passing)"
+                    android:textColor="#FFFFFF"
+                    android:inputType="number"
+                    android:maxLength="3" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!-- DRI -->
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:layout_marginStart="4dp"
+                android:layout_marginBottom="8dp"
+                app:boxBackgroundColor="#333333"
+                style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etDri"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="DRI (Dribbling)"
+                    android:textColor="#FFFFFF"
+                    android:inputType="number"
+                    android:maxLength="3" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!-- DEF -->
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:layout_marginEnd="4dp"
+                android:layout_marginBottom="8dp"
+                app:boxBackgroundColor="#333333"
+                style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etDef"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="DEF (Defending)"
+                    android:textColor="@color/phui_text_primary"
+                    android:inputType="number"
+                    android:maxLength="3" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!-- PHY -->
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:layout_marginStart="4dp"
+                android:layout_marginBottom="8dp"
+                app:boxBackgroundColor="#333333"
+                style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etPhy"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="PHY (Physical)"
+                    android:textColor="@color/phui_text_primary"
+                    android:inputType="number"
+                    android:maxLength="2" />
+            </com.google.android.material.textfield.TextInputLayout>
+        </GridLayout>
+
+        <!-- Nút Lưu -->
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnSavePlayer"
+            android:layout_width="match_parent"
+            android:layout_height="54dp"
+            android:background="@drawable/bg_button_primary"
+            android:text="SAVE PLAYER"
+            android:textColor="@color/phui_bg"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+</ScrollView>

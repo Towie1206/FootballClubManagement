@@ -1,0 +1,71 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<TableProxyOraclev20c class="oracle.dbtools.crest.model.design.storage.oracle.v20c.TableProxyOraclev20c" name="APP_USERS" directorySegmentName="seg_0" id="A0CCB606-5899-4BC2-A62C-62F45F6936C5">
+<createdBy>Admin</createdBy>
+<createdTime>2026-09-15 02:27:34 UTC</createdTime>
+<ownerDesignName>aa</ownerDesignName>
+<schemaObject>6378CC18-E7F7-4115-03E9-491E26CD4D11</schemaObject>
+<logging>YES</logging>
+<partitionedRowMovement>DISABLE</partitionedRowMovement>
+<segment>E43C816F-298E-4E14-3C60-E915204FAA9A</segment>
+<tableSpace>E1F37B43-E8A7-C6DB-FA10-8C6E32BD63A6</tableSpace>
+<temporaryChanged>false</temporaryChanged>
+<accessDriverType>oracle_loader</accessDriverType>
+<rejectLimit></rejectLimit>
+<inMemory>NO</inMemory>
+<columnProxies itemClass="oracle.dbtools.crest.model.design.storage.oracle.v12c.ColumnProxyOraclev12c">
+<ColumnProxy name="CREATED_AT" id="1BD47B7B-2058-D352-415A-35F41E817A83">
+<createdBy>Admin</createdBy>
+<createdTime>2026-09-15 02:27:35 UTC</createdTime>
+<ownerDesignName>aa</ownerDesignName>
+<defaultValue>CURRENT_TIMESTAMP</defaultValue>
+</ColumnProxy>
+<ColumnProxy name="USERNAME" id="574744D9-9973-C47D-2804-D4FD03FB2CC4">
+<createdBy>Admin</createdBy>
+<createdTime>2026-09-15 02:27:35 UTC</createdTime>
+<ownerDesignName>aa</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="ROLE" id="7B5E4F18-BB2E-81FB-74AC-F0383F1485CC">
+<createdBy>Admin</createdBy>
+<createdTime>2026-09-15 02:27:35 UTC</createdTime>
+<ownerDesignName>aa</ownerDesignName>
+<defaultValue>&apos;manager&apos;</defaultValue>
+</ColumnProxy>
+<ColumnProxy name="ID" id="BFD35672-2C63-D40F-88A1-E3C292F390CA">
+<createdBy>Admin</createdBy>
+<createdTime>2026-09-15 02:27:35 UTC</createdTime>
+<ownerDesignName>aa</ownerDesignName>
+<autoIncrementDDL>IDENTITY_CLAUSE</autoIncrementDDL>
+</ColumnProxy>
+<ColumnProxy name="PASSWORD_HASH" id="FA17676B-B3F4-3BEA-09AD-9866DA2ED410">
+<createdBy>Admin</createdBy>
+<createdTime>2026-09-15 02:27:35 UTC</createdTime>
+<ownerDesignName>aa</ownerDesignName>
+</ColumnProxy>
+</columnProxies>
+<primaryKeys>
+<PrimaryKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.PKProxyOraclev10g" name="APP_USERS_PK" id="ED425B47-4631-FF73-7BC7-41B2186FF8B4">
+<createdBy>Admin</createdBy>
+<createdTime>2026-09-15 02:27:36 UTC</createdTime>
+<ownerDesignName>aa</ownerDesignName>
+<schemaObject>6378CC18-E7F7-4115-03E9-491E26CD4D11</schemaObject>
+<segment>F1331D4C-E4DA-E4B3-27BF-392B802C309A</segment>
+<tableSpace>E1F37B43-E8A7-C6DB-FA10-8C6E32BD63A6</tableSpace>
+<indexSegment>F1331D4C-E4DA-E4B3-27BF-392B802C309A</indexSegment>
+<indexSort>SORTED</indexSort>
+<usingIndex>BY INDEX NAME</usingIndex>
+</PrimaryKey>
+</primaryKeys>
+<uniqueKeys>
+<UniqueKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.UniqueOraclev10g" name="APP_USERS_USERNAME_UN" id="AC93D605-47FA-7F26-AF12-FC1F06FABE87">
+<createdBy>Admin</createdBy>
+<createdTime>2026-09-15 02:27:36 UTC</createdTime>
+<ownerDesignName>aa</ownerDesignName>
+<schemaObject>6378CC18-E7F7-4115-03E9-491E26CD4D11</schemaObject>
+<segment>F1331D4C-E4DA-E4B3-27BF-392B802C309A</segment>
+<tableSpace>E1F37B43-E8A7-C6DB-FA10-8C6E32BD63A6</tableSpace>
+<indexSegment>F1331D4C-E4DA-E4B3-27BF-392B802C309A</indexSegment>
+<indexSort>SORTED</indexSort>
+<usingIndex>BY INDEX NAME</usingIndex>
+</UniqueKey>
+</uniqueKeys>
+</TableProxyOraclev20c>

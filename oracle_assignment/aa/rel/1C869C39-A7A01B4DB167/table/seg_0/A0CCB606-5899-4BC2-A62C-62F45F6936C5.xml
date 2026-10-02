@@ -1,0 +1,119 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="A0CCB606-5899-4BC2-A62C-62F45F6936C5" schemaObject="6378CC18-E7F7-4115-03E9-491E26CD4D11" name="APP_USERS">
+<sourceConnName>user</sourceConnName>
+<sourceObjSchema>SYSTEM</sourceObjSchema>
+<sourceObjName>APP_USERS</sourceObjName>
+<createdBy>Admin</createdBy>
+<createdTime>2026-09-15 02:27:34 UTC</createdTime>
+<ownerDesignName>aa</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="ID" id="BFD35672-2C63-D40F-88A1-E3C292F390CA">
+<sourceConnName>user</sourceConnName>
+<sourceObjSchema>APP_USERS</sourceObjSchema>
+<sourceObjName>ID</sourceObjName>
+<createdBy>Admin</createdBy>
+<createdTime>2026-09-15 02:27:35 UTC</createdTime>
+<ownerDesignName>aa</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementColumn>true</autoIncrementColumn>
+<identityColumn>true</identityColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<autoIncrementDisableCache>false</autoIncrementDisableCache>
+<autoIncrementCache>20</autoIncrementCache>
+<autoIncrementOrder>false</autoIncrementOrder>
+</Column>
+<Column name="USERNAME" id="574744D9-9973-C47D-2804-D4FD03FB2CC4">
+<sourceConnName>user</sourceConnName>
+<sourceObjSchema>APP_USERS</sourceObjSchema>
+<sourceObjName>USERNAME</sourceObjName>
+<createdBy>Admin</createdBy>
+<createdTime>2026-09-15 02:27:35 UTC</createdTime>
+<ownerDesignName>aa</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>32 BYTE</dataTypeSize>
+<ownDataTypeParameters>32 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="PASSWORD_HASH" id="FA17676B-B3F4-3BEA-09AD-9866DA2ED410">
+<sourceConnName>user</sourceConnName>
+<sourceObjSchema>APP_USERS</sourceObjSchema>
+<sourceObjName>PASSWORD_HASH</sourceObjName>
+<createdBy>Admin</createdBy>
+<createdTime>2026-09-15 02:27:35 UTC</createdTime>
+<ownerDesignName>aa</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>255 BYTE</dataTypeSize>
+<ownDataTypeParameters>255 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ROLE" id="7B5E4F18-BB2E-81FB-74AC-F0383F1485CC">
+<sourceConnName>user</sourceConnName>
+<sourceObjSchema>APP_USERS</sourceObjSchema>
+<sourceObjName>ROLE</sourceObjName>
+<createdBy>Admin</createdBy>
+<createdTime>2026-09-15 02:27:35 UTC</createdTime>
+<ownerDesignName>aa</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20 BYTE</dataTypeSize>
+<defaultValue>&apos;manager&apos;</defaultValue>
+<ownDataTypeParameters>20 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="CREATED_AT" id="1BD47B7B-2058-D352-415A-35F41E817A83">
+<sourceConnName>user</sourceConnName>
+<sourceObjSchema>APP_USERS</sourceObjSchema>
+<sourceObjName>CREATED_AT</sourceObjName>
+<createdBy>Admin</createdBy>
+<createdTime>2026-09-15 02:27:35 UTC</createdTime>
+<ownerDesignName>aa</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT015</logicalDatatype>
+<dataTypePrecision>6</dataTypePrecision>
+<defaultValue>CURRENT_TIMESTAMP</defaultValue>
+<ownDataTypeParameters>,6,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="ED425B47-4631-FF73-7BC7-41B2186FF8B4" schemaObject="6378CC18-E7F7-4115-03E9-491E26CD4D11" name="APP_USERS_PK">
+<sourceConnName>user</sourceConnName>
+<sourceObjSchema>SYSTEM</sourceObjSchema>
+<sourceObjName>SYS_C008390</sourceObjName>
+<createdBy>Admin</createdBy>
+<createdTime>2026-09-15 02:27:35 UTC</createdTime>
+<ownerDesignName>aa</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="BFD35672-2C63-D40F-88A1-E3C292F390CA"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="AC93D605-47FA-7F26-AF12-FC1F06FABE87" schemaObject="6378CC18-E7F7-4115-03E9-491E26CD4D11" name="APP_USERS_USERNAME_UN">
+<sourceConnName>user</sourceConnName>
+<sourceObjSchema>SYSTEM</sourceObjSchema>
+<sourceObjName>SYS_C008391</sourceObjName>
+<createdBy>Admin</createdBy>
+<createdTime>2026-09-15 02:27:35 UTC</createdTime>
+<ownerDesignName>aa</ownerDesignName>
+<indexState>Unique Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="574744D9-9973-C47D-2804-D4FD03FB2CC4"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

@@ -1,0 +1,17 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<TriggerOraclev10g class="oracle.dbtools.crest.model.design.storage.oracle.v10g.TriggerOraclev10g" name="TRG_UPDATE_TIMESTAMP" directorySegmentName="seg_0" id="89B4389B-19BB-C700-E0D4-ACA11C6DD8B0">
+<sourceConnName>user</sourceConnName>
+<sourceObjSchema>SYSTEM</sourceObjSchema>
+<sourceObjName>TRG_UPDATE_TIMESTAMP</sourceObjName>
+<createdBy>Admin</createdBy>
+<createdTime>2026-09-15 02:27:38 UTC</createdTime>
+<ownerDesignName>aa</ownerDesignName>
+<actions>UPDATE</actions>
+<body><![CDATA[BEGIN
+    :NEW.updated_at := CURRENT_TIMESTAMP;
+END;
+]]></body>
+<triggerTime>BEFORE</triggerTime>
+<owner>F4B13E49-F9F3-E010-5581-99C334A7845A</owner>
+<table>0E8638F4-196B-380E-3B45-D5AC9D95B954</table>
+</TriggerOraclev10g>

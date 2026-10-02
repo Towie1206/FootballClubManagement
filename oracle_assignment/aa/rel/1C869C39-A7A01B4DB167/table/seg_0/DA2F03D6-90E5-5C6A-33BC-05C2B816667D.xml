@@ -1,0 +1,121 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="DA2F03D6-90E5-5C6A-33BC-05C2B816667D" schemaObject="6378CC18-E7F7-4115-03E9-491E26CD4D11" name="PLAYER_TRAINING">
+<sourceConnName>user</sourceConnName>
+<sourceObjSchema>SYSTEM</sourceObjSchema>
+<sourceObjName>PLAYER_TRAINING</sourceObjName>
+<createdBy>Admin</createdBy>
+<createdTime>2026-09-15 02:27:34 UTC</createdTime>
+<ownerDesignName>aa</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="SESSION_ID" id="024CE0C6-9C30-DD14-EE18-932569487DF1">
+<sourceConnName>user</sourceConnName>
+<sourceObjSchema>PLAYER_TRAINING</sourceObjSchema>
+<sourceObjName>SESSION_ID</sourceObjName>
+<createdBy>Admin</createdBy>
+<createdTime>2026-09-15 02:27:35 UTC</createdTime>
+<ownerDesignName>aa</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="0430A413-8C6A-2D91-38D2-8DD3DDAD5DA1" referredColumn="CD490EEA-42F9-895A-7F50-53AA92541D02"/>
+</associations>
+</Column>
+<Column name="PLAYER_ID" id="16B8C4F0-822B-CD34-D6D1-82186F6DD558">
+<sourceConnName>user</sourceConnName>
+<sourceObjSchema>PLAYER_TRAINING</sourceObjSchema>
+<sourceObjName>PLAYER_ID</sourceObjName>
+<createdBy>Admin</createdBy>
+<createdTime>2026-09-15 02:27:35 UTC</createdTime>
+<ownerDesignName>aa</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="5B7DD0B5-ADAC-ABF6-80E4-06F22A1780BD" referredColumn="55A86221-045B-DB62-9E7F-DE8151407405"/>
+</associations>
+</Column>
+<Column name="PERFORMANCE_RATING" id="6BB28954-6378-C6B3-7E82-FF8041A8B76F">
+<sourceConnName>user</sourceConnName>
+<sourceObjSchema>PLAYER_TRAINING</sourceObjSchema>
+<sourceObjName>PERFORMANCE_RATING</sourceObjName>
+<createdBy>Admin</createdBy>
+<createdTime>2026-09-15 02:27:35 UTC</createdTime>
+<ownerDesignName>aa</ownerDesignName>
+<constraintName>CHK_RATING</constraintName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>2</dataTypePrecision>
+<dataTypeScale>0</dataTypeScale>
+<defaultValue>5</defaultValue>
+<ownDataTypeParameters>,2,0</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<listOfRanges>
+<rangeDef class="oracle.dbtools.crest.model.design.constraint.AVT">
+<beginValue>1</beginValue>
+<endValue>10</endValue>
+</rangeDef>
+</listOfRanges>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="6BAD6856-0EEB-5B38-8B0A-F6B2F42ACB78" name="PK_PLAYER_TRAINING">
+<sourceConnName>user</sourceConnName>
+<sourceObjSchema>SYSTEM</sourceObjSchema>
+<sourceObjName>PK_PLAYER_TRAINING</sourceObjName>
+<createdBy>Admin</createdBy>
+<createdTime>2026-09-15 02:27:36 UTC</createdTime>
+<ownerDesignName>aa</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="024CE0C6-9C30-DD14-EE18-932569487DF1"/>
+<colUsage columnID="16B8C4F0-822B-CD34-D6D1-82186F6DD558"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="52937D0F-9554-EF78-7A1B-BF51198B07E1" schemaObject="6378CC18-E7F7-4115-03E9-491E26CD4D11" name="PK_PLAYER_TRAINING">
+<sourceConnName>user</sourceConnName>
+<sourceObjSchema>SYSTEM</sourceObjSchema>
+<sourceObjName>PK_PLAYER_TRAINING</sourceObjName>
+<createdBy>Admin</createdBy>
+<createdTime>2026-09-15 02:27:35 UTC</createdTime>
+<ownerDesignName>aa</ownerDesignName>
+<indexState>Unique Plain Index</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="024CE0C6-9C30-DD14-EE18-932569487DF1"/>
+<colUsage columnID="16B8C4F0-822B-CD34-D6D1-82186F6DD558"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="275372A1-8F7D-0041-DDF0-B22A04B5C558" name="FK_PT_PLAYER">
+<createdBy>Admin</createdBy>
+<createdTime>2026-09-15 02:27:38 UTC</createdTime>
+<ownerDesignName>aa</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="16B8C4F0-822B-CD34-D6D1-82186F6DD558"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="E13E0091-71B5-A645-4DA2-4F80B5E6D5B6" name="FK_PT_SESSION">
+<createdBy>Admin</createdBy>
+<createdTime>2026-09-15 02:27:38 UTC</createdTime>
+<ownerDesignName>aa</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="024CE0C6-9C30-DD14-EE18-932569487DF1"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

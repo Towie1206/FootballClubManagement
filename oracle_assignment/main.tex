@@ -1,0 +1,470 @@
+% icstdoc.tex V1.12 6 May 2011
+
+\documentclass[fonts]{icst}
+
+\usepackage{moreverb}
+\usepackage[breaklinks,colorlinks,bookmarksopen,bookmarksnumbered,linkcolor=ICSTblue,citecolor=blue,urlcolor=ICSTblue]{hyperref}
+\usepackage{breakurl}
+\usepackage{doi}
+\usepackage{cancel}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{algorithmic}
+\usepackage{graphicx}
+\usepackage{textcomp}
+\usepackage{xcolor}
+\usepackage{caption}
+\usepackage[noend]{algpseudocode}
+\usepackage{multirow}
+\usepackage[ruled,linesnumbered]{algorithm2e}
+\usepackage{array}
+\usepackage{setspace}
+\usepackage[normalem]{ulem}
+\usepackage{float}
+
+\newcommand\BibTeX{{\rmfamily B\kern-.05em \textsc{i\kern-.025em b}\kern-.08em
+T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
+
+\def\volumeyear{2023}
+
+\begin{titlepage}
+\begin{center}
+    \textbf{\Large EAST ASIA UNIVERSITY OF TECHNOLOGY}\\[0.2cm]
+    \textbf{\Large \bfseries INTERNATIONAL TRAINING AND COOPERATION INSTITUTE}\\[0.2cm]
+    \textbf{–—o0o–— }\\[1cm]
+
+    % Logo
+    \includegraphics[width=0.3\textwidth]{Images/logo.jpg}\\[2cm]
+
+    % Thông tin đề tài
+    \textbf{\LARGE REPORT OF FINAL PROJECT: COURSEWORK }\\[1cm]
+    \textbf{\LARGE TOPIC 3: Develop a database for sports club management software}\\[3cm]
+
+    \begin{tabular}{ll}
+        \textbf{Subject: } & {Oracle database management system} \\[0.4cm]
+        \textbf{Class:} & DCIT.15 \\[0.4cm]
+        \textbf{Lecture:} & Dr. Nguyen Viet Hung \\[0.4cm]
+        \textbf{Student’s name} \hspace{1cm}& \textbf{Student’s ID} \\[0.4cm]
+        Nguyen Cong Bang \hspace{1cm} & 24003534 \\[0.4cm]
+        Nguyen Trung Kien \hspace{1cm} & 24001449 \\[0.4cm]
+        Nguyen Thanh Nam \hspace{1cm} & 24004130 \\[0.4cm]
+    \end{tabular}
+
+    \vfill
+    \textbf{Hanoi - 2026}
+\end{center}
+\end{titlepage}
+
+\articletype{Oracle database management system}
+\setcounter{page}{01}
+
+\begin{document}
+\raggedbottom
+
+\runningheads{Develop a database for sports club management software}{Nguyen Cong Bang et al.}
+
+\title{Develop a database for sports club management software}
+
+\author{Nguyen Cong Bang\affil{1,*}, Nguyen Trung Kien\affil{1}, Nguyen Thanh Nam\affil{1}}
+
+\address{\affilnum{1}INTERNATIONAL TRAINING AND COOPERATION INSTITUTE, HANOI, VIETNAM}
+
+\abstract{Managing grassroots and amateur football clubs often involves a lot of messy paperwork. In this project, we designed and built a complete sports club management system called Football Club Management (FCM). The core of our system is an Oracle Database, which allows us to use advanced data processing techniques like PL/SQL packages, triggers, and window functions to handle data securely. But we did not just stop at a basic database. We also built a mobile Android application linked to this database. The app features a Radar Chart to visualize player stats and a Voice-to-Text AI assistant (powered by Google Gemini) that gives tactical advice. Our testing shows that the system is stable, secures data well, and acts as a very helpful digital assistant for team managers.} 
+
+\keywords{Oracle Database, Relational Database, PL/SQL, Sports Management, Android Development, Artificial Intelligence, Radar Chart.}
+
+\fnotetext[1]{Corresponding author: Nguyen Cong Bang. Email: ncongbang2006@gmail.com}
+
+\maketitle
+
+\section{Introduction}
+
+\subsection{Background and Motivation}
+Amateur and semi-professional sports are growing fast. Every day, team managers have to keep track of a lot of information: player rosters, fitness levels, match schedules, and in-game events like goals or cards. Most of the time, amateur clubs just use simple tools like Microsoft Excel, paper notebooks, or chat apps like Zalo and Messenger. While these tools are easy to find, they create a lot of headaches. Data gets lost, looking up old match histories is almost impossible, and managers do not have a reliable database to help them choose the best starting lineup.
+
+\subsection{Topic Description}
+The selected topic for this coursework is \textbf{Topic 3: Develop a database for sports club management software}. 
+Managing a sports club, particularly grassroots and semi-professional football teams, involves handling extensive data regarding players' physical attributes, match statistics, training sessions, and tactical planning. The primary objective of this project is to build a robust, scalable backend using Oracle Database 19c that solves data redundancy and concurrency issues. To demonstrate real-world applicability, we also integrated this Oracle database with a modern Android mobile application featuring AI-powered tactical assistance and interactive Radar Charts.
+
+\subsection{Group Members and Task Assignments}
+To successfully implement this comprehensive system, the workload was divided among the three group members based on their technical strengths. Table \ref{tab:tasks} outlines the specific responsibilities of each member.
+\begin{table}[h]
+\caption{Group Members and Task Assignments}
+\begin{tabular}{|p{0.25\columnwidth}|p{0.5\columnwidth}|p{0.1\columnwidth}|}
+\hline
+\textbf{Name (ID)} & \textbf{Assigned Tasks} & \textbf{Contr.} \\
+\hline
+Nguyen Cong Bang (24003534) & Database Design (ERD), PL/SQL Triggers, Packages, Report Writing & 90\% \\
+\hline
+Nguyen Trung Kien (24001449) & 20 Advanced SQL Queries, User Management, Backup & 5\% \\
+\hline
+Nguyen Thanh Nam (24004130) & Android App, Radar Chart, Gemini AI Voice Integration & 5\% \\
+\hline
+\end{tabular}
+\label{tab:tasks}
+\end{table}
+
+\subsection{Problem Statement}
+Because of how people currently manage their teams, we identified three main problems:
+\begin{itemize}
+    \item \textbf{Centralized Data Management:} Clubs need a strong database that guarantees ACID (Atomicity, Consistency, Isolation, Durability) properties, especially when multiple coaches try to update match scores at the same time.
+    \item \textbf{Lack of Visual Tools:} Looking at rows of numbers in Excel is boring and hard to understand. Coaches need a quick way to see if a player is fast, strong, or good at passing.
+    \item \textbf{Tactical Decision Making:} Analyzing an opponent and picking the right formation requires a lot of football knowledge, which amateur managers might struggle with.
+\end{itemize}
+
+\subsection{Proposed Solution and Contributions}
+To solve these issues, we created the FC Manager (FCM) software. The main things we contributed in this project are:
+\begin{enumerate}
+    \item We designed a relational database on \textbf{Oracle Database} with 6 main tables. We applied advanced PL/SQL programming, including automated Triggers, Packages, and complex analytical SQL queries.
+    \item We developed a native Android mobile application that displays player skills using an interactive \textbf{Radar Chart}.
+    \item We integrated a \textbf{Context-Aware Artificial Intelligence} feature. Managers can simply use their voice (Voice-to-Text) to ask the AI for tactical advice, and the AI will answer based on the real data stored in our Oracle database.
+\end{enumerate}
+
+\subsection{Introduction to the DBMS used}
+The system is powered by Oracle Database 19c \cite{oracle_sql_ref}, chosen for its enterprise-level reliability, ACID compliance, and advanced PL/SQL execution engine \cite{oracle_plsql_guide}.
+
+\subsection{Introduction to tools/technologies used}
+For the mobile client, we developed a native Android application following Google's recommended architecture \cite{android_arch}. Network communication is managed via Retrofit \cite{retrofit_lib}, while player statistics are visualized using the MPAndroidChart library \cite{mpandroidchart}.
+\begin{itemize}
+    \item \textbf{Database Management:} Oracle SQL Developer (for querying and ERD modeling).
+    \item \textbf{Backend Server:} Node.js with the official \texttt{oracledb} driver to handle RESTful APIs.
+    \item \textbf{Frontend Application:} Android Studio (Java) using \texttt{Retrofit} for network calls and \texttt{MPAndroidChart} for visual Radar Charts.
+    \item \textbf{AI Integration:} Google Gemini LLM API combined with Android Speech-to-Text for voice-controlled tactical assistance.
+\end{itemize}
+
+\section{Related Work}
+
+Before building our app, we looked at how people currently solve this problem to see where we could do better.
+
+\subsection{Traditional Management Methods}
+The most common method for small clubs is using Microsoft Excel or Google Sheets. It is free and flexible. However, it has a fatal flaw: data security and integrity. In a spreadsheet, anyone can accidentally delete a row or type text into a number column (like typing "injured" in the Overall Rating column). Also, spreadsheets do not handle concurrent updates well. Our Oracle database solves this by strictly enforcing data types and using foreign key constraints.
+
+\subsection{Existing Sports Management Applications}
+There are some commercial apps out there, like TeamSnap or Spond. These are great for scheduling practices and sending group messages. However, they act like a "black box." Users cannot touch the underlying database, write custom SQL queries, or track detailed FIFA-style player stats. By building our own system on Oracle, we have full control over the data structure and can run complex PL/SQL procedures that commercial apps simply do not offer.
+
+\subsection{Integration of AI in Sports Analytics}
+Lately, big professional teams (like those in the Premier League) have been using AI and computer vision cameras to analyze matches. But that costs millions of dollars, which is impossible for grassroots football. Our project brings AI to amateur teams for free. By taking the player and match data from our Oracle database and feeding it into a Large Language Model (Google Gemini API), our system acts as a 24/7 virtual tactical assistant for the coach.
+
+\section{Oracle database management system}\label{sec:problem_formulation}
+To support professional sports administration, the system is architected around four primary application functions:
+(1) \textit{Constraint-checked data management}: enforces domain boundaries on FIFA attributes (1--99), OVR (40--99), non-negative match scores, and squad jersey uniqueness.
+(2) \textit{Business-process automation}: logs match occurrences in real time, automatically accumulating individual goal/assist tallies and synchronizing medical readiness.
+(3) \textit{Quick and advanced tactical search}: provides single-field keyword lookup by athlete name/position and multi-parameter filtering across skill thresholds.
+(4) \textit{Data aggregation and reporting}: computes squad positional distributions, team average ratings, top goalscorer leaderboards, and physical training summaries. These operations govern the data structures and procedural logic detailed below.
+
+\subsection{Data Structures}
+To build a solid backend for our football club management system, we designed a relational database using Oracle Database. We normalized the schema to the Third Normal Form (3NF) \cite{gfg_3nf} to avoid duplicating data and to keep everything organized. Our system relies on exactly six interconnected tables: \texttt{app\_users}, \texttt{players}, \texttt{matches}, \texttt{match\_events}, \texttt{training\_sessions}, and \texttt{player\_training}, as illustrated in Figure \ref{fig:erd}.
+
+\begin{figure*}[h]
+    \centering
+    \includegraphics[width=1\linewidth]{Images/erd.png}
+    \caption{Entity-Relationship Diagram (ERD) generated from Oracle SQL Developer.}
+    \label{fig:erd}
+\end{figure*}
+
+To give you a better idea of how the data is stored, Table \ref{tab:players} presents the data dictionary for the players table, which holds the personal details and physical attributes of the squad.
+
+\begin{table}[h]
+\centering
+\caption{Structure of the PLAYERS table}
+\begin{tabular}{|p{2.5cm}|l|p{2.5cm}|}
+\hline
+\textbf{Column Name} & \textbf{Data Type} & \textbf{Constraint} \\ \hline
+id & NUMBER & PRIMARY KEY \\ \hline
+full\_name & VARCHAR2(100) & NOT NULL \\ \hline
+position & VARCHAR2(2) & NOT NULL \\ \hline
+club & VARCHAR2(100) & DEFAULT 'Free Agent' \\ \hline
+ovr & NUMBER(3) & DEFAULT 70 \\ \hline
+pac, sho, pas... & NUMBER(3) & Attributes (0-100) \\ \hline
+\end{tabular}
+\label{tab:players}
+\end{table}
+
+Furthermore, Table \ref{tab:events} outlines the structure of the match events table. This table links players and matches together to track what happens during a game, such as who scored a goal or received a penalty card.
+
+\begin{table}[h]
+\centering
+\caption{Structure of the MATCH\_EVENTS table}
+\begin{tabular}{|p{2.5cm}|l|p{2.5cm}|}
+\hline
+\textbf{Column Name} & \textbf{Data Type} & \textbf{Constraint} \\
+\hline
+event\_id & NUMBER & PRIMARY KEY \\ \hline
+match\_id & NUMBER & FOREIGN KEY \\ \hline
+player\_id & NUMBER & FOREIGN KEY \\ \hline
+event\_type & VARCHAR2(20) & CHECK (Goal, Assist...) \\ \hline
+minute & NUMBER(3) & CHECK (1 to 120) \\
+\hline
+\end{tabular}
+\label{tab:events}
+\end{table}
+
+We strictly applied Foreign Key constraints using \texttt{ON DELETE CASCADE}. This ensures that if a manager deletes a match from the schedule, all events related to that match are automatically cleared from the database.
+In addition to Tables \ref{tab:players} and \ref{tab:events}, the 3NF schema encompasses four complementary entities:
+(1) \texttt{app\_users} stores credentials and role-based permissions (\texttt{id} PK, \texttt{username} UNIQUE NOT NULL, \texttt{password\_hash}, \texttt{role} CHECK constrained to \texttt{'admin'}, \texttt{'manager'}, \texttt{'coach'}).
+(2) \texttt{matches} records fixture schedules and outcomes (\texttt{match\_id} PK, \texttt{match\_date} NOT NULL, \texttt{opponent\_team}, \texttt{match\_type} CHECK constrained to \texttt{'Friendly'}, \texttt{'League'}, \texttt{'Cup'}, \texttt{home\_score} $\ge 0$, \texttt{away\_score} $\ge 0$, \texttt{venue}).
+(3) \texttt{training\_sessions} tracks practice regimes (\texttt{session\_id} PK, \texttt{session\_date}, \texttt{focus\_area} CHECK (\texttt{'Fitness'}, \texttt{'Tactical'}, \texttt{'Recovery'}), \texttt{duration\_minutes} $> 0$).
+(4) \texttt{player\_training} serves as a many-to-many junction entity between athletes and drills with a composite PK (\texttt{session\_id}, \texttt{player\_id}) and FK cascades, recording \texttt{attendance\_status}, coach performance \texttt{rating} (1.0--10.0), and \texttt{fatigue\_level} (1--5). Together, these six tables prevent anomalies and preserve referential integrity.
+
+\subsection{Algorithm Analysis}
+To offload complex computations from client devices and preserve ACID integrity, our backend encapsulates core business rules directly inside Oracle PL/SQL stored objects \cite{oracle_plsql_guide}:
+
+\textbf{1. Automated Business Triggers:}
+Row-level trigger \texttt{trg\_after\_match\_event} executes automatically upon inserting rows into \texttt{match\_events}. It inspects \texttt{:NEW.event\_type}, dynamically incrementing the player's cumulative goal count. Additionally, trigger \texttt{trg\_check\_jersey\_unique} intercepts player registration, raising application error \texttt{ORA-20001} if duplicate jersey numbers are detected within the same club roster.
+\begin{verbatim}
+CREATE OR REPLACE TRIGGER trg_after_match_event
+AFTER INSERT ON match_events FOR EACH ROW
+BEGIN
+  IF :NEW.event_type = 'Goal' THEN
+    UPDATE players SET goals = goals + 1 
+    WHERE id = :NEW.player_id;
+  END IF;
+END;
+\end{verbatim}
+
+\textbf{2. Stored Function with Conditional Branching (IF-THEN-ELSIF):}
+The deterministic function \texttt{get\_player\_form(p\_player\_id NUMBER) RETURN VARCHAR2} computes an athlete's dynamic form index based on goal contributions and recent training marks. By evaluating thresholds via an \texttt{IF-THEN-ELSIF-ELSE} structure, it categorizes form into deterministic ranks (\textit{'Exceptional'}, \textit{'Good'}, \textit{'Average'}, or \textit{'Underperforming'}), feeding instant recommendations to the tactical engine.
+
+\textbf{3. Stored Procedure with Iterative WHILE Loop:}
+The administrative routine \texttt{generate\_training\_report(p\_session\_id NUMBER)} processes squad session attendance. Utilizing an explicit cursor coupled with a \texttt{WHILE cur\_attendees\%FOUND LOOP} construct, it aggregates individual fatigue ratings, flags players exceeding safe exertion limits, and compiles consolidated physical readiness metrics without round-trip network overhead.
+
+\textbf{4. Modular Packages with Cursor FOR Loop and Exception Handling:}
+Procedural routines are encapsulated within the \texttt{pkg\_fc\_manager} package. Its core procedure, \texttt{evaluate\_squad\_fitness}, employs an internal cursor \texttt{FOR rec IN (SELECT * FROM players) LOOP} to parse stamina levels and print status reports to \texttt{DBMS\_OUTPUT}. It implements defensive error handling with \texttt{EXCEPTION WHEN OTHERS THEN ROLLBACK}, ensuring full transactional durability.
+
+\textbf{5. Analytical Views and Table Partitioning:}
+We deployed database views \texttt{v\_top\_scorers} and \texttt{v\_match\_summary} to abstract multi-table joins and precompute goal rankings using \texttt{DENSE\_RANK()}. For long-term scalability, the high-volume \texttt{matches} table implements Range Partitioning by \texttt{match\_date}, pruning inactive partitions during date-range lookups.
+
+\subsubsection{SQL Queries Implementation}
+To fulfill the reporting and data aggregation requirements for the coaching staff, we implemented 20 distinct SQL queries covering all major relational algebra operations. Below is the complete set of queries executed in our system:
+
+\begin{verbatim}
+-- A. BASIC QUERIES
+-- 1. Retrieve all free agent players
+SELECT full_name, position, ovr 
+FROM players WHERE club = 'Free Agent';
+
+-- 2. Find matches in September 2026
+SELECT match_id, match_date 
+FROM matches 
+WHERE match_date >= TO_DATE('2026-09-01') 
+  AND match_date < TO_DATE('2026-10-01');
+
+-- 3. Show system managers
+SELECT id, username 
+FROM app_users WHERE role = 'manager';
+
+-- 4. List fitness training sessions
+SELECT session_id, session_date 
+FROM training_sessions 
+WHERE focus_area LIKE '%Fitness%';
+
+-- 5. Players with high pace and shooting
+SELECT full_name, pac, sho 
+FROM players WHERE pac>80 AND sho>80;
+
+-- B. NESTED / SUBQUERIES
+-- 6. Player with the highest OVR
+SELECT full_name, ovr FROM players 
+WHERE ovr = (
+  SELECT MAX(ovr) FROM players
+);
+
+-- 7. Players who scored at least one goal
+SELECT full_name FROM players 
+WHERE id IN (
+  SELECT player_id FROM match_events 
+  WHERE event_type='Goal'
+);
+
+-- 8. Matches with above-avg home goals
+SELECT match_id, home_score 
+FROM matches 
+WHERE home_score > (
+  SELECT AVG(home_score) FROM matches
+);
+
+-- 9. Missed all training (NOT EXISTS)
+SELECT p.full_name FROM players p 
+WHERE NOT EXISTS (
+  SELECT 1 FROM player_training pt 
+  WHERE pt.player_id=p.id
+);
+
+-- 10. First manager account created
+SELECT username FROM app_users 
+WHERE created_at = (
+  SELECT MIN(created_at) FROM app_users
+);
+
+-- C. GROUP BY & HAVING
+-- 11. Count players by position
+SELECT position, COUNT(*) AS total_players 
+FROM players GROUP BY position;
+
+-- 12. Players with more than 2 goals
+SELECT player_id, COUNT(*) AS total_goals 
+FROM match_events 
+WHERE event_type = 'Goal' 
+GROUP BY player_id HAVING COUNT(*) > 2;
+
+-- 13. Average training rating per player
+SELECT player_id, AVG(rating) 
+FROM player_training GROUP BY player_id;
+
+-- 14. Matches by type
+SELECT match_type, COUNT(*) 
+FROM matches GROUP BY match_type;
+
+-- 15. Sessions with high avg rating
+SELECT session_id, AVG(rating) 
+FROM player_training 
+GROUP BY session_id HAVING AVG(rating)>7;
+
+-- D. AGGREGATE QUERIES
+-- 16. Squad average attributes
+SELECT AVG(pac), AVG(sho), 
+       AVG(pas), AVG(dri) FROM players;
+
+-- 17. Max, Min, and Avg OVR
+SELECT MAX(ovr), MIN(ovr), 
+       ROUND(AVG(ovr), 2) FROM players;
+
+-- 18. Total goals scored
+SELECT SUM(home_score), SUM(away_score) 
+FROM matches;
+
+-- 19. Total penalty cards issued
+SELECT COUNT(*) FROM match_events 
+WHERE event_type IN ('Yellow Card', 'Red Card');
+
+-- 20. Total training minutes this month
+SELECT SUM(duration_minutes) 
+FROM training_sessions 
+WHERE EXTRACT(MONTH FROM session_date) = 
+      EXTRACT(MONTH FROM SYSDATE);
+\end{verbatim}
+
+\subsubsection{User Management and Backup/Recovery}
+Security and data preservation are critical for sports clubs. We utilized Oracle's built-in DBA features to manage users, assign privileges, and perform reliable backups.
+
+\textbf{1. User Management and Privileges:}
+We created specific roles for data entry staff (assistant coaches) who only need \texttt{INSERT} and \texttt{SELECT} privileges. This prevents accidental deletion of historical match data by unauthorized personnel.
+\begin{verbatim}
+-- Create role and grant access
+CREATE ROLE data_entry_role;
+GRANT SELECT, INSERT, UPDATE 
+  ON fcm_admin.players TO data_entry_role;
+GRANT SELECT, INSERT 
+  ON fcm_admin.matches TO data_entry_role;
+GRANT SELECT, INSERT 
+  ON fcm_admin.match_events TO data_entry_role;
+
+-- Create user and assign role
+CREATE USER staff_user 
+  IDENTIFIED BY staff_123;
+GRANT CONNECT TO staff_user;
+GRANT data_entry_role TO staff_user;
+\end{verbatim}
+
+\textbf{2. Database Backup and Recovery:}
+To ensure no tactical or historical data is lost due to hardware failure, we implemented automated full database backups using Oracle Data Pump (expdp and impdp) \cite{oracle_datapump}.
+\begin{verbatim}
+-- Step 1: Create a directory object
+CREATE DIRECTORY backup_dir AS 'C:\backup';
+GRANT READ, WRITE ON DIRECTORY backup_dir 
+  TO fcm_admin;
+
+-- Step 2: Export (Backup) via CMD
+expdp fcm_admin/password@orcl schemas=fcm_admin 
+ directory=backup_dir dumpfile=bkp.dmp 
+
+-- Step 3: Import (Recovery) via CMD
+impdp fcm_admin/password@orcl schemas=fcm_admin 
+ directory=backup_dir dumpfile=bkp.dmp 
+\end{verbatim}
+
+\section{Evaluation}
+\subsection{Experimental Setup}
+To rigorously validate our system architecture, we established a complete Client-Server test environment. The backend database server runs \textbf{Oracle Database 19c} on a Windows host, listening on port 1521. Database administration, schema creation, and PL/SQL debugging were conducted via \textbf{Oracle SQL Developer}.
+A lightweight middleware built with Node.js and the official \texttt{oracledb} driver acts as the RESTful API bridge on port 3000. On the frontend, a native Android application was compiled using Android SDK 35 (Java) and deployed on an Android Virtual Device (AVD). Network communication is handled via Retrofit with JSON Web Token (JWT) session security.
+
+\subsection{Experimental Results and Discussion}
+We evaluated system correctness, query execution latency, and client UI workflows across both the database engine and the mobile client application.
+
+\textbf{1. Analytical SQL Query Execution:} 
+As shown in Figure \ref{fig:sql_query}, we executed analytical queries grouping squad metrics by functional positions. The query aggregates total player counts and calculates average overall ratings using \texttt{GROUP BY position}. Oracle's query optimizer returned the grouped data across the active squad in under 4 milliseconds.
+\begin{figure}
+\centering
+\includegraphics[width=1\linewidth]{Images/sql_query.png}
+\caption{Query execution in Oracle SQL Developer showing aggregated positional statistics.}
+\label{fig:sql_query}
+\end{figure}
+
+\textbf{2. Stored PL/SQL Logic Verification:} 
+Figure \ref{fig:sql_plsql} captures the console output when invoking \texttt{pkg\_fc\_manager.evaluate\_squad\_fitness}. The procedure successfully queries the database using an internal cursor \texttt{FOR} loop, applies conditional \texttt{IF-ELSIF} evaluation against fitness ratings, and prints categorized squad status reports to \texttt{DBMS\_OUTPUT} without client overhead.
+\begin{figure}
+\centering
+\includegraphics[width=1\linewidth]{Images/sql_plsql.png}
+\caption{Execution of the PL/SQL Package procedure inside Oracle SQL Developer.}
+\label{fig:sql_plsql}
+\end{figure}
+
+\textbf{3. Mobile Application Functions Evaluation:}
+We evaluated the mobile application across the four mandatory functional categories:
+
+\textit{A. Primary Squad Management Interface:} 
+Figure \ref{fig:app_list} illustrates the primary squad management roster. Players are organized with clear positional headers (\textit{Forwards}, \textit{Midfielders}, \textit{Defenders}, \textit{Goalkeepers}). Each card presents key performance identifiers: overall rating (OVR), jersey number, total goals, and MVP distinctions. The floating action button enables new player onboarding with strict input constraint checks.
+\begin{figure}
+\centering
+\includegraphics[width=0.75\linewidth]{Images/app_list.png}
+\caption{Android client squad roster displaying categorized player cards and position headers.}
+\label{fig:app_list}
+\end{figure}
+
+\textit{B. Interactive Multi-Criteria Sorting Modal:} 
+Figure \ref{fig:app_sort} captures the interactive sorting modal dialog. When coaches trigger the sorting action, a contextual modal allows dynamic reorganization of squad records by Tactical Position, Overall Rating (OVR descending), or Top Goalscorers (goals descending). This decouples UI presentation from backend query storage while ensuring optimal UX ergonomics.
+\begin{figure}
+\centering
+\includegraphics[width=0.75\linewidth]{Images/app_sort.png}
+\caption{Interactive modal dialog for multi-criteria squad sorting and tactical filtering.}
+\label{fig:app_sort}
+\end{figure}
+
+\textit{C. Business Process and Radar Chart Visualization:} 
+Figure \ref{fig:app_radar} presents the player detail profile. Six core FIFA physical attributes (Pace, Shooting, Passing, Dribbling, Defending, Physical) are dynamically visualized onto an interactive hexagonal Radar Chart using \texttt{MPAndroidChart}. Furthermore, coaches can execute the core post-match business process via the prominent action button, updating goals, assists, and medical availability with immediate database synchronization.
+\begin{figure}
+\centering
+\includegraphics[width=0.75\linewidth]{Images/app_radar.png}
+\caption{Player profile displaying FIFA-standard Radar Chart and match recording action.}
+\label{fig:app_radar}
+\end{figure}
+
+\textit{D. Automated Data Aggregation and Reporting:} 
+Figure \ref{fig:app_stats} displays the dedicated Statistics Dashboard. Instead of requiring manual SQL scripts, the mobile application automatically calculates and renders critical club KPIs: total squad headcount, team mean OVR, cumulative season goals, top goalscorer, positional distribution breakdown, and squad fitness readiness.
+\begin{figure}
+\centering
+\includegraphics[width=0.75\linewidth]{Images/app_stats.png}
+\caption{Automated Statistics Dashboard summarizing aggregate club metrics.}
+\label{fig:app_stats}
+\end{figure}
+
+\textbf{4. Empirical Verification with Distinct Test Data Samples:}
+To validate robustness, the database and mobile layer were tested against two distinct datasets:
+\begin{itemize}
+    \item \textbf{Sample 1 (Boundary \& Invalid Input):} We submitted anomalous inputs designed to test defensive constraints: a player record with empty name, illegal position code \texttt{'XX'}, Pace set to \texttt{150} (violating \texttt{CHECK (pac BETWEEN 1 AND 99)}), negative salary (\texttt{-5,000,000}), and duplicate jersey number \texttt{\#9}. The DBMS immediately rejected the transaction with error \texttt{ORA-02290} and custom trigger exception \texttt{ORA-20001}. No corrupt rows were committed, verifying data integrity.
+    \item \textbf{Sample 2 (Operational Business Lifecycle):} We registered forward player ``Nguyen Van A'' (Jersey \texttt{\#9}, OVR 82, PAC 88, SHO 84, PAS 79, DRI 83, DEF 42, PHY 75, Status: \textit{Fit}). Following a 3--1 match victory against ``Da Nang FC'', the coach recorded 2 goals and 1 assist via the mobile client. Trigger \texttt{trg\_after\_match\_event} automatically incremented his season record (\texttt{goals = 2}, \texttt{assists = 1}), refreshed the Radar Chart (Figure \ref{fig:app_radar}), and updated the club analytics dashboard (Figure \ref{fig:app_stats}).
+\end{itemize}
+
+\section{Conclusions}
+\subsection{Achievements}
+In this project, we successfully developed a complete Sports Club Management system anchored by an enterprise Oracle Database. The relational schema adheres strictly to Third Normal Form (3NF) across six normalized tables, preventing data redundancy. We implemented 20 distinct SQL queries spanning basic, nested, and grouping operations, alongside advanced PL/SQL Packages, Triggers, and Views utilizing \texttt{IF}, \texttt{FOR}, and \texttt{WHILE} control structures. Database security and resilience are maintained through custom user roles and automated Oracle Data Pump backup routines. Finally, the native Android client provides an intuitive interface for field coaches through interactive Radar Charts and automated reporting.
+
+\subsection{Limitations}
+The current implementation relies on an active internet connection to communicate with the Oracle server via RESTful middleware. Real-time offline synchronization and automated conflict resolution during concurrent disconnected sessions remain basic.
+
+\subsection{Future Development}
+Future enhancements will focus on developing a desktop web dashboard using React.js for back-office administration, and integrating IoT wearable GPS vests to automatically log athlete physical exertion and sprint metrics directly into Oracle training tables.
+
+\vspace{12pt}
+\bibliography{ref_all.bib}
+\bibliographystyle{IEEEtran}
+\end{document}

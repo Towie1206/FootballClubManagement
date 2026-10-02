@@ -1,175 +1,256 @@
 package com.eaut.footballclubmanagement;
 
+import android.content.Intent;
 import android.os.Bundle;
-import android.widget.Button;
-import android.widget.EditText;
-import android.widget.TextView;
-import android.widget.Toast;
-import androidx.appcompat.app.AppCompatActivity;
-import com.eaut.footballclubmanagement.models.Player;
-import com.eaut.footballclubmanagement.network.RetrofitClient;
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
-
+import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
+import android.widget.Button;
+import android.widget.TextView;
+import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.lifecycle.ViewModelProvider;
+
+import com.eaut.footballclubmanagement.models.Player;
+import com.eaut.footballclubmanagement.utils.PlayerInputValidator;
+import com.eaut.footballclubmanagement.utils.PlayerIntent;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
 
-public class PlayerFormActivity extends AppCompatActivity {
+import java.util.Map;
+import java.util.Random;
 
-    private TextInputEditText etPlayerName, etJerseyNumber;
+public class PlayerFormActivity extends AppCompatActivity {
+    private TextInputEditText etPlayerName;
+    private TextInputEditText etJerseyNumber;
+    private TextInputEditText etClub;
+    private TextInputEditText etPac;
+    private TextInputEditText etSho;
+    private TextInputEditText etPas;
+    private TextInputEditText etDri;
+    private TextInputEditText etDef;
+    private TextInputEditText etPhy;
+    private TextInputEditText etMatches;
+    private TextInputEditText etGoals;
+    private TextInputEditText etAssists;
+    private TextInputEditText etMvp;
     private AutoCompleteTextView etPosition;
-    private TextInputLayout tilPlayerName, tilJerseyNumber, tilPosition;
+    private TextInputLayout tilPlayerName;
+    private TextInputLayout tilJerseyNumber;
+    private TextInputLayout tilPosition;
+    private TextInputLayout tilClub;
     private Button btnSavePlayer;
-    private TextView tvFormTitle;
-    private boolean isEditMode = false;
-    private int playerId = -1;
+    private PlayerViewModel playerViewModel;
+    private Player originalPlayer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_player_form);
+        bindViews();
 
-        tvFormTitle = findViewById(R.id.tvFormTitle);
-        etPlayerName = findViewById(R.id.etPlayerName);
-        etJerseyNumber = findViewById(R.id.etJerseyNumber);
-        etPosition = findViewById(R.id.etPosition);
-        
-        tilPlayerName = findViewById(R.id.tilPlayerName);
-        tilJerseyNumber = findViewById(R.id.tilJerseyNumber);
-        tilPosition = findViewById(R.id.tilPosition);
-        btnSavePlayer = findViewById(R.id.btnSavePlayer);
+        playerViewModel = new ViewModelProvider(this).get(PlayerViewModel.class);
+        originalPlayer = PlayerIntent.readPlayer(getIntent());
 
-        // Thiết lập Dropdown cho Vị trí thi đấu
-        String[] positions = new String[]{"FW (Tiền đạo)", "MF (Tiền vệ)", "DF (Hậu vệ)", "GK (Thủ môn)"};
-        ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_dropdown_item_1line, positions);
-        etPosition.setAdapter(adapter);
+        String[] positions = getResources().getStringArray(R.array.player_positions);
+        etPosition.setAdapter(new ArrayAdapter<>(this,
+                android.R.layout.simple_dropdown_item_1line, positions));
+        etPosition.setOnClickListener(v -> etPosition.showDropDown());
 
-        if (getIntent().hasExtra("PLAYER_ID")) {
-            isEditMode = true;
-            playerId = getIntent().getIntExtra("PLAYER_ID", -1);
-            tvFormTitle.setText("SỬA HỒ SƠ");
-            etPlayerName.setText(getIntent().getStringExtra("PLAYER_NAME"));
-            etJerseyNumber.setText(String.valueOf(getIntent().getIntExtra("PLAYER_JERSEY", 0)));
-            
-            String posExtra = getIntent().getStringExtra("PLAYER_POSITION");
-            if (posExtra != null) {
-                for (String p : positions) {
-                    if (p.startsWith(posExtra)) {
-                        etPosition.setText(p, false);
-                        break;
-                    }
-                }
-            }
+        if (originalPlayer == null) {
+            prefillDefaults();
+        } else {
+            prefillPlayer(originalPlayer);
         }
 
-        // Tắt lỗi khi người dùng bắt đầu gõ lại
-        android.text.TextWatcher clearErrorWatcher = new android.text.TextWatcher() {
-            @Override public void beforeTextChanged(CharSequence s, int start, int count, int after) {}
-            @Override public void onTextChanged(CharSequence s, int start, int before, int count) {
-                tilPlayerName.setErrorEnabled(false);
-                tilJerseyNumber.setErrorEnabled(false);
-                tilPosition.setErrorEnabled(false);
-            }
-            @Override public void afterTextChanged(android.text.Editable s) {}
-        };
-        etPlayerName.addTextChangedListener(clearErrorWatcher);
-        etJerseyNumber.addTextChangedListener(clearErrorWatcher);
-        etPosition.addTextChangedListener(clearErrorWatcher);
-
+        findViewById(R.id.btnBack).setOnClickListener(v -> finish());
+        findViewById(R.id.btnRandomStats).setOnClickListener(v -> randomStats());
         btnSavePlayer.setOnClickListener(v -> savePlayer());
     }
 
-    private void savePlayer() {
-        String name = etPlayerName.getText().toString().trim();
-        String jerseyStr = etJerseyNumber.getText().toString().trim();
-        String positionFull = etPosition.getText().toString().trim();
+    private void bindViews() {
+        etPlayerName = findViewById(R.id.etPlayerName);
+        etJerseyNumber = findViewById(R.id.etJerseyNumber);
+        etPosition = findViewById(R.id.etPosition);
+        etClub = findViewById(R.id.etClub);
+        etMatches = findViewById(R.id.etMatches);
+        etGoals = findViewById(R.id.etGoals);
+        etAssists = findViewById(R.id.etAssists);
+        etMvp = findViewById(R.id.etMvp);
+        etPac = findViewById(R.id.etPac);
+        etSho = findViewById(R.id.etSho);
+        etPas = findViewById(R.id.etPas);
+        etDri = findViewById(R.id.etDri);
+        etDef = findViewById(R.id.etDef);
+        etPhy = findViewById(R.id.etPhy);
+        tilPlayerName = findViewById(R.id.tilPlayerName);
+        tilJerseyNumber = findViewById(R.id.tilJerseyNumber);
+        tilPosition = findViewById(R.id.tilPosition);
+        tilClub = findViewById(R.id.tilClub);
+        btnSavePlayer = findViewById(R.id.btnSavePlayer);
+    }
 
-        // 1. Validation Logic
-        boolean isValid = true;
-        
-        if (name.isEmpty()) {
-            tilPlayerName.setError("Tên không được để trống");
-            isValid = false;
-        } else if (name.length() < 2) {
-            tilPlayerName.setError("Tên quá ngắn");
-            isValid = false;
+    private void prefillDefaults() {
+        etClub.setText(R.string.free_agent);
+        setNumber(etMatches, 0);
+        setNumber(etGoals, 0);
+        setNumber(etAssists, 0);
+        setNumber(etMvp, 0);
+        setNumber(etPac, 70);
+        setNumber(etSho, 70);
+        setNumber(etPas, 70);
+        setNumber(etDri, 70);
+        setNumber(etDef, 70);
+        setNumber(etPhy, 70);
+    }
+
+    private void prefillPlayer(Player player) {
+        TextView title = findViewById(R.id.tvFormTitle);
+        title.setText(R.string.edit_player_title);
+        etPlayerName.setText(player.getFullName());
+        setNumber(etJerseyNumber, player.getJerseyNumber());
+        etPosition.setText(positionLabel(player.getPosition()), false);
+        etClub.setText(player.getClub());
+        setNumber(etMatches, player.getMatches());
+        setNumber(etGoals, player.getGoals());
+        setNumber(etAssists, player.getAssists());
+        setNumber(etMvp, player.getMvp());
+        setNumber(etPac, player.getPac());
+        setNumber(etSho, player.getSho());
+        setNumber(etPas, player.getPas());
+        setNumber(etDri, player.getDri());
+        setNumber(etDef, player.getDef());
+        setNumber(etPhy, player.getPhy());
+    }
+
+    private String positionLabel(String position) {
+        if (position == null) return "";
+        switch (position) {
+            case "FW": return getString(R.string.position_fw);
+            case "MF": return getString(R.string.position_mf);
+            case "DF": return getString(R.string.position_df);
+            case "GK": return getString(R.string.position_gk);
+            default: return "";
+        }
+    }
+
+    private void randomStats() {
+        String position = textOf(etPosition);
+        Random random = new Random();
+        if (position.startsWith("FW")) {
+            setStats(random, 75, 80, 60, 75, 30, 65);
+        } else if (position.startsWith("MF")) {
+            setStats(random, 70, 70, 80, 75, 65, 70);
+        } else if (position.startsWith("DF")) {
+            setStats(random, 65, 40, 60, 60, 80, 80);
+        } else if (position.startsWith("GK")) {
+            setStats(random, 75, 70, 60, 78, 45, 75);
+        } else {
+            Toast.makeText(this, R.string.choose_position_first, Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    private void setStats(Random random, int pac, int sho, int pas, int dri, int def, int phy) {
+        setNumber(etPac, pac + random.nextInt(15));
+        setNumber(etSho, sho + random.nextInt(15));
+        setNumber(etPas, pas + random.nextInt(15));
+        setNumber(etDri, dri + random.nextInt(15));
+        setNumber(etDef, def + random.nextInt(15));
+        setNumber(etPhy, phy + random.nextInt(15));
+    }
+
+    private void savePlayer() {
+        clearErrors();
+        int id = originalPlayer == null ? 0 : originalPlayer.getId();
+        String health = originalPlayer == null ? "Fit" : originalPlayer.getHealthStatus();
+        PlayerInputValidator.ValidationResult validation = PlayerInputValidator.validate(
+                id, health, textOf(etPlayerName), textOf(etJerseyNumber), textOf(etPosition),
+                textOf(etClub), textOf(etMatches), textOf(etGoals), textOf(etAssists),
+                textOf(etMvp), textOf(etPac), textOf(etSho), textOf(etPas), textOf(etDri),
+                textOf(etDef), textOf(etPhy));
+        if (!validation.isValid()) {
+            showValidationErrors(validation.getErrors());
+            Toast.makeText(this, R.string.fix_form_errors, Toast.LENGTH_SHORT).show();
+            return;
         }
 
-        int jersey = -1;
-        if (jerseyStr.isEmpty()) {
-            tilJerseyNumber.setError("Số áo không được để trống");
-            isValid = false;
+        setSaving(true);
+        Player player = validation.getPlayer();
+        if (originalPlayer == null) {
+            playerViewModel.addPlayer(player).observe(this, this::handleSaveResult);
         } else {
-            try {
-                jersey = Integer.parseInt(jerseyStr);
-                if (jersey < 1 || jersey > 99) {
-                    tilJerseyNumber.setError("Số áo phải từ 1 đến 99");
-                    isValid = false;
-                }
-            } catch (NumberFormatException e) {
-                tilJerseyNumber.setError("Số áo không hợp lệ");
-                isValid = false;
+            playerViewModel.updatePlayer(player.getId(), player).observe(this, this::handleSaveResult);
+        }
+    }
+
+    private void handleSaveResult(OperationResult<Player> result) {
+        if (result == null) return;
+        setSaving(false);
+        if (result.getStatus() == OperationResult.Status.AUTH_REQUIRED) {
+            redirectToLogin();
+        } else if (result.isSuccess()) {
+            Intent resultIntent = new Intent();
+            PlayerIntent.putPlayer(resultIntent, result.getData());
+            setResult(RESULT_OK, resultIntent);
+            Toast.makeText(this,
+                    originalPlayer == null ? R.string.player_added : R.string.player_updated,
+                    Toast.LENGTH_SHORT).show();
+            finish();
+        } else {
+            Toast.makeText(this, result.getMessage(), Toast.LENGTH_LONG).show();
+        }
+    }
+
+    private void showValidationErrors(Map<PlayerInputValidator.Field, String> errors) {
+        for (Map.Entry<PlayerInputValidator.Field, String> error : errors.entrySet()) {
+            switch (error.getKey()) {
+                case NAME: tilPlayerName.setError(error.getValue()); break;
+                case JERSEY: tilJerseyNumber.setError(error.getValue()); break;
+                case POSITION: tilPosition.setError(error.getValue()); break;
+                case CLUB: tilClub.setError(error.getValue()); break;
+                case MATCHES: etMatches.setError(error.getValue()); break;
+                case GOALS: etGoals.setError(error.getValue()); break;
+                case ASSISTS: etAssists.setError(error.getValue()); break;
+                case MVP: etMvp.setError(error.getValue()); break;
+                case PAC: etPac.setError(error.getValue()); break;
+                case SHO: etSho.setError(error.getValue()); break;
+                case PAS: etPas.setError(error.getValue()); break;
+                case DRI: etDri.setError(error.getValue()); break;
+                case DEF: etDef.setError(error.getValue()); break;
+                case PHY: etPhy.setError(error.getValue()); break;
             }
         }
+    }
 
-        if (positionFull.isEmpty()) {
-            tilPosition.setError("Vui lòng chọn vị trí");
-            isValid = false;
-        }
+    private void clearErrors() {
+        tilPlayerName.setError(null);
+        tilJerseyNumber.setError(null);
+        tilPosition.setError(null);
+        tilClub.setError(null);
+        TextInputEditText[] numericFields = {etMatches, etGoals, etAssists, etMvp,
+                etPac, etSho, etPas, etDri, etDef, etPhy};
+        for (TextInputEditText field : numericFields) field.setError(null);
+    }
 
-        if (!isValid) return;
+    private void setSaving(boolean saving) {
+        btnSavePlayer.setEnabled(!saving);
+        btnSavePlayer.setText(saving ? R.string.saving_player : R.string.save_player);
+    }
 
-        // Lấy mã vị trí gốc (VD: "FW (Tiền đạo)" -> "FW")
-        String position = positionFull.split(" ")[0];
+    private void redirectToLogin() {
+        Toast.makeText(this, R.string.session_expired, Toast.LENGTH_SHORT).show();
+        Intent intent = new Intent(this, LoginActivity.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+        startActivity(intent);
+        finish();
+    }
 
-        Player player = new Player(playerId, name, position, jersey, "Fit", 75, 0, 0);
+    private static String textOf(TextView view) {
+        return view.getText() == null ? "" : view.getText().toString().trim();
+    }
 
-        btnSavePlayer.setEnabled(false); // Trạng thái Loading (chống click nhiều lần)
-        btnSavePlayer.setText("ĐANG LƯU...");
-
-        if (isEditMode) {
-            RetrofitClient.getApiService().updatePlayer(playerId, player).enqueue(new Callback<Player>() {
-                @Override
-                public void onResponse(Call<Player> call, Response<Player> response) {
-                    if (response.isSuccessful()) {
-                        Toast.makeText(PlayerFormActivity.this, "Cập nhật thành công!", Toast.LENGTH_SHORT).show();
-                        finish();
-                    } else {
-                        btnSavePlayer.setEnabled(true);
-                        btnSavePlayer.setText("LƯU CẦU THỦ");
-                        Toast.makeText(PlayerFormActivity.this, "Lỗi cập nhật", Toast.LENGTH_SHORT).show();
-                    }
-                }
-                @Override
-                public void onFailure(Call<Player> call, Throwable t) {
-                    btnSavePlayer.setEnabled(true);
-                    btnSavePlayer.setText("LƯU CẦU THỦ");
-                    Toast.makeText(PlayerFormActivity.this, "Lỗi mạng", Toast.LENGTH_SHORT).show();
-                }
-            });
-        } else {
-            RetrofitClient.getApiService().addPlayer(player).enqueue(new Callback<Player>() {
-                @Override
-                public void onResponse(Call<Player> call, Response<Player> response) {
-                    if (response.isSuccessful()) {
-                        Toast.makeText(PlayerFormActivity.this, "Thêm cầu thủ thành công!", Toast.LENGTH_SHORT).show();
-                        finish();
-                    } else {
-                        btnSavePlayer.setEnabled(true);
-                        btnSavePlayer.setText("LƯU CẦU THỦ");
-                        Toast.makeText(PlayerFormActivity.this, "Lỗi tạo mới", Toast.LENGTH_SHORT).show();
-                    }
-                }
-                @Override
-                public void onFailure(Call<Player> call, Throwable t) {
-                    btnSavePlayer.setEnabled(true);
-                    btnSavePlayer.setText("LƯU CẦU THỦ");
-                    Toast.makeText(PlayerFormActivity.this, "Lỗi mạng", Toast.LENGTH_SHORT).show();
-                }
-            });
-        }
+    private static void setNumber(TextView view, int value) {
+        view.setText(String.valueOf(value));
     }
 }

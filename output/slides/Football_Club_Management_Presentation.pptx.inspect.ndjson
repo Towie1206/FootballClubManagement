@@ -1,0 +1,251 @@
+{"kind":"deck","id":"pr/xay0ao","name":"Deck"}
+{"kind":"layout","layoutId":"e2c90134-279e-45a0-a2b4-015f362f0870","name":"Master","type":"master"}
+{"kind":"layout","layoutId":"cec806f7-3747-49f7-92e0-ae8dffed01e4","name":"Title Slide","type":"title"}
+{"kind":"slide","id":"sl/fcfwrh","slide":1,"title":"ANDROID • AI • OFFLINE-FIRST","textShapes":5}
+{"kind":"shape","id":"sh/s32lojq9","slide":1,"bbox":[700,54,520,610]}
+{"kind":"shape","id":"sh/r2t4fe9o","slide":1,"bbox":[740,128,410,2]}
+{"kind":"shape","id":"sh/q1k3m98j","slide":1,"bbox":[740,538,410,2]}
+{"kind":"shape","id":"sh/5gbmd4ry","slide":1,"bbox":[836,128,2,412]}
+{"kind":"shape","id":"sh/4f2lkzqd","slide":1,"bbox":[1054,128,2,412]}
+{"kind":"shape","id":"sh/3etkbe9s","slide":1,"name":"football-pitch-center","bbox":[910,260,160,160]}
+{"kind":"shape","id":"sh/idk3i987","slide":1,"bbox":[54,58,274,30]}
+{"kind":"textbox","id":"sh/pcfmp872","slide":1,"text":"ANDROID • AI • OFFLINE-FIRST","textPreview":"ANDROID • AI • OFFLINE-FIRST","textChars":28,"textLines":1,"bbox":[64,64,254,18]}
+{"kind":"textbox","id":"sh/ob6lw3qh","slide":1,"text":"Football Club\nManagement","textPreview":"Football Club | Management","textChars":24,"textLines":2,"bbox":[54,152,590,172]}
+{"kind":"textbox","id":"sh/epgf65of","slide":1,"text":"Quản lý đội bóng, quỹ, cầu thủ và tư vấn chiến thuật qua một AI gateway an toàn.","textPreview":"Quản lý đội bóng, quỹ, cầu thủ và tư vấn chiến thuật qua một AI gateway an toàn.","textChars":80,"textLines":1,"bbox":[58,346,550,104]}
+{"kind":"textbox","id":"sh/zapgzap0","slide":1,"text":"NGUYEN CONG BANG","textPreview":"NGUYEN CONG BANG","textChars":16,"textLines":1,"bbox":[58,555,310,24]}
+{"kind":"textbox","id":"sh/0bix8f6l","slide":1,"text":"Đồ án Lập trình di động tích hợp AI • 2026","textPreview":"Đồ án Lập trình di động tích hợp AI • 2026","textChars":42,"textLines":1,"bbox":[58,586,500,24]}
+{"kind":"notes","id":"nt/fcfwrh","slide":1,"text":"Mở đầu bằng một câu: đây là MVP có dữ liệu thật, CRUD thật và AI đi qua backend; phần trình bày tập trung vào bằng chứng chạy được.\n\n[Sources]\n- Yêu cầu bài tập lớn.pdf, trang 1–6\n- README.md"}
+{"kind":"slide","id":"sl/8qqjyi","slide":2,"title":"01 • BÀI TOÁN","textShapes":20}
+{"kind":"textbox","id":"sh/0vix0bmd","slide":2,"text":"01 • BÀI TOÁN","textPreview":"01 • BÀI TOÁN","textChars":13,"textLines":1,"bbox":[52,32,520,24]}
+{"kind":"textbox","id":"sh/zu9g765s","slide":2,"text":"Từ sổ tay rời rạc đến một luồng quản lý thống nhất","textPreview":"Từ sổ tay rời rạc đến một luồng quản lý thống nhất","textChars":50,"textLines":1,"bbox":[52,62,1176,58]}
+{"kind":"textbox","id":"sh/y90fy147","slide":2,"text":"MVP ưu tiên đúng ba nỗi đau có thể kiểm chứng trong buổi bảo vệ.","textPreview":"MVP ưu tiên đúng ba nỗi đau có thể kiểm chứng trong buổi bảo vệ.","textChars":64,"textLines":1,"bbox":[52,122,1120,42]}
+{"kind":"shape","id":"sh/d8ry5wnm","slide":2,"bbox":[52,190,610,112]}
+{"kind":"textbox","id":"sh/c7ixwbm1","slide":2,"text":"01","textPreview":"01","textChars":2,"textLines":1,"bbox":[70,208,54,42]}
+{"kind":"textbox","id":"sh/b69g365g","slide":2,"text":"Quân số phân tán","textPreview":"Quân số phân tán","textChars":16,"textLines":1,"bbox":[130,208,514,34]}
+{"kind":"textbox","id":"sh/q50fu14v","slide":2,"text":"Danh sách, tìm kiếm, lọc, sắp xếp và hồ sơ cầu thủ có CRUD thật.","textPreview":"Danh sách, tìm kiếm, lọc, sắp xếp và hồ sơ cầu thủ có CRUD thật.","textChars":64,"textLines":1,"bbox":[70,256,574,32]}
+{"kind":"shape","id":"sh/p47y1wnq","slide":2,"bbox":[52,326,610,112]}
+{"kind":"textbox","id":"sh/43yxsrm5","slide":2,"text":"02","textPreview":"02","textChars":2,"textLines":1,"bbox":[70,344,54,42]}
+{"kind":"textbox","id":"sh/id4z65sf","slide":2,"text":"Thu chi khó đối soát","textPreview":"Thu chi khó đối soát","textChars":20,"textLines":1,"bbox":[130,344,514,34]}
+{"kind":"textbox","id":"sh/jed0fa9k","slide":2,"text":"Sổ quỹ cục bộ hoạt động offline và cập nhật tức thời.","textPreview":"Sổ quỹ cục bộ hoạt động offline và cập nhật tức thời.","textChars":53,"textLines":1,"bbox":[70,392,574,32]}
+{"kind":"shape","id":"sh/4fmh8fa5","slide":2,"bbox":[52,462,610,112]}
+{"kind":"textbox","id":"sh/5gvihkrq","slide":2,"text":"03","textPreview":"03","textChars":2,"textLines":1,"bbox":[70,480,54,42]}
+{"kind":"textbox","id":"sh/u9kz25s3","slide":2,"text":"Chiến thuật thiếu ngữ cảnh","textPreview":"Chiến thuật thiếu ngữ cảnh","textChars":26,"textLines":1,"bbox":[130,480,514,34]}
+{"kind":"textbox","id":"sh/vatgba9o","slide":2,"text":"AI nhận dữ liệu đội bóng từ backend trước khi đưa ra gợi ý.","textPreview":"AI nhận dữ liệu đội bóng từ backend trước khi đưa ra gợi ý.","textChars":59,"textLines":1,"bbox":[70,528,574,32]}
+{"kind":"shape","id":"sh/wb2h4fa9","slide":2,"bbox":[708,190,520,384]}
+{"kind":"textbox","id":"sh/hcvidkru","slide":2,"text":"Mục tiêu MVP","textPreview":"Mục tiêu MVP","textChars":12,"textLines":1,"bbox":[740,224,300,34]}
+{"kind":"textbox","id":"sh/mlkzyls7","slide":2,"text":"Một người quản lý có thể hoàn tất vòng đời cầu thủ, theo dõi quỹ và nhận gợi ý chiến thuật mà không lộ khóa AI trên thiết bị.","textPreview":"Một người quản lý có thể hoàn tất vòng đời cầu thủ, theo dõi quỹ và nhận gợi ý chiến thuật mà không lộ khóa AI trên thiết bị.","textChars":125,"textLines":1,"bbox":[740,278,430,126]}
+{"kind":"shape","id":"sh/76tg7q9s","slide":2,"bbox":[740,448,176,30]}
+{"kind":"textbox","id":"sh/bqpwfmpk","slide":2,"text":"10 màn hình / luồng","textPreview":"10 màn hình / luồng","textChars":19,"textLines":1,"bbox":[750,454,156,18]}
+{"kind":"shape","id":"sh/apgf618z","slide":2,"bbox":[928,448,150,30]}
+{"kind":"textbox","id":"sh/xc7ehw7a","slide":2,"text":"4 trạng thái UI","textPreview":"4 trạng thái UI","textChars":15,"textLines":1,"bbox":[938,454,130,18]}
+{"kind":"shape","id":"sh/cryx8rqp","slide":2,"bbox":[740,492,166,30]}
+{"kind":"textbox","id":"sh/ze9wj6pg","slide":2,"text":"1 nguồn dữ liệu","textPreview":"1 nguồn dữ liệu","textChars":15,"textLines":1,"bbox":[750,498,146,18]}
+{"kind":"shape","id":"sh/yd0fa18v","slide":2,"bbox":[918,492,136,30]}
+{"kind":"textbox","id":"sh/lgrelg7m","slide":2,"text":"Gateway AI","textPreview":"Gateway AI","textChars":10,"textLines":1,"bbox":[928,498,116,18]}
+{"kind":"shape","id":"sh/kfixcbq1","slide":2,"bbox":[52,682,1176,1]}
+{"kind":"textbox","id":"sh/fi5w72pc","slide":2,"text":"FC MANAGER • 2026","textPreview":"FC MANAGER • 2026","textChars":17,"textLines":1,"bbox":[52,690,500,20]}
+{"kind":"textbox","id":"sh/ehwvyx8r","slide":2,"text":"02","textPreview":"02","textChars":2,"textLines":1,"bbox":[1160,688,68,20]}
+{"kind":"notes","id":"nt/8qqjyi","slide":2,"text":"Nêu vấn đề trước, rồi liên kết mỗi vấn đề với một khả năng có thể demo. Không mô tả quá nhiều tính năng ngoài phạm vi MVP.\n\n[Sources]\n- docs/REQUIREMENTS_TRACEABILITY.md\n- app/src/main/java/com/eaut/footballclubmanagement"}
+{"kind":"slide","id":"sl/tujogw","slide":3,"title":"02 • PHẠM VI","textShapes":19}
+{"kind":"textbox","id":"sh/svmdwzet","slide":3,"text":"02 • PHẠM VI","textPreview":"02 • PHẠM VI","textChars":12,"textLines":1,"bbox":[52,32,520,24]}
+{"kind":"textbox","id":"sh/7udw3ud8","slide":3,"text":"Ba hành trình bao phủ toàn bộ rubric chức năng","textPreview":"Ba hành trình bao phủ toàn bộ rubric chức năng","textChars":46,"textLines":1,"bbox":[52,62,1176,58]}
+{"kind":"textbox","id":"sh/6t4vupwn","slide":3,"text":"Mỗi hành trình có xác thực đầu vào, trạng thái dữ liệu và đường lui khi lỗi.","textPreview":"Mỗi hành trình có xác thực đầu vào, trạng thái dữ liệu và đường lui khi lỗi.","textChars":76,"textLines":1,"bbox":[52,122,1120,42]}
+{"kind":"shape","id":"sh/5sve14v2","slide":3,"bbox":[52,190,362,240]}
+{"kind":"textbox","id":"sh/krmdszeh","slide":3,"text":"A","textPreview":"A","textChars":1,"textLines":1,"bbox":[70,208,54,42]}
+{"kind":"textbox","id":"sh/jqdczudw","slide":3,"text":"Tài khoản","textPreview":"Tài khoản","textChars":9,"textLines":1,"bbox":[130,208,266,34]}
+{"kind":"textbox","id":"sh/i54vqpwb","slide":3,"text":"Splash → Đăng nhập/đăng ký → Dashboard → Settings → Đăng xuất. Token phiên được lưu cục bộ và gửi qua header.","textPreview":"Splash → Đăng nhập/đăng ký → Dashboard → Settings → Đăng xuất. Token phiên được lưu cục bộ và gửi qua header.","textChars":109,"textLines":1,"bbox":[70,256,326,160]}
+{"kind":"shape","id":"sh/x4vuxkvq","slide":3,"bbox":[434,190,362,240]}
+{"kind":"textbox","id":"sh/w32dofel","slide":3,"text":"B","textPreview":"B","textChars":1,"textLines":1,"bbox":[452,208,54,42]}
+{"kind":"textbox","id":"sh/2h8ret8b","slide":3,"text":"Cầu thủ","textPreview":"Cầu thủ","textChars":7,"textLines":1,"bbox":[512,208,266,34]}
+{"kind":"textbox","id":"sh/n2h8ny9w","slide":3,"text":"Danh sách → tìm/lọc/sắp xếp → chi tiết → thêm/sửa/xóa. Room làm cache, REST đồng bộ dữ liệu.","textPreview":"Danh sách → tìm/lọc/sắp xếp → chi tiết → thêm/sửa/xóa. Room làm cache, REST đồng bộ dữ liệu.","textChars":92,"textLines":1,"bbox":[452,256,326,160]}
+{"kind":"shape","id":"sh/o3q9g3qh","slide":3,"bbox":[816,190,412,240]}
+{"kind":"textbox","id":"sh/p4zqp8r2","slide":3,"text":"C","textPreview":"C","textChars":1,"textLines":1,"bbox":[834,208,54,42]}
+{"kind":"textbox","id":"sh/edorat8z","slide":3,"text":"Vận hành đội","textPreview":"Vận hành đội","textChars":12,"textLines":1,"bbox":[894,208,316,34]}
+{"kind":"textbox","id":"sh/feh8jy9k","slide":3,"text":"Sổ quỹ offline, nhắc lịch bằng WorkManager và AI Coach dựa trên bối cảnh đội bóng.","textPreview":"Sổ quỹ offline, nhắc lịch bằng WorkManager và AI Coach dựa trên bối cảnh đội bóng.","textChars":82,"textLines":1,"bbox":[834,256,376,160]}
+{"kind":"shape","id":"sh/0fq9c3q5","slide":3,"bbox":[140,490,154,30]}
+{"kind":"textbox","id":"sh/1gzqlorq","slide":3,"text":"Loading","textPreview":"Loading","textChars":7,"textLines":1,"bbox":[150,496,134,18]}
+{"kind":"shape","id":"sh/q9or6983","slide":3,"bbox":[384,490,154,30]}
+{"kind":"textbox","id":"sh/rax8fe9o","slide":3,"text":"Empty","textPreview":"Empty","textChars":5,"textLines":1,"bbox":[394,496,134,18]}
+{"kind":"shape","id":"sh/veto7apg","slide":3,"bbox":[628,490,154,30]}
+{"kind":"textbox","id":"sh/udkne5ov","slide":3,"text":"Error","textPreview":"Error","textChars":5,"textLines":1,"bbox":[638,496,134,18]}
+{"kind":"shape","id":"sh/hgv69k7m","slide":3,"bbox":[872,490,154,30]}
+{"kind":"textbox","id":"sh/gfm5gf61","slide":3,"text":"Success","textPreview":"Success","textChars":7,"textLines":1,"bbox":[882,496,134,18]}
+{"kind":"textbox","id":"sh/3idobupc","slide":3,"text":"Bằng chứng chấm: thao tác thật + dữ liệu thay đổi thật + thông báo rõ ràng","textPreview":"Bằng chứng chấm: thao tác thật + dữ liệu thay đổi thật + thông báo rõ ràng","textChars":74,"textLines":1,"bbox":[176,564,928,44]}
+{"kind":"shape","id":"sh/ih4nipor","slide":3,"bbox":[52,682,1176,1]}
+{"kind":"textbox","id":"sh/5kv6dk7i","slide":3,"text":"FC MANAGER • 2026","textPreview":"FC MANAGER • 2026","textChars":17,"textLines":1,"bbox":[52,690,500,20]}
+{"kind":"textbox","id":"sh/4jmpkz6x","slide":3,"text":"03","textPreview":"03","textChars":2,"textLines":1,"bbox":[1160,688,68,20]}
+{"kind":"notes","id":"nt/tujogw","slide":3,"text":"Demo hành trình B trước vì nó chứng minh nhiều tiêu chí nhất; sau đó chuyển nhanh sang quỹ, thông báo, cài đặt và AI.\n\n[Sources]\n- docs/DEMO_SCRIPT.md\n- docs/REQUIREMENTS_TRACEABILITY.md"}
+{"kind":"slide","id":"sl/6zmzve","slide":4,"title":"03 • KIẾN TRÚC","textShapes":21}
+{"kind":"textbox","id":"sh/0jy18zet","slide":4,"text":"03 • KIẾN TRÚC","textPreview":"03 • KIẾN TRÚC","textChars":14,"textLines":1,"bbox":[52,32,520,24]}
+{"kind":"textbox","id":"sh/zipkzud8","slide":4,"text":"Khóa AI không bao giờ đi xuống Android","textPreview":"Khóa AI không bao giờ đi xuống Android","textChars":38,"textLines":1,"bbox":[52,62,1176,58]}
+{"kind":"textbox","id":"sh/yhwj6pwn","slide":4,"text":"Dòng dữ liệu phân tầng, có cache cục bộ và hợp đồng API rõ ràng.","textPreview":"Dòng dữ liệu phân tầng, có cache cục bộ và hợp đồng API rõ ràng.","textChars":64,"textLines":1,"bbox":[52,122,1120,42]}
+{"kind":"shape","id":"sh/dgn2x4v2","slide":4,"bbox":[52,214,238,112]}
+{"kind":"textbox","id":"sh/cfe14zeh","slide":4,"text":"Android / Java","textPreview":"Android / Java","textChars":14,"textLines":1,"bbox":[68,232,206,28]}
+{"kind":"textbox","id":"sh/bu50vudw","slide":4,"text":"UI + ViewModel\nRetrofit + Room","textPreview":"UI + ViewModel | Retrofit + Room","textChars":30,"textLines":2,"bbox":[68,266,206,46]}
+{"kind":"shape","id":"sh/qtwj2pwb","slide":4,"bbox":[300,270,68,3]}
+{"kind":"shape","id":"sh/xcr29ov6","slide":4,"bbox":[364,262,18,18]}
+{"kind":"shape","id":"sh/wbi1gjel","slide":4,"bbox":[392,214,238,112]}
+{"kind":"textbox","id":"sh/2d4z2tgj","slide":4,"text":"Express API","textPreview":"Express API","textChars":11,"textLines":1,"bbox":[408,232,206,28]}
+{"kind":"textbox","id":"sh/nydgvex4","slide":4,"text":"Auth middleware\nValidation + limits","textPreview":"Auth middleware | Validation + limits","textChars":35,"textLines":2,"bbox":[408,266,206,46]}
+{"kind":"shape","id":"sh/ozmh4jy9","slide":4,"bbox":[640,270,68,3]}
+{"kind":"shape","id":"sh/p0fyxofu","slide":4,"bbox":[704,262,18,18]}
+{"kind":"shape","id":"sh/e94zy9g7","slide":4,"bbox":[732,168,218,112]}
+{"kind":"textbox","id":"sh/fadgrexs","slide":4,"text":"Oracle / Mock","textPreview":"Oracle / Mock","textChars":13,"textLines":1,"bbox":[748,186,186,28]}
+{"kind":"textbox","id":"sh/0bmh0jyd","slide":4,"text":"Players + users\nPersistent contract","textPreview":"Players + users | Persistent contract","textChars":35,"textLines":2,"bbox":[748,220,186,46]}
+{"kind":"shape","id":"sh/1cvytofy","slide":4,"bbox":[732,334,218,112]}
+{"kind":"textbox","id":"sh/y5ozadwr","slide":4,"text":"Gemini","textPreview":"Gemini","textChars":6,"textLines":1,"bbox":[748,352,186,28]}
+{"kind":"textbox","id":"sh/z6x03yxw","slide":4,"text":"Server-side key\nGrounded prompt","textPreview":"Server-side key | Grounded prompt","textChars":31,"textLines":2,"bbox":[748,386,186,46]}
+{"kind":"shape","id":"sh/va9wvado","slide":4,"bbox":[960,270,60,3]}
+{"kind":"shape","id":"sh/u9gv25w3","slide":4,"bbox":[1016,262,18,18]}
+{"kind":"shape","id":"sh/hcrex0ve","slide":4,"bbox":[1044,214,184,112]}
+{"kind":"textbox","id":"sh/wbid4ve9","slide":4,"text":"UI states","textPreview":"UI states","textChars":9,"textLines":1,"bbox":[1060,232,152,28]}
+{"kind":"textbox","id":"sh/je9wzadk","slide":4,"text":"Loading\nEmpty / Error\nSuccess","textPreview":"Loading | Empty / Error | Success","textChars":29,"textLines":3,"bbox":[1060,266,152,46]}
+{"kind":"shape","id":"sh/id0v65wz","slide":4,"bbox":[660,270,3,190]}
+{"kind":"shape","id":"sh/5gre1kvq","slide":4,"bbox":[660,458,72,3]}
+{"kind":"textbox","id":"sh/4fix8fe5","slide":4,"text":"3 lớp","textPreview":"3 lớp","textChars":5,"textLines":1,"bbox":[54,524,156,38]}
+{"kind":"textbox","id":"sh/ritw3udw","slide":4,"text":"Presentation → Domain/Repository → Data","textPreview":"Presentation → Domain/Repository → Data","textChars":39,"textLines":1,"bbox":[54,568,392,26]}
+{"kind":"textbox","id":"sh/6hkfapwb","slide":4,"text":"Bảo mật","textPreview":"Bảo mật","textChars":7,"textLines":1,"bbox":[510,524,156,38]}
+{"kind":"textbox","id":"sh/o72dkza9","slide":4,"text":"Salted password hash + signed token + env-only AI key","textPreview":"Salted password hash + signed token + env-only AI key","textChars":53,"textLines":1,"bbox":[510,568,430,26]}
+{"kind":"textbox","id":"sh/p8vetkbu","slide":4,"text":"Offline","textPreview":"Offline","textChars":7,"textLines":1,"bbox":[986,524,156,38]}
+{"kind":"textbox","id":"sh/2lkvips3","slide":4,"text":"Room giữ dữ liệu dùng gần nhất","textPreview":"Room giữ dữ liệu dùng gần nhất","textChars":30,"textLines":1,"bbox":[986,568,242,44]}
+{"kind":"shape","id":"sh/n6tcruto","slide":4,"bbox":[52,682,1176,1]}
+{"kind":"textbox","id":"sh/gj2dgfad","slide":4,"text":"FC MANAGER • 2026","textPreview":"FC MANAGER • 2026","textChars":17,"textLines":1,"bbox":[52,690,500,20]}
+{"kind":"textbox","id":"sh/1kbupkby","slide":4,"text":"04","textPreview":"04","textChars":2,"textLines":1,"bbox":[1160,688,68,20]}
+{"kind":"notes","id":"nt/6zmzve","slide":4,"text":"Đi theo mũi tên: app gọi backend, backend kiểm tra phiên và dữ liệu, sau đó mới gọi DB hoặc model. Nhấn mạnh khóa AI chỉ nằm trong biến môi trường backend.\n\n[Sources]\n- docs/ARCHITECTURE.md\n- docs/ERD_AND_API.md\n- backend/routes/ai.js\n- app/src/main/java/com/eaut/footballclubmanagement/network/RetrofitClient.java"}
+{"kind":"slide","id":"sl/woxvj9","slide":5,"title":"04 • SẢN PHẨM","textShapes":25}
+{"kind":"textbox","id":"sh/9ovelkf2","slide":5,"text":"04 • SẢN PHẨM","textPreview":"04 • SẢN PHẨM","textChars":13,"textLines":1,"bbox":[52,32,520,24]}
+{"kind":"textbox","id":"sh/ml4fa5gb","slide":5,"text":"Giao diện tối, tương phản cao và ưu tiên tác vụ","textPreview":"Giao diện tối, tương phản cao và ưu tiên tác vụ","textChars":47,"textLines":1,"bbox":[52,62,1176,58]}
+{"kind":"textbox","id":"sh/7mdwjaxw","slide":5,"text":"Ảnh dưới đây được lấy trực tiếp từ bản APK chạy trên emulator.","textPreview":"Ảnh dưới đây được lấy trực tiếp từ bản APK chạy trên emulator.","textChars":62,"textLines":1,"bbox":[52,122,1120,42]}
+{"kind":"shape","id":"sh/kj2x8vyl","slide":5,"bbox":[80,184,238,424]}
+{"kind":"shape","id":"sh/lkbeh0f6","slide":5,"bbox":[88,206,222,392]}
+{"kind":"textbox","id":"sh/yhkf65gf","slide":5,"text":"FC","textPreview":"FC","textChars":2,"textLines":1,"bbox":[106,258,186,56]}
+{"kind":"textbox","id":"sh/zitwfqx0","slide":5,"text":"Dashboard","textPreview":"Dashboard","textChars":9,"textLines":1,"bbox":[106,336,186,120]}
+{"kind":"textbox","id":"sh/cv2x4vy9","slide":5,"text":"Ảnh chạy thật được chèn tự động sau build","textPreview":"Ảnh chạy thật được chèn tự động sau build","textChars":41,"textLines":1,"bbox":[106,496,186,70]}
+{"kind":"shape","id":"sh/xwbed0fu","slide":5,"bbox":[175,193,48,4]}
+{"kind":"shape","id":"sh/lc7ydsj6","slide":5,"bbox":[350,184,238,424]}
+{"kind":"shape","id":"sh/kbyx4nil","slide":5,"bbox":[358,206,222,392]}
+{"kind":"textbox","id":"sh/zapgbi1g","slide":5,"text":"FC","textPreview":"FC","textChars":2,"textLines":1,"bbox":[376,258,186,56]}
+{"kind":"textbox","id":"sh/y9gf2d0v","slide":5,"text":"Danh sách cầu thủ","textPreview":"Danh sách cầu thủ","textChars":17,"textLines":1,"bbox":[376,336,186,120]}
+{"kind":"textbox","id":"sh/x87y98ja","slide":5,"text":"Ảnh chạy thật được chèn tự động sau build","textPreview":"Ảnh chạy thật được chèn tự động sau build","textChars":41,"textLines":1,"bbox":[376,496,186,70]}
+{"kind":"shape","id":"sh/c7yx03ip","slide":5,"bbox":[445,193,48,4]}
+{"kind":"shape","id":"sh/b65g7y14","slide":5,"bbox":[620,184,238,424]}
+{"kind":"shape","id":"sh/a5wfyt0j","slide":5,"bbox":[628,206,222,392]}
+{"kind":"textbox","id":"sh/p4ny58jy","slide":5,"text":"FC","textPreview":"FC","textChars":2,"textLines":1,"bbox":[646,258,186,56]}
+{"kind":"textbox","id":"sh/ojexw3it","slide":5,"text":"AI Coach","textPreview":"AI Coach","textChars":8,"textLines":1,"bbox":[646,336,186,120]}
+{"kind":"textbox","id":"sh/gnixc3q9","slide":5,"text":"Ảnh chạy thật được chèn tự động sau build","textPreview":"Ảnh chạy thật được chèn tự động sau build","textChars":41,"textLines":1,"bbox":[646,496,186,70]}
+{"kind":"shape","id":"sh/1oryl8ru","slide":5,"bbox":[715,193,48,4]}
+{"kind":"textbox","id":"sh/ul0fat8j","slide":5,"text":"Thiết kế phục vụ demo","textPreview":"Thiết kế phục vụ demo","textChars":21,"textLines":1,"bbox":[916,214,276,34]}
+{"kind":"shape","id":"sh/fm9gjy94","slide":5,"bbox":[916,274,48,30]}
+{"kind":"textbox","id":"sh/sjyx8jqd","slide":5,"text":"01","textPreview":"01","textChars":2,"textLines":1,"bbox":[926,280,28,18]}
+{"kind":"textbox","id":"sh/tk7yhory","slide":5,"text":"Điều hướng rõ","textPreview":"Điều hướng rõ","textChars":13,"textLines":1,"bbox":[980,279,220,28]}
+{"kind":"shape","id":"sh/6xgf6t87","slide":5,"bbox":[916,344,48,30]}
+{"kind":"textbox","id":"sh/7ypgfy9s","slide":5,"text":"02","textPreview":"02","textChars":2,"textLines":1,"bbox":[926,350,28,18]}
+{"kind":"textbox","id":"sh/cf2hknqh","slide":5,"text":"Touch target đủ lớn","textPreview":"Touch target đủ lớn","textChars":19,"textLines":1,"bbox":[980,349,220,28]}
+{"kind":"shape","id":"sh/dgbytsr2","slide":5,"bbox":[916,414,48,30]}
+{"kind":"textbox","id":"sh/nad0jmt4","slide":5,"text":"03","textPreview":"03","textChars":2,"textLines":1,"bbox":[926,420,28,18]}
+{"kind":"textbox","id":"sh/m94jahsz","slide":5,"text":"Thông báo trạng thái","textPreview":"Thông báo trạng thái","textChars":20,"textLines":1,"bbox":[980,419,220,28]}
+{"kind":"shape","id":"sh/9cfilwba","slide":5,"bbox":[916,484,48,30]}
+{"kind":"textbox","id":"sh/8bm1crap","slide":5,"text":"04","textPreview":"04","textChars":2,"textLines":1,"bbox":[926,490,28,18]}
+{"kind":"textbox","id":"sh/vexkn6tg","slide":5,"text":"Nội dung tiếng Việt","textPreview":"Nội dung tiếng Việt","textChars":19,"textLines":1,"bbox":[980,489,220,28]}
+{"kind":"textbox","id":"sh/adoje1sv","slide":5,"text":"#ADE74E","textPreview":"#ADE74E","textChars":7,"textLines":1,"bbox":[916,574,132,26]}
+{"kind":"textbox","id":"sh/xgf2pwbm","slide":5,"text":"accent nhận diện trên nền #0A0F0C","textPreview":"accent nhận diện trên nền #0A0F0C","textChars":33,"textLines":1,"bbox":[1018,574,190,38]}
+{"kind":"shape","id":"sh/wf61gra1","slide":5,"bbox":[52,682,1176,1]}
+{"kind":"textbox","id":"sh/bit0b2tc","slide":5,"text":"FC MANAGER • 2026","textPreview":"FC MANAGER • 2026","textChars":17,"textLines":1,"bbox":[52,690,500,20]}
+{"kind":"textbox","id":"sh/qhkj2xsr","slide":5,"text":"05","textPreview":"05","textChars":2,"textLines":1,"bbox":[1160,688,68,20]}
+{"kind":"notes","id":"nt/woxvj9","slide":5,"text":"Không đọc lại chữ trên slide. Dùng ảnh để chỉ nhanh vị trí trạng thái, nút CRUD và kết quả AI trong khi bản live demo đang sẵn sàng.\n\n[Sources]\n- output/screenshots/dashboard.png\n- output/screenshots/players.png\n- output/screenshots/ai-coach.png\n- app/src/main/res/layout"}
+{"kind":"slide","id":"sl/0cbpz4","slide":6,"title":"05 • AI","textShapes":18}
+{"kind":"textbox","id":"sh/do3qdsj6","slide":6,"text":"05 • AI","textPreview":"05 • AI","textChars":7,"textLines":1,"bbox":[52,32,520,24]}
+{"kind":"textbox","id":"sh/qlcridkv","slide":6,"text":"Một use case hữu ích, có ngữ cảnh và có đường lui","textPreview":"Một use case hữu ích, có ngữ cảnh và có đường lui","textChars":49,"textLines":1,"bbox":[52,62,1176,58]}
+{"kind":"textbox","id":"sh/bml8bi10","slide":6,"text":"AI Coach tư vấn đội hình/chiến thuật từ dữ liệu đội, không trả lời giả cứng trong app.","textPreview":"AI Coach tư vấn đội hình/chiến thuật từ dữ liệu đội, không trả lời giả cứng trong app.","textChars":86,"textLines":1,"bbox":[52,122,1120,42]}
+{"kind":"shape","id":"sh/0bu9o72x","slide":6,"bbox":[52,188,360,214]}
+{"kind":"textbox","id":"sh/lc3ahcji","slide":6,"text":"01","textPreview":"01","textChars":2,"textLines":1,"bbox":[70,206,54,42]}
+{"kind":"textbox","id":"sh/ypcrmxkr","slide":6,"text":"Grounding","textPreview":"Grounding","textChars":9,"textLines":1,"bbox":[130,206,264,34]}
+{"kind":"textbox","id":"sh/zqlsf21c","slide":6,"text":"Backend lấy dữ liệu cầu thủ, tạo prompt theo mẫu và chỉ gửi phần ngữ cảnh cần thiết.","textPreview":"Backend lấy dữ liệu cầu thủ, tạo prompt theo mẫu và chỉ gửi phần ngữ cảnh cần thiết.","textChars":84,"textLines":1,"bbox":[70,254,324,134]}
+{"kind":"shape","id":"sh/8fe9s72t","slide":6,"bbox":[434,188,360,214]}
+{"kind":"textbox","id":"sh/9gnalcje","slide":6,"text":"02","textPreview":"02","textChars":2,"textLines":1,"bbox":[452,206,54,42]}
+{"kind":"textbox","id":"sh/pcji9cjy","slide":6,"text":"Guardrails","textPreview":"Guardrails","textChars":10,"textLines":1,"bbox":[512,206,264,34]}
+{"kind":"textbox","id":"sh/4bahgr2d","slide":6,"text":"Kiểm tra phiên, giới hạn câu hỏi, timeout, thông báo lỗi có thể thử lại.","textPreview":"Kiểm tra phiên, giới hạn câu hỏi, timeout, thông báo lỗi có thể thử lại.","textChars":72,"textLines":1,"bbox":[452,254,324,134]}
+{"kind":"shape","id":"sh/3a107m1s","slide":6,"bbox":[816,188,412,214]}
+{"kind":"textbox","id":"sh/29szehk7","slide":6,"text":"03","textPreview":"03","textChars":2,"textLines":1,"bbox":[834,206,54,42]}
+{"kind":"textbox","id":"sh/dg3idwju","slide":6,"text":"Đánh giá","textPreview":"Đánh giá","textChars":8,"textLines":1,"bbox":[894,206,316,34]}
+{"kind":"textbox","id":"sh/cfuhkr2p","slide":6,"text":"20 kịch bản: bình thường, dữ liệu thiếu, injection, timeout, key lỗi, dữ liệu lớn.","textPreview":"20 kịch bản: bình thường, dữ liệu thiếu, injection, timeout, key lỗi, dữ liệu lớn.","textChars":82,"textLines":1,"bbox":[834,254,376,134]}
+{"kind":"shape","id":"sh/re10bm14","slide":6,"bbox":[52,448,1176,152]}
+{"kind":"textbox","id":"sh/qdszihkj","slide":6,"text":"APP","textPreview":"APP","textChars":3,"textLines":1,"bbox":[84,498,80,28]}
+{"kind":"shape","id":"sh/tkzi1s3q","slide":6,"bbox":[170,509,104,3]}
+{"kind":"shape","id":"sh/sjqh8725","slide":6,"bbox":[270,501,18,18]}
+{"kind":"textbox","id":"sh/knuho7a1","slide":6,"text":"BACKEND GATEWAY","textPreview":"BACKEND GATEWAY","textChars":15,"textLines":1,"bbox":[304,498,204,28]}
+{"kind":"shape","id":"sh/lo3ihcbm","slide":6,"bbox":[516,509,104,3]}
+{"kind":"shape","id":"sh/y1czmxsv","slide":6,"bbox":[616,501,18,18]}
+{"kind":"textbox","id":"sh/j2l0f2tg","slide":6,"text":"MODEL","textPreview":"MODEL","textChars":5,"textLines":1,"bbox":[650,498,100,28]}
+{"kind":"shape","id":"sh/8ru1s7ad","slide":6,"bbox":[762,509,104,3]}
+{"kind":"shape","id":"sh/tsnilcri","slide":6,"bbox":[862,501,18,18]}
+{"kind":"textbox","id":"sh/6pczqhs7","slide":6,"text":"KIỂM TRA + HIỂN THỊ","textPreview":"KIỂM TRA + HIỂN THỊ","textChars":19,"textLines":1,"bbox":[896,498,280,28]}
+{"kind":"shape","id":"sh/7ql0j2ts","slide":6,"bbox":[52,682,1176,1]}
+{"kind":"textbox","id":"sh/gve1wra9","slide":6,"text":"FC MANAGER • 2026","textPreview":"FC MANAGER • 2026","textChars":17,"textLines":1,"bbox":[52,690,500,20]}
+{"kind":"textbox","id":"sh/hwnipwru","slide":6,"text":"06","textPreview":"06","textChars":2,"textLines":1,"bbox":[1160,688,68,20]}
+{"kind":"notes","id":"nt/0cbpz4","slide":6,"text":"Giải thích đây là grounded generation qua dữ liệu có cấu trúc, chưa tự nhận là RAG tài liệu. Trình bày một ca thành công và một ca lỗi/timeout.\n\n[Sources]\n- docs/AI_EVALUATION.md\n- backend/routes/ai.js\n- backend/lib/aiClient.js\n- app/src/main/java/com/eaut/footballclubmanagement/AiCoachActivity.java"}
+{"kind":"slide","id":"sl/5m0aq3","slide":7,"title":"06 • CHẤT LƯỢNG","textShapes":21}
+{"kind":"textbox","id":"sh/5g3e9on2","slide":7,"text":"06 • CHẤT LƯỢNG","textPreview":"06 • CHẤT LƯỢNG","textChars":15,"textLines":1,"bbox":[52,32,520,24]}
+{"kind":"textbox","id":"sh/itcfy9or","slide":7,"text":"Bằng chứng tự động thay cho lời hứa","textPreview":"Bằng chứng tự động thay cho lời hứa","textChars":35,"textLines":1,"bbox":[52,62,1176,58]}
+{"kind":"textbox","id":"sh/jelw7e5c","slide":7,"text":"Kết quả được sinh từ lần kiểm tra gần nhất: Chưa ghi nhận.","textPreview":"Kết quả được sinh từ lần kiểm tra gần nhất: Chưa ghi nhận.","textChars":58,"textLines":1,"bbox":[52,122,1120,42]}
+{"kind":"shape","id":"sh/wruxwz6l","slide":7,"bbox":[52,190,362,210]}
+{"kind":"textbox","id":"sh/hs3e54n6","slide":7,"text":"A","textPreview":"A","textChars":1,"textLines":1,"bbox":[70,208,54,42]}
+{"kind":"textbox","id":"sh/upsfupof","slide":7,"text":"Android","textPreview":"Android","textChars":7,"textLines":1,"bbox":[130,208,266,34]}
+{"kind":"textbox","id":"sh/vqlw3u50","slide":7,"text":"Unit tests: Chờ chạy\nLint: Chờ chạy\nAPK: Chờ chạy","textPreview":"Unit tests: Chờ chạy | Lint: Chờ chạy | APK: Chờ chạy","textChars":49,"textLines":3,"bbox":[70,256,326,130]}
+{"kind":"shape","id":"sh/0nex83m5","slide":7,"bbox":[434,190,362,210]}
+{"kind":"textbox","id":"sh/1onyh8na","slide":7,"text":"B","textPreview":"B","textChars":1,"textLines":1,"bbox":[452,208,54,42]}
+{"kind":"textbox","id":"sh/t03qxgre","slide":7,"text":"Backend","textPreview":"Backend","textChars":7,"textLines":1,"bbox":[512,208,266,34]}
+{"kind":"textbox","id":"sh/szu9obat","slide":7,"text":"Automated tests: Chờ chạy\nSmoke API: Chờ chạy\nAuth + AI errors được kiểm tra","textPreview":"Automated tests: Chờ chạy | Smoke API: Chờ chạy | Auth + AI errors được kiểm tra","textChars":76,"textLines":3,"bbox":[452,256,326,130]}
+{"kind":"shape","id":"sh/7y18vq98","slide":7,"bbox":[816,190,412,210]}
+{"kind":"textbox","id":"sh/6xs7mlsn","slide":7,"text":"C","textPreview":"C","textChars":1,"textLines":1,"bbox":[834,208,54,42]}
+{"kind":"textbox","id":"sh/5wjqtgr2","slide":7,"text":"AI scenarios","textPreview":"AI scenarios","textChars":12,"textLines":1,"bbox":[894,208,316,34]}
+{"kind":"textbox","id":"sh/kvapkbah","slide":7,"text":"20 ca được mô tả theo input, kỳ vọng, rủi ro và tiêu chí pass; live-model cần key riêng khi bảo vệ.","textPreview":"20 ca được mô tả theo input, kỳ vọng, rủi ro và tiêu chí pass; live-model cần key riêng khi bảo vệ.","textChars":99,"textLines":1,"bbox":[834,256,376,130]}
+{"kind":"textbox","id":"sh/ju18r69w","slide":7,"text":"Rủi ro được khóa","textPreview":"Rủi ro được khóa","textChars":16,"textLines":1,"bbox":[52,458,260,34]}
+{"kind":"shape","id":"sh/its7i1sr","slide":7,"bbox":[52,516,300,30]}
+{"kind":"textbox","id":"sh/psnq50rm","slide":7,"text":"Mất mạng → Room cache","textPreview":"Mất mạng → Room cache","textChars":21,"textLines":1,"bbox":[62,522,280,18]}
+{"kind":"shape","id":"sh/4re9wfa1","slide":7,"bbox":[382,516,300,30]}
+{"kind":"textbox","id":"sh/o761o329","slide":7,"text":"API lỗi → Error + retry","textPreview":"API lỗi → Error + retry","textChars":23,"textLines":1,"bbox":[392,522,280,18]}
+{"kind":"shape","id":"sh/98f2h83u","slide":7,"bbox":[52,570,300,30]}
+{"kind":"textbox","id":"sh/m54jmdk3","slide":7,"text":"Input sai → validation","textPreview":"Input sai → validation","textChars":22,"textLines":1,"bbox":[62,576,280,18]}
+{"kind":"shape","id":"sh/n6dkfylo","slide":7,"bbox":[382,570,300,30]}
+{"kind":"textbox","id":"sh/0jm1k32d","slide":7,"text":"Key AI thiếu → lỗi cấu hình rõ","textPreview":"Key AI thiếu → lỗi cấu hình rõ","textChars":30,"textLines":1,"bbox":[392,576,280,18]}
+{"kind":"shape","id":"sh/1kv2d83i","slide":7,"bbox":[766,468,462,130]}
+{"kind":"textbox","id":"sh/eh4jit47","slide":7,"text":"PASS CONDITION","textPreview":"PASS CONDITION","textChars":14,"textLines":1,"bbox":[794,490,190,20]}
+{"kind":"textbox","id":"sh/zidkbyls","slide":7,"text":"Tests xanh + APK cài được + 1 vòng CRUD + 1 lượt AI có kiểm soát","textPreview":"Tests xanh + APK cài được + 1 vòng CRUD + 1 lượt AI có kiểm soát","textChars":64,"textLines":1,"bbox":[794,524,398,56]}
+{"kind":"shape","id":"sh/cf21gjm1","slide":7,"bbox":[52,682,1176,1]}
+{"kind":"textbox","id":"sh/dgvi9o3m","slide":7,"text":"FC MANAGER • 2026","textPreview":"FC MANAGER • 2026","textChars":17,"textLines":1,"bbox":[52,690,500,20]}
+{"kind":"textbox","id":"sh/fatkje5o","slide":7,"text":"07","textPreview":"07","textChars":2,"textLines":1,"bbox":[1160,688,68,20]}
+{"kind":"notes","id":"nt/5m0aq3","slide":7,"text":"Đọc các trạng thái thực tế trên slide; nếu live model chưa có key thì nói rõ phần nào đã test bằng mock contract và phần nào cần key để xác nhận.\n\n[Sources]\n- output/evidence/test_summary.json\n- docs/TEST_PLAN.md\n- docs/AI_EVALUATION.md\n- .github/workflows/ci.yml"}
+{"kind":"slide","id":"sl/gde9il","slide":8,"title":"07 • KẾT LUẬN","textShapes":16}
+{"kind":"shape","id":"sh/ytwbud4b","slide":8,"bbox":[54,48,150,30]}
+{"kind":"textbox","id":"sh/5wnaps32","slide":8,"text":"07 • KẾT LUẬN","textPreview":"07 • KẾT LUẬN","textChars":13,"textLines":1,"bbox":[64,54,130,18]}
+{"kind":"textbox","id":"sh/kvetwn2h","slide":8,"text":"MVP sẵn sàng để chứng minh,\nkhông chỉ để kể.","textPreview":"MVP sẵn sàng để chứng minh, | không chỉ để kể.","textChars":44,"textLines":2,"bbox":[54,126,710,126]}
+{"kind":"textbox","id":"sh/bqlsjil0","slide":8,"text":"Luồng demo 7 phút","textPreview":"Luồng demo 7 phút","textChars":17,"textLines":1,"bbox":[54,312,250,30]}
+{"kind":"shape","id":"sh/a5cbqd4f","slide":8,"bbox":[54,374,52,30]}
+{"kind":"textbox","id":"sh/xsnals3q","slide":8,"text":"01","textPreview":"01","textChars":2,"textLines":1,"bbox":[64,380,32,18]}
+{"kind":"textbox","id":"sh/wretsnm5","slide":8,"text":"Đăng nhập","textPreview":"Đăng nhập","textChars":9,"textLines":1,"bbox":[54,438,196,46]}
+{"kind":"shape","id":"sh/n2lsfylo","slide":8,"bbox":[196,397,66,3]}
+{"kind":"shape","id":"sh/m1crmt43","slide":8,"bbox":[258,389,18,18]}
+{"kind":"shape","id":"sh/cvi1kzm9","slide":8,"bbox":[282,374,52,30]}
+{"kind":"textbox","id":"sh/dgr2dknu","slide":8,"text":"02","textPreview":"02","textChars":2,"textLines":1,"bbox":[292,380,32,18]}
+{"kind":"textbox","id":"sh/qt0jip43","slide":8,"text":"CRUD cầu thủ","textPreview":"CRUD cầu thủ","textChars":12,"textLines":1,"bbox":[282,438,196,46]}
+{"kind":"shape","id":"sh/bu9kbu5o","slide":8,"bbox":[424,397,66,3]}
+{"kind":"shape","id":"sh/ori1gfmd","slide":8,"bbox":[486,389,18,18]}
+{"kind":"shape","id":"sh/psr2pkni","slide":8,"bbox":[510,374,52,30]}
+{"kind":"textbox","id":"sh/2pgje547","slide":8,"text":"03","textPreview":"03","textChars":2,"textLines":1,"bbox":[520,380,32,18]}
+{"kind":"textbox","id":"sh/3qpkna5s","slide":8,"text":"Offline/error state","textPreview":"Offline/error state","textChars":19,"textLines":1,"bbox":[510,438,196,46]}
+{"kind":"shape","id":"sh/8n2lsjmh","slide":8,"bbox":[652,397,66,3]}
+{"kind":"shape","id":"sh/9ob2l4n2","slide":8,"bbox":[714,389,18,18]}
+{"kind":"shape","id":"sh/xs7apkru","slide":8,"bbox":[738,374,52,30]}
+{"kind":"textbox","id":"sh/wrytgfa9","slide":8,"text":"04","textPreview":"04","textChars":2,"textLines":1,"bbox":[748,380,32,18]}
+{"kind":"textbox","id":"sh/vq5sna9o","slide":8,"text":"AI Coach","textPreview":"AI Coach","textChars":8,"textLines":1,"bbox":[738,438,196,46]}
+{"kind":"shape","id":"sh/apwbe5sj","slide":8,"bbox":[880,397,66,3]}
+{"kind":"shape","id":"sh/94nal0by","slide":8,"bbox":[942,389,18,18]}
+{"kind":"shape","id":"sh/83etcvad","slide":8,"bbox":[966,374,52,30]}
+{"kind":"textbox","id":"sh/n25sjqts","slide":8,"text":"05","textPreview":"05","textChars":2,"textLines":1,"bbox":[976,380,32,18]}
+{"kind":"textbox","id":"sh/m1wba5s7","slide":8,"text":"Thông báo + settings","textPreview":"Thông báo + settings","textChars":20,"textLines":1,"bbox":[966,438,196,46]}
+{"kind":"shape","id":"sh/l0nah0bm","slide":8,"bbox":[54,538,1174,92]}
+{"kind":"textbox","id":"sh/0zut8va1","slide":8,"text":"Bộ nộp: APK • source • báo cáo DOCX/PDF • slide • test evidence • tài liệu API/ERD/AI","textPreview":"Bộ nộp: APK • source • báo cáo DOCX/PDF • slide • test evidence • tài liệu API/ERD/AI","textChars":85,"textLines":1,"bbox":[82,568,1118,34]}
+{"kind":"textbox","id":"sh/q5s7i18z","slide":8,"text":"FC MANAGER • EVIDENCE-DRIVEN SUBMISSION","textPreview":"FC MANAGER • EVIDENCE-DRIVEN SUBMISSION","textChars":39,"textLines":1,"bbox":[54,684,500,20]}
+{"kind":"textbox","id":"sh/b618r69k","slide":8,"text":"08","textPreview":"08","textChars":2,"textLines":1,"bbox":[1160,682,68,20]}
+{"kind":"notes","id":"nt/gde9il","slide":8,"text":"Kết thúc bằng điều sẽ chứng minh ngay trong live demo. Sau slide này chuyển thẳng sang app, không dùng slide cảm ơn chung chung.\n\n[Sources]\n- docs/RELEASE_CHECKLIST.md\n- docs/DEMO_SCRIPT.md\n- docs/REQUIREMENTS_TRACEABILITY.md"}

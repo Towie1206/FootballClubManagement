@@ -9,9 +9,12 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.eaut.footballclubmanagement.models.Player;
 import java.util.List;
 
-public class PlayerAdapter extends RecyclerView.Adapter<PlayerAdapter.PlayerViewHolder> {
+public class PlayerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
-    private List<Player> playerList;
+    private static final int TYPE_HEADER = 0;
+    private static final int TYPE_PLAYER = 1;
+
+    private List<Object> items;
     private OnPlayerClickListener listener;
 
     public interface OnPlayerClickListener {
@@ -19,70 +22,81 @@ public class PlayerAdapter extends RecyclerView.Adapter<PlayerAdapter.PlayerView
         void onDelete(Player player);
     }
 
-    public PlayerAdapter(List<Player> playerList, OnPlayerClickListener listener) {
-        this.playerList = playerList;
+    public PlayerAdapter(List<Object> items, OnPlayerClickListener listener) {
+        this.items = items;
         this.listener = listener;
+    }
+
+    @Override
+    public int getItemViewType(int position) {
+        if (items.get(position) instanceof String) {
+            return TYPE_HEADER;
+        }
+        return TYPE_PLAYER;
     }
 
     @NonNull
     @Override
-    public PlayerViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_player_card, parent, false);
-        return new PlayerViewHolder(view);
+    public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        if (viewType == TYPE_HEADER) {
+            View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_player_header, parent, false);
+            return new HeaderViewHolder(view);
+        } else {
+            View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_player_card, parent, false);
+            return new PlayerViewHolder(view);
+        }
     }
 
     @Override
-    public void onBindViewHolder(@NonNull PlayerViewHolder holder, int position) {
-        Player player = playerList.get(position);
-        holder.tvOvr.setText(String.valueOf(player.getOvr()));
-        holder.tvPosition.setText(player.getPosition());
-        holder.tvName.setText(player.getFullName());
-        holder.tvGoals.setText("⚽ " + player.getGoals() + " Bàn");
-        holder.tvMvp.setText("⭐ " + player.getMvp() + " MVP");
-        holder.tvJersey.setText("#" + player.getJerseyNumber());
+    public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
+        if (getItemViewType(position) == TYPE_HEADER) {
+            String title = (String) items.get(position);
+            ((HeaderViewHolder) holder).tvHeaderTitle.setText(title);
+        } else {
+            Player player = (Player) items.get(position);
+            PlayerViewHolder pvh = (PlayerViewHolder) holder;
+            
+            pvh.tvOvr.setText(String.valueOf(player.getOvr()));
+            pvh.tvPosition.setText(player.getPosition());
+            pvh.tvName.setText(player.getFullName());
+            
+            pvh.tvGoals.setText("⚽ " + player.getGoals() + " Goals");
+            pvh.tvMvp.setText("⭐ " + player.getMvp() + " MVP");
+            
+            pvh.tvJersey.setText("#" + player.getJerseyNumber());
 
-        // Bấm vào thẻ để Xem Chi tiết kèm theo View root để làm Animation
-        holder.itemView.setOnClickListener(v -> listener.onEdit(player, holder.itemView));
-        
-        // Nhấn giữ (Long click) để xóa
-        holder.itemView.setOnLongClickListener(v -> {
-            listener.onDelete(player);
-            return true;
-        });
+            pvh.itemView.setOnClickListener(v -> listener.onEdit(player, pvh.itemView));
+            pvh.itemView.setOnLongClickListener(v -> {
+                listener.onDelete(player);
+                return true;
+            });
+        }
     }
 
     @Override
     public int getItemCount() {
-        return playerList != null ? playerList.size() : 0;
+        return items != null ? items.size() : 0;
     }
 
-    public void updateData(List<Player> newPlayers) {
-        this.playerList = newPlayers;
+    public void updateData(List<Object> newItems) {
+        this.items = newItems;
         notifyDataSetChanged();
     }
 
-    public Player getPlayerAt(int position) {
-        return playerList.get(position);
+    public Object getItemAt(int position) {
+        return items.get(position);
     }
 
-    public void removePlayerAt(int position) {
-        playerList.remove(position);
-        notifyItemRemoved(position);
-    }
-
-    public void restorePlayer(Player player, int position) {
-        playerList.add(position, player);
-        notifyItemInserted(position);
-    }
-
-    public void filterList(List<Player> filteredList) {
-        this.playerList = filteredList;
-        notifyDataSetChanged();
+    static class HeaderViewHolder extends RecyclerView.ViewHolder {
+        TextView tvHeaderTitle;
+        public HeaderViewHolder(@NonNull View itemView) {
+            super(itemView);
+            tvHeaderTitle = itemView.findViewById(R.id.tvHeaderTitle);
+        }
     }
 
     static class PlayerViewHolder extends RecyclerView.ViewHolder {
         TextView tvOvr, tvPosition, tvName, tvGoals, tvMvp, tvJersey;
-
         public PlayerViewHolder(@NonNull View itemView) {
             super(itemView);
             tvOvr = itemView.findViewById(R.id.tvOvr);

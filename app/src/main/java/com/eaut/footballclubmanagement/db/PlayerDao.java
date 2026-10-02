@@ -15,6 +15,12 @@ public interface PlayerDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     void insertAll(List<Player> players);
 
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    void insert(Player player);
+
     @Query("DELETE FROM players")
     void deleteAll();
+
+    @Query("DELETE FROM players WHERE id = :id")
+    void deleteById(int id);
 }

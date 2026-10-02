@@ -1,42 +1,69 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/phui_bg">
+    android:background="@color/phui_bg"
+    android:fitsSystemWindows="true"
+    android:scrollbars="none">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:padding="24dp"
+        android:padding="20dp"
         android:gravity="center_horizontal">
 
-        <!-- Thẻ cầu thủ Hero (Shared Element) -->
+        <!-- Header Back Button -->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp">
+            <ImageView
+                android:id="@+id/btnBack"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:src="@android:drawable/ic_menu_revert"
+                android:contentDescription="@string/back_button_description"
+                app:tint="@color/phui_text_primary" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="PLAYER PROFILE"
+                android:textColor="@color/phui_text_primary"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+        </RelativeLayout>
+
+        <!-- Thẻ cầu thủ Hero -->
         <LinearLayout
             android:id="@+id/detailCardRoot"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/bg_card"
             android:orientation="vertical"
-            android:padding="24dp"
+            android:padding="20dp"
             android:gravity="center"
             android:transitionName="player_card_transition"
-            android:layout_marginBottom="32dp">
+            android:layout_marginBottom="16dp">
 
             <LinearLayout
-                android:layout_width="140dp"
-                android:layout_height="140dp"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
                 android:background="@drawable/bg_input"
                 android:gravity="center"
                 android:orientation="vertical"
-                android:layout_marginBottom="16dp">
+                android:layout_marginBottom="12dp">
                 <TextView
                     android:id="@+id/tvDetailOvr"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="85"
                     android:textColor="@color/phui_accent"
-                    android:textSize="54sp"
+                    android:textSize="44sp"
                     android:textStyle="bold" />
                 <TextView
                     android:id="@+id/tvDetailPosition"
@@ -44,7 +71,7 @@
                     android:layout_height="wrap_content"
                     android:text="FW"
                     android:textColor="@color/phui_text_secondary"
-                    android:textSize="20sp"
+                    android:textSize="16sp"
                     android:textStyle="bold" />
             </LinearLayout>
 
@@ -52,113 +79,212 @@
                 android:id="@+id/tvDetailName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Nguyễn Văn A"
+                android:text="Nguyen Van A"
                 android:textColor="@color/phui_text_primary"
-                android:textSize="30sp"
+                android:textSize="24sp"
                 android:textStyle="bold"/>
                 
             <TextView
                 android:id="@+id/tvDetailJersey"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:text="Số áo: 9"
+                android:layout_marginTop="4dp"
+                android:text="Jersey: #9"
                 android:textColor="@color/phui_accent"
-                android:textSize="18sp"
+                android:textSize="16sp"
+                android:textStyle="bold"/>
+                
+            <TextView
+                android:id="@+id/tvDetailClub"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:text="Club: Free Agent"
+                android:textColor="@color/phui_text_secondary"
+                android:textSize="14sp"/>
+
+            <TextView
+                android:id="@+id/tvDetailHealth"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="✔ Fit"
+                android:textColor="@color/phui_accent"
+                android:textSize="13sp"
                 android:textStyle="bold"/>
         </LinearLayout>
 
-        <!-- Chỉ số chi tiết (FIFA Style Progress Bars) -->
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="PHÂN TÍCH CHỈ SỐ"
-            android:textColor="@color/phui_text_secondary"
-            android:textSize="14sp"
-            android:textStyle="bold"
-            android:layout_marginBottom="16dp" />
-
+        <!-- Thẻ Thành tích thi đấu & Nghiệp vụ -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/bg_card"
             android:orientation="vertical"
-            android:padding="20dp"
-            android:layout_marginBottom="32dp">
+            android:padding="16dp"
+            android:layout_marginBottom="16dp">
 
-            <!-- Tốc độ / Thể lực -->
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Thể lực &amp; Tốc độ (PAC)"
-                android:textColor="@color/phui_text_primary"
-                android:textSize="14sp"
-                android:layout_marginBottom="8dp"/>
-            <ProgressBar
-                android:id="@+id/progressPac"
-                style="?android:attr/progressBarStyleHorizontal"
-                android:layout_width="match_parent"
-                android:layout_height="12dp"
-                android:progressDrawable="@drawable/custom_progress"
-                android:progress="85"
-                android:layout_marginBottom="16dp"/>
+                android:text="MATCH PERFORMANCE"
+                android:textColor="@color/phui_accent"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="12dp" />
 
-            <!-- Sút / Ghi bàn -->
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Dứt điểm (SHO) - Dựa trên bàn thắng"
-                android:textColor="@color/phui_text_primary"
-                android:textSize="14sp"
-                android:layout_marginBottom="8dp"/>
-            <ProgressBar
-                android:id="@+id/progressSho"
-                style="?android:attr/progressBarStyleHorizontal"
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="12dp"
-                android:progressDrawable="@drawable/custom_progress"
-                android:progress="70"
-                android:layout_marginBottom="16dp"/>
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="16dp">
 
-            <!-- Đóng góp MVP -->
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Tầm ảnh hưởng (MVP)"
-                android:textColor="@color/phui_text_primary"
-                android:textSize="14sp"
-                android:layout_marginBottom="8dp"/>
-            <ProgressBar
-                android:id="@+id/progressMvp"
-                style="?android:attr/progressBarStyleHorizontal"
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical">
+                    <TextView
+                        android:id="@+id/tvDetailMatches"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="0"
+                        android:textColor="@color/phui_text_primary"
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Matches"
+                        android:textColor="@color/phui_text_secondary"
+                        android:textSize="11sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical">
+                    <TextView
+                        android:id="@+id/tvDetailGoals"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="0"
+                        android:textColor="@color/phui_accent"
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Goals"
+                        android:textColor="@color/phui_text_secondary"
+                        android:textSize="11sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical">
+                    <TextView
+                        android:id="@+id/tvDetailAssists"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="0"
+                        android:textColor="@color/phui_text_primary"
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Assists"
+                        android:textColor="@color/phui_text_secondary"
+                        android:textSize="11sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical">
+                    <TextView
+                        android:id="@+id/tvDetailMvp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="0"
+                        android:textColor="@color/phui_accent"
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="MVP"
+                        android:textColor="@color/phui_text_secondary"
+                        android:textSize="11sp" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- Nút Nghiệp Vụ: Ghi Nhận Trận Đấu -->
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnRecordMatch"
                 android:layout_width="match_parent"
-                android:layout_height="12dp"
-                android:progressDrawable="@drawable/custom_progress"
-                android:progress="50" />
-                
+                android:layout_height="48dp"
+                android:background="@drawable/bg_button_primary"
+                android:text="⚽ RECORD MATCH PERFORMANCE"
+                android:textColor="@color/phui_bg"
+                android:textSize="13sp"
+                android:textStyle="bold"/>
         </LinearLayout>
 
-        <!-- Nút Hành động -->
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/btnEditFromDetail"
+        <!-- Chỉ số FIFA 25 Style (Radar Chart) -->
+        <TextView
             android:layout_width="match_parent"
-            android:layout_height="54dp"
-            android:layout_marginBottom="12dp"
-            android:background="@drawable/bg_button_primary"
-            android:text="SỬA THÔNG TIN"
-            android:textColor="@color/phui_bg"
-            android:textSize="16sp"
-            android:textStyle="bold" />
+            android:layout_height="wrap_content"
+            android:text="SKILL ATTRIBUTES RADAR"
+            android:textColor="@color/phui_text_secondary"
+            android:textSize="13sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="12dp" />
 
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/btnDeleteFromDetail"
+        <com.github.mikephil.charting.charts.RadarChart
+            android:id="@+id/radarChart"
             android:layout_width="match_parent"
-            android:layout_height="54dp"
-            android:background="@drawable/bg_input"
-            android:text="XÓA CẦU THỦ"
-            android:textColor="@color/phui_error"
-            android:textSize="16sp"
-            android:textStyle="bold" />
+            android:layout_height="260dp"
+            android:layout_marginBottom="24dp" />
 
+        <!-- Nút Hành Động (Sửa / Xóa) -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="16dp">
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnEdit"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                android:layout_marginEnd="8dp"
+                android:background="@drawable/bg_input"
+                android:text="EDIT PROFILE"
+                android:textColor="@color/phui_text_primary"
+                android:textSize="14sp"
+                android:textStyle="bold"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnDelete"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                android:layout_marginStart="8dp"
+                android:background="@drawable/bg_input"
+                android:text="DELETE PLAYER"
+                android:textColor="@color/phui_error"
+                android:textSize="14sp"
+                android:textStyle="bold"/>
+        </LinearLayout>
     </LinearLayout>
 </ScrollView>

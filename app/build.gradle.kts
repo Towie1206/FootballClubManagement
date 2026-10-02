@@ -2,6 +2,16 @@ plugins {
     alias(libs.plugins.android.application)
 }
 
+fun String.asBuildConfigString(): String =
+    "\"" + replace("\\", "\\\\").replace("\"", "\\\"") + "\""
+
+val configuredApiBaseUrl = providers.gradleProperty("FCM_API_BASE_URL")
+    .orElse(providers.environmentVariable("FCM_API_BASE_URL"))
+    .getOrElse("http://10.0.2.2:3000/")
+val configuredApiKey = providers.gradleProperty("FCM_API_KEY")
+    .orElse(providers.environmentVariable("FCM_API_KEY"))
+    .getOrElse("")
+
 android {
     namespace = "com.eaut.footballclubmanagement"
     compileSdk {
@@ -16,14 +26,23 @@ android {
         versionName = "1.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+        buildConfigField("String", "API_BASE_URL", configuredApiBaseUrl.asBuildConfigString())
+        buildConfigField("String", "API_KEY", configuredApiKey.asBuildConfigString())
     }
 
     buildTypes {
+        debug {
+            manifestPlaceholders["usesCleartextTraffic"] = "true"
+        }
         release {
+            manifestPlaceholders["usesCleartextTraffic"] = "false"
             optimization {
                 enable = false
             }
         }
+    }
+    buildFeatures {
+        buildConfig = true
     }
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_11
@@ -61,8 +80,6 @@ dependencies {
     implementation("androidx.lifecycle:lifecycle-viewmodel:2.6.2")
     implementation("androidx.lifecycle:lifecycle-livedata:2.6.2")
     
-    // Google Sign-In
-    implementation("com.google.android.gms:play-services-auth:20.7.0")
-    
-    testImplementation(libs.junit)
+    // Biểu đồ Radar Chart
+    implementation("com.github.PhilJay:MPAndroidChart:v3.1.0")
 }

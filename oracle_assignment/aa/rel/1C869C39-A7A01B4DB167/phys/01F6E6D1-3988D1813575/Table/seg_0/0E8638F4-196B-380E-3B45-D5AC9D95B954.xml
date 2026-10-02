@@ -1,0 +1,141 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<TableProxyOraclev20c class="oracle.dbtools.crest.model.design.storage.oracle.v20c.TableProxyOraclev20c" name="PLAYERS" directorySegmentName="seg_0" id="0E8638F4-196B-380E-3B45-D5AC9D95B954">
+<createdBy>Admin</createdBy>
+<createdTime>2026-09-15 02:27:34 UTC</createdTime>
+<ownerDesignName>aa</ownerDesignName>
+<schemaObject>6378CC18-E7F7-4115-03E9-491E26CD4D11</schemaObject>
+<logging>YES</logging>
+<partitionedRowMovement>DISABLE</partitionedRowMovement>
+<segment>E43C816F-298E-4E14-3C60-E915204FAA9A</segment>
+<tableSpace>E1F37B43-E8A7-C6DB-FA10-8C6E32BD63A6</tableSpace>
+<temporaryChanged>false</temporaryChanged>
+<accessDriverType>oracle_loader</accessDriverType>
+<rejectLimit></rejectLimit>
+<inMemory>NO</inMemory>
+<columnProxies itemClass="oracle.dbtools.crest.model.design.storage.oracle.v12c.ColumnProxyOraclev12c">
+<ColumnProxy name="PAS" id="0BC33999-1A24-BD9E-7E9A-3E4E34B2C2AF">
+<createdBy>Admin</createdBy>
+<createdTime>2026-09-15 02:27:35 UTC</createdTime>
+<ownerDesignName>aa</ownerDesignName>
+<defaultValue>70</defaultValue>
+</ColumnProxy>
+<ColumnProxy name="GOALS" id="1443ACB0-C3E7-C7C3-D8BE-3A6924D9309C">
+<createdBy>Admin</createdBy>
+<createdTime>2026-09-15 02:27:35 UTC</createdTime>
+<ownerDesignName>aa</ownerDesignName>
+<defaultValue>0</defaultValue>
+</ColumnProxy>
+<ColumnProxy name="FULL_NAME" id="1AF8AECA-D5B4-B93B-61A6-0629725A8821">
+<createdBy>Admin</createdBy>
+<createdTime>2026-09-15 02:27:35 UTC</createdTime>
+<ownerDesignName>aa</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="JERSEY_NUMBER" id="287124A2-FB0B-6375-B993-08E3CD39C656">
+<createdBy>Admin</createdBy>
+<createdTime>2026-09-15 02:27:35 UTC</createdTime>
+<ownerDesignName>aa</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="MVP" id="2B49215E-6B61-18FF-DAEF-CDEA39CCC795">
+<createdBy>Admin</createdBy>
+<createdTime>2026-09-15 02:27:35 UTC</createdTime>
+<ownerDesignName>aa</ownerDesignName>
+<defaultValue>0</defaultValue>
+</ColumnProxy>
+<ColumnProxy name="ASSISTS" id="352514A7-BA4F-7A4B-FD0E-1556B91D3510">
+<createdBy>Admin</createdBy>
+<createdTime>2026-09-15 02:27:35 UTC</createdTime>
+<ownerDesignName>aa</ownerDesignName>
+<defaultValue>0</defaultValue>
+</ColumnProxy>
+<ColumnProxy name="UPDATED_AT" id="423B5514-22FB-CA42-43B6-4911CAA68124">
+<createdBy>Admin</createdBy>
+<createdTime>2026-09-15 02:27:35 UTC</createdTime>
+<ownerDesignName>aa</ownerDesignName>
+<defaultValue>CURRENT_TIMESTAMP</defaultValue>
+</ColumnProxy>
+<ColumnProxy name="ID" id="55A86221-045B-DB62-9E7F-DE8151407405">
+<createdBy>Admin</createdBy>
+<createdTime>2026-09-15 02:27:35 UTC</createdTime>
+<ownerDesignName>aa</ownerDesignName>
+<autoIncrementDDL>IDENTITY_CLAUSE</autoIncrementDDL>
+</ColumnProxy>
+<ColumnProxy name="HEALTH_STATUS" id="55DC2384-3DCB-92C9-021A-10011B629155">
+<createdBy>Admin</createdBy>
+<createdTime>2026-09-15 02:27:35 UTC</createdTime>
+<ownerDesignName>aa</ownerDesignName>
+<defaultValue>&apos;Fit&apos;</defaultValue>
+</ColumnProxy>
+<ColumnProxy name="CREATED_AT" id="836296CE-90FB-4088-CD5D-60D33B1FEEF3">
+<createdBy>Admin</createdBy>
+<createdTime>2026-09-15 02:27:35 UTC</createdTime>
+<ownerDesignName>aa</ownerDesignName>
+<defaultValue>CURRENT_TIMESTAMP</defaultValue>
+</ColumnProxy>
+<ColumnProxy name="DRI" id="87D7397E-F589-7CDF-0715-D28551E7800C">
+<createdBy>Admin</createdBy>
+<createdTime>2026-09-15 02:27:35 UTC</createdTime>
+<ownerDesignName>aa</ownerDesignName>
+<defaultValue>70</defaultValue>
+</ColumnProxy>
+<ColumnProxy name="MATCHES" id="882F67B0-EF4A-7C99-FCCE-A474ED7464BC">
+<createdBy>Admin</createdBy>
+<createdTime>2026-09-15 02:27:35 UTC</createdTime>
+<ownerDesignName>aa</ownerDesignName>
+<defaultValue>0</defaultValue>
+</ColumnProxy>
+<ColumnProxy name="CLUB" id="8A674015-3C0A-DD63-B9FD-4516AB6E5427">
+<createdBy>Admin</createdBy>
+<createdTime>2026-09-15 02:27:35 UTC</createdTime>
+<ownerDesignName>aa</ownerDesignName>
+<defaultValue>&apos;Tự do&apos;</defaultValue>
+</ColumnProxy>
+<ColumnProxy name="PAC" id="9A433916-70A4-ED58-B5D7-A4D438FC184D">
+<createdBy>Admin</createdBy>
+<createdTime>2026-09-15 02:27:35 UTC</createdTime>
+<ownerDesignName>aa</ownerDesignName>
+<defaultValue>70</defaultValue>
+</ColumnProxy>
+<ColumnProxy name="OVR" id="A26FD97C-B579-5C8A-5A44-AEC44B3C5685">
+<createdBy>Admin</createdBy>
+<createdTime>2026-09-15 02:27:35 UTC</createdTime>
+<ownerDesignName>aa</ownerDesignName>
+<defaultValue>70</defaultValue>
+</ColumnProxy>
+<ColumnProxy name="PHY" id="A344859B-7A5E-DE05-9912-3AFE31E81F4F">
+<createdBy>Admin</createdBy>
+<createdTime>2026-09-15 02:27:35 UTC</createdTime>
+<ownerDesignName>aa</ownerDesignName>
+<defaultValue>70</defaultValue>
+</ColumnProxy>
+<ColumnProxy name="POSITION" id="AB056ED8-8AF1-9CBE-D61D-5325756FD1CA">
+<createdBy>Admin</createdBy>
+<createdTime>2026-09-15 02:27:35 UTC</createdTime>
+<ownerDesignName>aa</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="DEF" id="AE5ABFE8-C768-2020-C695-C3D536D31BBA">
+<createdBy>Admin</createdBy>
+<createdTime>2026-09-15 02:27:35 UTC</createdTime>
+<ownerDesignName>aa</ownerDesignName>
+<defaultValue>70</defaultValue>
+</ColumnProxy>
+<ColumnProxy name="SHO" id="C012DA04-33A7-4A83-B9BF-46B08BE2A3A4">
+<createdBy>Admin</createdBy>
+<createdTime>2026-09-15 02:27:35 UTC</createdTime>
+<ownerDesignName>aa</ownerDesignName>
+<defaultValue>70</defaultValue>
+</ColumnProxy>
+</columnProxies>
+<primaryKeys>
+<PrimaryKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.PKProxyOraclev10g" name="PLAYERS_PK" id="9C9C840D-3F85-1A8D-FEE4-D1754A608E3D">
+<createdBy>Admin</createdBy>
+<createdTime>2026-09-15 02:27:36 UTC</createdTime>
+<ownerDesignName>aa</ownerDesignName>
+<schemaObject>6378CC18-E7F7-4115-03E9-491E26CD4D11</schemaObject>
+<segment>F1331D4C-E4DA-E4B3-27BF-392B802C309A</segment>
+<tableSpace>E1F37B43-E8A7-C6DB-FA10-8C6E32BD63A6</tableSpace>
+<indexSegment>F1331D4C-E4DA-E4B3-27BF-392B802C309A</indexSegment>
+<indexSort>SORTED</indexSort>
+<usingIndex>BY INDEX NAME</usingIndex>
+</PrimaryKey>
+</primaryKeys>
+</TableProxyOraclev20c>

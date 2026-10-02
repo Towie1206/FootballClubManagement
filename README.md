@@ -10,7 +10,7 @@ Dự án Siêu ứng dụng quản lý Đội bóng Phủi (Sân 5, 7, 11) đư�
 
 ## 🌟 Tính năng nổi bật vượt chỉ tiêu (Vượt qua ứng dụng thông thường)
 
-- **🤖 Trợ lý Ảo AI (Gemini 2.5 Flash + RAG):** Tích hợp AI đọc hiểu trực tiếp Data của đội bóng từ Oracle DB để đưa ra tư vấn đội hình, chiến thuật, và phân tích điểm yếu cá nhân hóa.
+- **🤖 Trợ lý Ảo AI (Gemini 3.6 Flash + Context Injection):** Tích hợp AI đọc hiểu trực tiếp Data của đội bóng từ Oracle DB để đưa ra tư vấn đội hình, chiến thuật, và phân tích điểm yếu cá nhân hóa.
 - **💰 Sổ Quỹ Minh Bạch (Room DB & Async Thread):** Quản lý thu chi bằng hệ thống Database cục bộ, xử lý đa luồng (Background Thread) chuẩn kỹ sư phần mềm, tránh giật lag UI.
 - **🔐 Bảo mật Cấp Doanh nghiệp (Enterprise Security):** 
   - Mã hóa mật khẩu/PIN Thủ quỹ bằng thuật toán băm **SHA-256**.
@@ -40,6 +40,17 @@ node index.js
 - Chờ Gradle Sync hoàn tất.
 - Bấm **Run (Shift + F10)** để cài đặt lên Máy ảo (Emulator) hoặc điện thoại thật.
 *(Lưu ý: Nếu test trên máy thật, cần trỏ lại IP của máy chủ Node.js trong file `RetrofitClient.java` thay vì `10.0.2.2`).*
+
+## 📂 Oracle Database Coursework Deliverables (`oracle_assignment/`)
+
+Dự án hoàn thiện toàn bộ yêu cầu đồ án môn học **Oracle Database Management System** (Topic 3 - Lớp DCIT.15 - Giảng viên: TS. Nguyễn Viết Hùng):
+- **`00_RUN_ALL.sql`**: Master script tạo tự động 8 bảng (3NF), nạp dữ liệu mẫu, tạo View, Function, Procedure, Trigger và Package.
+- **`03_SQL_QUERIES_20_TYPES.sql`**: 20 câu truy vấn SQL phân loại (Cơ bản, Lồng nhau, Gom nhóm, Nâng cao).
+- **`04_PLSQL_PROGRAMMING.sql`**: Lập trình PL/SQL đầy đủ Functions, Procedures (FOR loop, Exceptions), Triggers và Packages.
+- **`05_USER_MANAGEMENT_AND_BACKUP.sql`**: Phân quyền RBAC, hướng dẫn sao lưu/phục hồi với Oracle Data Pump (`expdp` / `impdp`).
+- **`Bao_Cao_Bai_Tap_Lon_Oracle_DBMS.docx` / `main.tex`**: Báo cáo học thuật chuẩn IEEE (Tiếng Việt & Tiếng Anh).
+- **`Sports_Club_Management_Oracle_Presentation.pptx`**: Slide báo cáo đồ án chuyên nghiệp.
+- **`aa.dmd`**: Thiết kế mô hình dữ liệu quan hệ trên Oracle SQL Developer Data Modeler.
 
 ## 🛡 License
 Phát triển cho đồ án kết thúc môn. Nghiêm cấm sao chép thương mại.

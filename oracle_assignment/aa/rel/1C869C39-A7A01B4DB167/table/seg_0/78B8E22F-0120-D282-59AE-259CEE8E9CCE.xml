@@ -1,0 +1,147 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="78B8E22F-0120-D282-59AE-259CEE8E9CCE" schemaObject="6378CC18-E7F7-4115-03E9-491E26CD4D11" name="MATCHES">
+<sourceConnName>user</sourceConnName>
+<sourceObjSchema>SYSTEM</sourceObjSchema>
+<sourceObjName>MATCHES</sourceObjName>
+<createdBy>Admin</createdBy>
+<createdTime>2026-09-15 02:27:34 UTC</createdTime>
+<ownerDesignName>aa</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="MATCH_ID" id="0EB9F421-BE4A-83C9-DD24-A04E9B629923">
+<sourceConnName>user</sourceConnName>
+<sourceObjSchema>MATCHES</sourceObjSchema>
+<sourceObjName>MATCH_ID</sourceObjName>
+<createdBy>Admin</createdBy>
+<createdTime>2026-09-15 02:27:35 UTC</createdTime>
+<ownerDesignName>aa</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementColumn>true</autoIncrementColumn>
+<identityColumn>true</identityColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<autoIncrementDisableCache>false</autoIncrementDisableCache>
+<autoIncrementCache>20</autoIncrementCache>
+<autoIncrementOrder>false</autoIncrementOrder>
+</Column>
+<Column name="MATCH_DATE" id="7E83B058-68E4-3707-AEA3-B46439D06A5A">
+<sourceConnName>user</sourceConnName>
+<sourceObjSchema>MATCHES</sourceObjSchema>
+<sourceObjName>MATCH_DATE</sourceObjName>
+<createdBy>Admin</createdBy>
+<createdTime>2026-09-15 02:27:35 UTC</createdTime>
+<ownerDesignName>aa</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<dataTypeSize>7</dataTypeSize>
+<ownDataTypeParameters>7,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="OPPONENT_TEAM" id="D8D32218-4015-9EC3-A85F-F7F9F8A515BF">
+<sourceConnName>user</sourceConnName>
+<sourceObjSchema>MATCHES</sourceObjSchema>
+<sourceObjName>OPPONENT_TEAM</sourceObjName>
+<createdBy>Admin</createdBy>
+<createdTime>2026-09-15 02:27:35 UTC</createdTime>
+<ownerDesignName>aa</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100 BYTE</dataTypeSize>
+<ownDataTypeParameters>100 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="VENUE" id="D9B82932-5251-7F84-8027-B4DACC94DE54">
+<sourceConnName>user</sourceConnName>
+<sourceObjSchema>MATCHES</sourceObjSchema>
+<sourceObjName>VENUE</sourceObjName>
+<createdBy>Admin</createdBy>
+<createdTime>2026-09-15 02:27:35 UTC</createdTime>
+<ownerDesignName>aa</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100 BYTE</dataTypeSize>
+<ownDataTypeParameters>100 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="MATCH_TYPE" id="712F5FAB-1174-7B39-60CE-1DC66933DE62">
+<sourceConnName>user</sourceConnName>
+<sourceObjSchema>MATCHES</sourceObjSchema>
+<sourceObjName>MATCH_TYPE</sourceObjName>
+<createdBy>Admin</createdBy>
+<createdTime>2026-09-15 02:27:35 UTC</createdTime>
+<ownerDesignName>aa</ownerDesignName>
+<constraintName>CHK_MATCH_TYPE</constraintName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50 BYTE</dataTypeSize>
+<listOfValues>
+<valueDef value="&apos;Cup&apos;" description=""/>
+<valueDef value="&apos;Friendly&apos;" description=""/>
+<valueDef value="&apos;League&apos;" description=""/>
+</listOfValues>
+<defaultValue>&apos;Friendly&apos;</defaultValue>
+<ownDataTypeParameters>50 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="HOME_SCORE" id="08622C83-F310-63DE-2860-725EDDBA33F9">
+<sourceConnName>user</sourceConnName>
+<sourceObjSchema>MATCHES</sourceObjSchema>
+<sourceObjName>HOME_SCORE</sourceObjName>
+<createdBy>Admin</createdBy>
+<createdTime>2026-09-15 02:27:35 UTC</createdTime>
+<ownerDesignName>aa</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>3</dataTypePrecision>
+<dataTypeScale>0</dataTypeScale>
+<defaultValue>0</defaultValue>
+<ownDataTypeParameters>,3,0</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="AWAY_SCORE" id="F87F88CD-999F-27CD-8737-F53046434532">
+<sourceConnName>user</sourceConnName>
+<sourceObjSchema>MATCHES</sourceObjSchema>
+<sourceObjName>AWAY_SCORE</sourceObjName>
+<createdBy>Admin</createdBy>
+<createdTime>2026-09-15 02:27:35 UTC</createdTime>
+<ownerDesignName>aa</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>3</dataTypePrecision>
+<dataTypeScale>0</dataTypeScale>
+<defaultValue>0</defaultValue>
+<ownDataTypeParameters>,3,0</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="3286ABAC-D470-A729-3C6D-E97CA5DFF7A5" schemaObject="6378CC18-E7F7-4115-03E9-491E26CD4D11" name="MATCHES_PK">
+<sourceConnName>user</sourceConnName>
+<sourceObjSchema>SYSTEM</sourceObjSchema>
+<sourceObjName>SYS_C008416</sourceObjName>
+<createdBy>Admin</createdBy>
+<createdTime>2026-09-15 02:27:35 UTC</createdTime>
+<ownerDesignName>aa</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="0EB9F421-BE4A-83C9-DD24-A04E9B629923"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

@@ -1,0 +1,19 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="087BB869-2A32-4820-E88C-FC52DD14A728" containerWithKeyObject="44650D5C-AA92-377C-BF41-AFDD90A44ADD" localFKIndex="A69C0942-6D40-8FD7-C529-F693D793571A" name="FK_EVENT_MATCH">
+<sourceConnName>user</sourceConnName>
+<sourceObjSchema>SYSTEM</sourceObjSchema>
+<sourceObjName>FK_EVENT_MATCH</sourceObjName>
+<createdBy>Admin</createdBy>
+<createdTime>2026-09-15 02:27:38 UTC</createdTime>
+<ownerDesignName>aa</ownerDesignName>
+<referredTableLongName>SYSTEM.MATCHES</referredTableLongName>
+<deleteRule>CASCADE</deleteRule>
+<referredTableID>78B8E22F-0120-D282-59AE-259CEE8E9CCE</referredTableID>
+<keyObject>3286ABAC-D470-A729-3C6D-E97CA5DFF7A5</keyObject>
+<referredKeyID>3286ABAC-D470-A729-3C6D-E97CA5DFF7A5</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>MATCH_ID</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

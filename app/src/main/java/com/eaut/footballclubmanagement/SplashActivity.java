@@ -2,9 +2,9 @@ package com.eaut.footballclubmanagement;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.Handler;
-import android.os.Looper;
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.eaut.footballclubmanagement.network.SessionManager;
 
 public class SplashActivity extends AppCompatActivity {
     @Override
@@ -22,8 +22,8 @@ public class SplashActivity extends AppCompatActivity {
                 .setDuration(1200)
                 .withEndAction(() -> {
                     // Chờ animation chạy xong mới kiểm tra đăng nhập
-                    android.content.SharedPreferences prefs = getSharedPreferences("AppPrefs", MODE_PRIVATE);
-                    boolean isLoggedIn = prefs.getBoolean("isLoggedIn", false);
+                    if (isFinishing() || isDestroyed()) return;
+                    boolean isLoggedIn = new SessionManager(this).hasValidSession();
                     
                     Intent intent;
                     if (isLoggedIn) {
@@ -35,5 +35,12 @@ public class SplashActivity extends AppCompatActivity {
                     finish();
                 })
                 .start();
+    }
+
+    @Override
+    protected void onDestroy() {
+        android.view.View logoLayout = findViewById(R.id.logoContainer);
+        if (logoLayout != null) logoLayout.animate().cancel();
+        super.onDestroy();
     }
 }

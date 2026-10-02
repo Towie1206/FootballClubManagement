@@ -1,0 +1,91 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="B71598A7-4BF3-6A4E-AFA0-A3D1707C726C" schemaObject="6378CC18-E7F7-4115-03E9-491E26CD4D11" name="TRAINING_SESSIONS">
+<sourceConnName>user</sourceConnName>
+<sourceObjSchema>SYSTEM</sourceObjSchema>
+<sourceObjName>TRAINING_SESSIONS</sourceObjName>
+<createdBy>Admin</createdBy>
+<createdTime>2026-09-15 02:27:34 UTC</createdTime>
+<ownerDesignName>aa</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="SESSION_ID" id="CD490EEA-42F9-895A-7F50-53AA92541D02">
+<sourceConnName>user</sourceConnName>
+<sourceObjSchema>TRAINING_SESSIONS</sourceObjSchema>
+<sourceObjName>SESSION_ID</sourceObjName>
+<createdBy>Admin</createdBy>
+<createdTime>2026-09-15 02:27:35 UTC</createdTime>
+<ownerDesignName>aa</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementColumn>true</autoIncrementColumn>
+<identityColumn>true</identityColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<autoIncrementDisableCache>false</autoIncrementDisableCache>
+<autoIncrementCache>20</autoIncrementCache>
+<autoIncrementOrder>false</autoIncrementOrder>
+</Column>
+<Column name="SESSION_DATE" id="B431A375-7588-7CF9-37DC-9CFD32694CAE">
+<sourceConnName>user</sourceConnName>
+<sourceObjSchema>TRAINING_SESSIONS</sourceObjSchema>
+<sourceObjName>SESSION_DATE</sourceObjName>
+<createdBy>Admin</createdBy>
+<createdTime>2026-09-15 02:27:35 UTC</createdTime>
+<ownerDesignName>aa</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<dataTypeSize>7</dataTypeSize>
+<ownDataTypeParameters>7,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="FOCUS_AREA" id="C7264A45-C991-A6DD-61B0-39C16A4536C1">
+<sourceConnName>user</sourceConnName>
+<sourceObjSchema>TRAINING_SESSIONS</sourceObjSchema>
+<sourceObjName>FOCUS_AREA</sourceObjName>
+<createdBy>Admin</createdBy>
+<createdTime>2026-09-15 02:27:35 UTC</createdTime>
+<ownerDesignName>aa</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100 BYTE</dataTypeSize>
+<ownDataTypeParameters>100 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="DURATION_MINUTES" id="FDB7CEBC-84C8-91CA-A847-74C84F517CA8">
+<sourceConnName>user</sourceConnName>
+<sourceObjSchema>TRAINING_SESSIONS</sourceObjSchema>
+<sourceObjName>DURATION_MINUTES</sourceObjName>
+<createdBy>Admin</createdBy>
+<createdTime>2026-09-15 02:27:35 UTC</createdTime>
+<ownerDesignName>aa</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>3</dataTypePrecision>
+<dataTypeScale>0</dataTypeScale>
+<ownDataTypeParameters>,3,0</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="F01436B6-F7C4-1E59-2DD7-EAA60B02DD9B" schemaObject="6378CC18-E7F7-4115-03E9-491E26CD4D11" name="TRAINING_SESSIONS_PK">
+<sourceConnName>user</sourceConnName>
+<sourceObjSchema>SYSTEM</sourceObjSchema>
+<sourceObjName>SYS_C008431</sourceObjName>
+<createdBy>Admin</createdBy>
+<createdTime>2026-09-15 02:27:35 UTC</createdTime>
+<ownerDesignName>aa</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="CD490EEA-42F9-895A-7F50-53AA92541D02"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

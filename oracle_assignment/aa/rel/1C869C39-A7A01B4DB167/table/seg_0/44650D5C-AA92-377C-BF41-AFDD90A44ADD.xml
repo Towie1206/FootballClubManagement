@@ -1,0 +1,144 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="44650D5C-AA92-377C-BF41-AFDD90A44ADD" schemaObject="6378CC18-E7F7-4115-03E9-491E26CD4D11" name="MATCH_EVENTS">
+<sourceConnName>user</sourceConnName>
+<sourceObjSchema>SYSTEM</sourceObjSchema>
+<sourceObjName>MATCH_EVENTS</sourceObjName>
+<createdBy>Admin</createdBy>
+<createdTime>2026-09-15 02:27:34 UTC</createdTime>
+<ownerDesignName>aa</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="EVENT_ID" id="03AA5051-1F02-E649-C830-7C39A0DC4894">
+<sourceConnName>user</sourceConnName>
+<sourceObjSchema>MATCH_EVENTS</sourceObjSchema>
+<sourceObjName>EVENT_ID</sourceObjName>
+<createdBy>Admin</createdBy>
+<createdTime>2026-09-15 02:27:35 UTC</createdTime>
+<ownerDesignName>aa</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementColumn>true</autoIncrementColumn>
+<identityColumn>true</identityColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<autoIncrementDisableCache>false</autoIncrementDisableCache>
+<autoIncrementCache>20</autoIncrementCache>
+<autoIncrementOrder>false</autoIncrementOrder>
+</Column>
+<Column name="MATCH_ID" id="FAF5ED32-6A12-8B12-C5EE-F515B94A7C07">
+<sourceConnName>user</sourceConnName>
+<sourceObjSchema>MATCH_EVENTS</sourceObjSchema>
+<sourceObjName>MATCH_ID</sourceObjName>
+<createdBy>Admin</createdBy>
+<createdTime>2026-09-15 02:27:35 UTC</createdTime>
+<ownerDesignName>aa</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="087BB869-2A32-4820-E88C-FC52DD14A728" referredColumn="0EB9F421-BE4A-83C9-DD24-A04E9B629923"/>
+</associations>
+</Column>
+<Column name="PLAYER_ID" id="A23FDE49-2054-0D67-E36D-D98BBB98D93A">
+<sourceConnName>user</sourceConnName>
+<sourceObjSchema>MATCH_EVENTS</sourceObjSchema>
+<sourceObjName>PLAYER_ID</sourceObjName>
+<createdBy>Admin</createdBy>
+<createdTime>2026-09-15 02:27:35 UTC</createdTime>
+<ownerDesignName>aa</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="5910D91B-D69C-782F-1BE7-BBC8EF96A48D" referredColumn="55A86221-045B-DB62-9E7F-DE8151407405"/>
+</associations>
+</Column>
+<Column name="EVENT_TYPE" id="56C9680D-2538-3FDC-7455-A9352FE3C7F4">
+<sourceConnName>user</sourceConnName>
+<sourceObjSchema>MATCH_EVENTS</sourceObjSchema>
+<sourceObjName>EVENT_TYPE</sourceObjName>
+<createdBy>Admin</createdBy>
+<createdTime>2026-09-15 02:27:35 UTC</createdTime>
+<ownerDesignName>aa</ownerDesignName>
+<constraintName>CHK_EVENT_TYPE</constraintName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20 BYTE</dataTypeSize>
+<listOfValues>
+<valueDef value="&apos;Assist&apos;" description=""/>
+<valueDef value="&apos;Goal&apos;" description=""/>
+<valueDef value="&apos;MVP&apos;" description=""/>
+<valueDef value="&apos;Red Card&apos;" description=""/>
+<valueDef value="&apos;Yellow Card&apos;" description=""/>
+</listOfValues>
+<ownDataTypeParameters>20 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="MINUTE" id="484C2DC6-71A4-DC46-D61B-8F59529EAB01">
+<sourceConnName>user</sourceConnName>
+<sourceObjSchema>MATCH_EVENTS</sourceObjSchema>
+<sourceObjName>MINUTE</sourceObjName>
+<createdBy>Admin</createdBy>
+<createdTime>2026-09-15 02:27:35 UTC</createdTime>
+<ownerDesignName>aa</ownerDesignName>
+<constraintName>CHK_MINUTE</constraintName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>3</dataTypePrecision>
+<dataTypeScale>0</dataTypeScale>
+<ownDataTypeParameters>,3,0</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<listOfRanges>
+<rangeDef class="oracle.dbtools.crest.model.design.constraint.AVT">
+<beginValue>1</beginValue>
+<endValue>120</endValue>
+</rangeDef>
+</listOfRanges>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="592A9BA8-58C8-5A30-0C9C-23CCE6503329" schemaObject="6378CC18-E7F7-4115-03E9-491E26CD4D11" name="MATCH_EVENTS_PK">
+<sourceConnName>user</sourceConnName>
+<sourceObjSchema>SYSTEM</sourceObjSchema>
+<sourceObjName>SYS_C008424</sourceObjName>
+<createdBy>Admin</createdBy>
+<createdTime>2026-09-15 02:27:35 UTC</createdTime>
+<ownerDesignName>aa</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="03AA5051-1F02-E649-C830-7C39A0DC4894"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="A69C0942-6D40-8FD7-C529-F693D793571A" name="FK_EVENT_MATCH">
+<createdBy>Admin</createdBy>
+<createdTime>2026-09-15 02:27:38 UTC</createdTime>
+<ownerDesignName>aa</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="FAF5ED32-6A12-8B12-C5EE-F515B94A7C07"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="0E9F1585-34B9-3A73-CB74-3203B429FC3F" name="FK_EVENT_PLAYER">
+<createdBy>Admin</createdBy>
+<createdTime>2026-09-15 02:27:38 UTC</createdTime>
+<ownerDesignName>aa</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="A23FDE49-2054-0D67-E36D-D98BBB98D93A"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

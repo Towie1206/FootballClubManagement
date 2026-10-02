@@ -3,7 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/phui_bg">
+    android:background="@color/phui_bg"
+    android:fitsSystemWindows="true">
 
     <!-- Header & Search (Top) -->
     <LinearLayout
@@ -13,15 +14,34 @@
         android:orientation="vertical"
         android:paddingTop="32dp">
 
-        <TextView
+        <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:paddingHorizontal="20dp"
-            android:layout_marginBottom="16dp"
-            android:text="Danh sách đội"
-            android:textColor="@color/phui_text_primary"
-            android:textSize="28sp"
-            android:textStyle="bold" />
+            android:layout_marginBottom="16dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:text="Squad Roster"
+                android:textColor="@color/phui_text_primary"
+                android:textSize="28sp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/btnLogout"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:padding="6dp"
+                android:background="@drawable/bg_input"
+                android:src="@android:drawable/ic_lock_power_off"
+                android:contentDescription="Log Out"
+                app:tint="@color/phui_error" />
+        </RelativeLayout>
 
         <!-- Cụm Tìm kiếm và Sắp xếp -->
         <LinearLayout
@@ -38,7 +58,7 @@
                 android:layout_height="48dp"
                 android:layout_marginEnd="8dp"
                 android:background="@drawable/bg_input"
-                android:hint="🔍 Tìm tên..."
+                android:hint="🔍 Search player..."
                 android:textColorHint="@color/phui_text_secondary"
                 android:textColor="@color/phui_text_primary"
                 android:paddingHorizontal="16dp"
@@ -75,7 +95,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="36dp"
                     android:background="@drawable/bg_button_primary"
-                    android:text="Tất cả"
+                    android:text="ALL"
                     android:textColor="@color/phui_bg"
                     android:textSize="12sp"
                     android:layout_marginEnd="8dp"/>
@@ -85,7 +105,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="36dp"
                     android:background="@drawable/bg_input"
-                    android:text="Tiền đạo"
+                    android:text="FW"
                     android:textColor="@color/phui_text_primary"
                     android:textSize="12sp"
                     android:layout_marginEnd="8dp"/>
@@ -95,7 +115,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="36dp"
                     android:background="@drawable/bg_input"
-                    android:text="Tiền vệ"
+                    android:text="MF"
                     android:textColor="@color/phui_text_primary"
                     android:textSize="12sp"
                     android:layout_marginEnd="8dp"/>
@@ -105,7 +125,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="36dp"
                     android:background="@drawable/bg_input"
-                    android:text="Hậu vệ"
+                    android:text="DF"
                     android:textColor="@color/phui_text_primary"
                     android:textSize="12sp"
                     android:layout_marginEnd="8dp"/>
@@ -115,7 +135,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="36dp"
                     android:background="@drawable/bg_input"
-                    android:text="Thủ môn"
+                    android:text="GK"
                     android:textColor="@color/phui_text_primary"
                     android:textSize="12sp"/>
             </LinearLayout>
@@ -181,22 +201,34 @@
                     android:layout_marginBottom="16dp"/>
                     
                 <TextView
+                    android:id="@+id/tvEmptyTitle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Chưa có cầu thủ nào"
+                    android:text="No players found"
                     android:textColor="@color/phui_text_primary"
                     android:textSize="18sp"
                     android:textStyle="bold"
                     android:layout_marginBottom="8dp"/>
                     
                 <TextView
+                    android:id="@+id/tvEmptyMessage"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Bấm + THÊM để bắt đầu chiêu mộ Tân Binh ngay!"
+                    android:text="Tap + to recruit new players and build your squad!"
                     android:textColor="@color/phui_text_secondary"
                     android:textSize="14sp"
                     android:textAlignment="center"
                     android:paddingHorizontal="32dp"/>
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btnRetry"
+                    android:layout_width="wrap_content"
+                    android:layout_height="48dp"
+                    android:layout_marginTop="16dp"
+                    android:background="@drawable/bg_button_primary"
+                    android:text="@string/retry_action"
+                    android:textColor="@color/phui_bg"
+                    android:visibility="gone" />
             </LinearLayout>
         </RelativeLayout>
     </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
@@ -213,6 +245,7 @@
         app:backgroundTint="@color/phui_accent"
         app:tint="@color/phui_bg"
         android:src="@android:drawable/ic_input_add"
+        android:contentDescription="@string/add_player_description"
         app:fabSize="normal" />
 
     <!-- Thanh điều hướng đáy chuẩn Enterprise -->

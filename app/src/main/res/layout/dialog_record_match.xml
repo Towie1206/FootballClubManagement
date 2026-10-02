@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/phui_card"
+    android:orientation="vertical"
+    android:padding="24dp">
+
+    <TextView
+        android:id="@+id/tvDialogTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="⚽ Record Match Performance"
+        android:textColor="@color/phui_text_primary"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="4dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Business-process post-match statistical update"
+        android:textColor="@color/phui_text_secondary"
+        android:textSize="12sp"
+        android:layout_marginBottom="16dp"/>
+
+    <!-- Nhập số bàn thắng ghi được -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Goals scored in match:"
+        android:textColor="@color/phui_text_secondary"
+        android:textSize="13sp"
+        android:layout_marginBottom="6dp"/>
+
+    <EditText
+        android:id="@+id/etMatchGoals"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:background="@drawable/bg_input"
+        android:textColor="@color/phui_text_primary"
+        android:inputType="number"
+        android:paddingHorizontal="16dp"
+        android:text="0"
+        android:layout_marginBottom="12dp"/>
+
+    <!-- Nhập số kiến tạo -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Assists provided in match:"
+        android:textColor="@color/phui_text_secondary"
+        android:textSize="13sp"
+        android:layout_marginBottom="6dp"/>
+
+    <EditText
+        android:id="@+id/etMatchAssists"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:background="@drawable/bg_input"
+        android:textColor="@color/phui_text_primary"
+        android:inputType="number"
+        android:paddingHorizontal="16dp"
+        android:text="0"
+        android:layout_marginBottom="12dp"/>
+
+    <!-- Checkbox MVP -->
+    <CheckBox
+        android:id="@+id/cbIsMvp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="⭐ Man of the Match (MVP Award)"
+        android:textColor="@color/phui_accent"
+        android:textSize="14sp"
+        android:layout_marginBottom="12dp"/>
+
+    <!-- Tình trạng thể lực -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Post-match fitness condition:"
+        android:textColor="@color/phui_text_secondary"
+        android:textSize="13sp"
+        android:layout_marginBottom="6dp"/>
+
+    <RadioGroup
+        android:id="@+id/rgHealth"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginBottom="20dp">
+
+        <RadioButton
+            android:id="@+id/rbFit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="✔ Match Fit"
+            android:textColor="@color/phui_text_primary"
+            android:checked="true"
+            android:layout_marginEnd="16dp"/>
+
+        <RadioButton
+            android:id="@+id/rbInjured"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="⚠ Injured"
+            android:textColor="@color/phui_error"/>
+    </RadioGroup>
+
+    <!-- Nút hành động -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnDialogCancel"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_weight="1"
+            android:background="@drawable/bg_input"
+            android:text="CANCEL"
+            android:textColor="@color/phui_text_secondary"
+            android:layout_marginEnd="8dp"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnDialogConfirm"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_weight="1"
+            android:background="@drawable/bg_button_primary"
+            android:text="CONFIRM"
+            android:textColor="@color/phui_bg"
+            android:textStyle="bold"
+            android:layout_marginStart="8dp"/>
+    </LinearLayout>
+
+</LinearLayout>

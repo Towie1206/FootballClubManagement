@@ -57,6 +57,13 @@ public interface ApiService {
     class LoginResponse {
         public String token;
         public String message;
-        // Bỏ qua map User cho đơn giản
+        public long expiresIn;
+        public User user;
+    }
+
+    class User {
+        public int id;
+        public String username;
+        public String role;
     }
 }

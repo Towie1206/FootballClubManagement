@@ -1,0 +1,51 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<TableProxyOraclev20c class="oracle.dbtools.crest.model.design.storage.oracle.v20c.TableProxyOraclev20c" name="TRAINING_SESSIONS" directorySegmentName="seg_0" id="B71598A7-4BF3-6A4E-AFA0-A3D1707C726C">
+<createdBy>Admin</createdBy>
+<createdTime>2026-09-15 02:27:34 UTC</createdTime>
+<ownerDesignName>aa</ownerDesignName>
+<schemaObject>6378CC18-E7F7-4115-03E9-491E26CD4D11</schemaObject>
+<logging>YES</logging>
+<partitionedRowMovement>DISABLE</partitionedRowMovement>
+<segment>E43C816F-298E-4E14-3C60-E915204FAA9A</segment>
+<tableSpace>E1F37B43-E8A7-C6DB-FA10-8C6E32BD63A6</tableSpace>
+<temporaryChanged>false</temporaryChanged>
+<accessDriverType>oracle_loader</accessDriverType>
+<rejectLimit></rejectLimit>
+<inMemory>NO</inMemory>
+<columnProxies itemClass="oracle.dbtools.crest.model.design.storage.oracle.v12c.ColumnProxyOraclev12c">
+<ColumnProxy name="SESSION_DATE" id="B431A375-7588-7CF9-37DC-9CFD32694CAE">
+<createdBy>Admin</createdBy>
+<createdTime>2026-09-15 02:27:35 UTC</createdTime>
+<ownerDesignName>aa</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="FOCUS_AREA" id="C7264A45-C991-A6DD-61B0-39C16A4536C1">
+<createdBy>Admin</createdBy>
+<createdTime>2026-09-15 02:27:35 UTC</createdTime>
+<ownerDesignName>aa</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="SESSION_ID" id="CD490EEA-42F9-895A-7F50-53AA92541D02">
+<createdBy>Admin</createdBy>
+<createdTime>2026-09-15 02:27:35 UTC</createdTime>
+<ownerDesignName>aa</ownerDesignName>
+<autoIncrementDDL>IDENTITY_CLAUSE</autoIncrementDDL>
+</ColumnProxy>
+<ColumnProxy name="DURATION_MINUTES" id="FDB7CEBC-84C8-91CA-A847-74C84F517CA8">
+<createdBy>Admin</createdBy>
+<createdTime>2026-09-15 02:27:35 UTC</createdTime>
+<ownerDesignName>aa</ownerDesignName>
+</ColumnProxy>
+</columnProxies>
+<primaryKeys>
+<PrimaryKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.PKProxyOraclev10g" name="TRAINING_SESSIONS_PK" id="F01436B6-F7C4-1E59-2DD7-EAA60B02DD9B">
+<createdBy>Admin</createdBy>
+<createdTime>2026-09-15 02:27:36 UTC</createdTime>
+<ownerDesignName>aa</ownerDesignName>
+<schemaObject>6378CC18-E7F7-4115-03E9-491E26CD4D11</schemaObject>
+<segment>F1331D4C-E4DA-E4B3-27BF-392B802C309A</segment>
+<tableSpace>E1F37B43-E8A7-C6DB-FA10-8C6E32BD63A6</tableSpace>
+<indexSegment>F1331D4C-E4DA-E4B3-27BF-392B802C309A</indexSegment>
+<indexSort>SORTED</indexSort>
+<usingIndex>BY INDEX NAME</usingIndex>
+</PrimaryKey>
+</primaryKeys>
+</TableProxyOraclev20c>

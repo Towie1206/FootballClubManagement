@@ -6,12 +6,11 @@ import androidx.room.Room;
 import androidx.room.RoomDatabase;
 import com.eaut.footballclubmanagement.models.Player;
 
-@Database(entities = {Player.class, FundTransaction.class}, version = 2, exportSchema = false)
+@Database(entities = {Player.class}, version = 5, exportSchema = false)
 public abstract class AppDatabase extends RoomDatabase {
     private static volatile AppDatabase INSTANCE;
 
     public abstract PlayerDao playerDao();
-    public abstract FundDao fundDao();
 
     public static AppDatabase getDatabase(final Context context) {
         if (INSTANCE == null) {
