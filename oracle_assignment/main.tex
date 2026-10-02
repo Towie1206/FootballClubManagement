@@ -24,7 +24,7 @@
 \newcommand\BibTeX{{\rmfamily B\kern-.05em \textsc{i\kern-.025em b}\kern-.08em
 T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
 
-\def\volumeyear{2023}
+\def\volumeyear{2026}
 
 \begin{titlepage}
 \begin{center}
@@ -68,11 +68,11 @@ T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
 
 \address{\affilnum{1}INTERNATIONAL TRAINING AND COOPERATION INSTITUTE, HANOI, VIETNAM}
 
-\abstract{Managing grassroots and amateur football clubs often involves a lot of messy paperwork. In this project, we designed and built a complete sports club management system called Football Club Management (FCM). The core of our system is an Oracle Database, which allows us to use advanced data processing techniques like PL/SQL packages, triggers, and window functions to handle data securely. But we did not just stop at a basic database. We also built a mobile Android application linked to this database. The app features a Radar Chart to visualize player stats and a Voice-to-Text AI assistant (powered by Google Gemini) that gives tactical advice. Our testing shows that the system is stable, secures data well, and acts as a very helpful digital assistant for team managers.} 
+\abstract{Managing grassroots and amateur football clubs often involves fragmented spreadsheets and manual record-keeping. In this project, we designed and built an enterprise-grade sports club management system called Football Club Management (FCM). The core of our system is an Oracle Database 19c normalized strictly to Third Normal Form (3NF), leveraging advanced stored logic including PL/SQL packages, business-rule triggers, and analytical queries to preserve ACID integrity. To support field coaching workflows, we developed a native Android mobile application connected to this database via RESTful middleware. The mobile client features an interactive hexagonal Radar Chart for FIFA-style player skill visualization, multi-criteria tactical sorting, automated club performance analytics, and dynamic post-match event synchronization. Empirical evaluation validates that the system strictly enforces database constraints, executes analytical queries with sub-second latency, and serves as an effective operational tool for team managers.} 
 
-\keywords{Oracle Database, Relational Database, PL/SQL, Sports Management, Android Development, Artificial Intelligence, Radar Chart.}
+\keywords{Oracle Database, Relational Database, 3NF Normalization, PL/SQL, Sports Management, Android Development, Radar Chart, Data Pump.}
 
-\fnotetext[1]{Corresponding author: Nguyen Cong Bang. Email: ncongbang2006@gmail.com}
+\fnotetext[1]{Corresponding author: Nguyen Cong Bang (ncongbang2006@gmail.com). Source Code: \url{https://github.com/Towie1206/FootballClubManagement}. Video Walkthrough: \url{https://youtu.be/hOxtv8arrCM}}
 
 \maketitle
 
@@ -83,21 +83,25 @@ Amateur and semi-professional sports are growing fast. Every day, team managers 
 
 \subsection{Topic Description}
 The selected topic for this coursework is \textbf{Topic 3: Develop a database for sports club management software}. 
-Managing a sports club, particularly grassroots and semi-professional football teams, involves handling extensive data regarding players' physical attributes, match statistics, training sessions, and tactical planning. The primary objective of this project is to build a robust, scalable backend using Oracle Database 19c that solves data redundancy and concurrency issues. To demonstrate real-world applicability, we also integrated this Oracle database with a modern Android mobile application featuring AI-powered tactical assistance and interactive Radar Charts.
+Managing a sports club, particularly grassroots and semi-professional football teams, involves handling extensive data regarding players' physical attributes, match statistics, training sessions, and tactical planning. The primary objective of this project is to build a robust, scalable backend using Oracle Database 19c that solves data redundancy and concurrency issues. To demonstrate real-world applicability, we also integrated this Oracle database with a modern Android mobile application featuring interactive FIFA-standard Radar Charts, multi-criteria tactical sorting, and automated performance analytics.
 
 \subsection{Group Members and Task Assignments}
 To successfully implement this comprehensive system, the workload was divided among the three group members based on their technical strengths. Table \ref{tab:tasks} outlines the specific responsibilities of each member.
+
+\textbf{Source Code Repository:} \url{https://github.com/Towie1206/FootballClubManagement}\\[0.2cm]
+\textbf{Video Demonstration:} \url{https://youtu.be/hOxtv8arrCM}
+
 \begin{table}[h]
 \caption{Group Members and Task Assignments}
 \begin{tabular}{|p{0.25\columnwidth}|p{0.5\columnwidth}|p{0.1\columnwidth}|}
 \hline
 \textbf{Name (ID)} & \textbf{Assigned Tasks} & \textbf{Contr.} \\
 \hline
-Nguyen Cong Bang (24003534) & Database Design (ERD), PL/SQL Triggers, Packages, Report Writing & 90\% \\
+Nguyen Cong Bang (24003534) & Database design (ERD, 3NF), PL/SQL programming (triggers, packages), backend API, and lead report writing & 50\% \\
 \hline
-Nguyen Trung Kien (24001449) & 20 Advanced SQL Queries, User Management, Backup & 5\% \\
+Nguyen Trung Kien (24001449) & SQL queries implementation, sample data collection and insertion, database testing support & 25\% \\
 \hline
-Nguyen Thanh Nam (24004130) & Android App, Radar Chart, Gemini AI Voice Integration & 5\% \\
+Nguyen Thanh Nam (24004130) & Mobile UI support, test verification, PowerPoint slides design, and video demonstration recording & 25\% \\
 \hline
 \end{tabular}
 \label{tab:tasks}
@@ -114,9 +118,9 @@ Because of how people currently manage their teams, we identified three main pro
 \subsection{Proposed Solution and Contributions}
 To solve these issues, we created the FC Manager (FCM) software. The main things we contributed in this project are:
 \begin{enumerate}
-    \item We designed a relational database on \textbf{Oracle Database} with 6 main tables. We applied advanced PL/SQL programming, including automated Triggers, Packages, and complex analytical SQL queries.
-    \item We developed a native Android mobile application that displays player skills using an interactive \textbf{Radar Chart}.
-    \item We integrated a \textbf{Context-Aware Artificial Intelligence} feature. Managers can simply use their voice (Voice-to-Text) to ask the AI for tactical advice, and the AI will answer based on the real data stored in our Oracle database.
+    \item We designed a relational database on \textbf{Oracle Database} with 6 main tables in 3NF. We applied advanced PL/SQL programming, including automated Triggers, Packages with cursor FOR loops, and 20 categorized analytical SQL queries.
+    \item We developed a native Android mobile application that displays player skills using an interactive \textbf{Radar Chart} powered by \texttt{MPAndroidChart}.
+    \item We implemented an \textbf{Automated KPI Analytics and Match Recording Workflow}. Coaches can record in-game performance (goals, assists, cards) on the mobile client, which immediately activates Oracle PL/SQL triggers to synchronize statistics, top goalscorers, and squad availability without manual bookkeeping.
 \end{enumerate}
 
 \subsection{Introduction to the DBMS used}
@@ -128,7 +132,7 @@ For the mobile client, we developed a native Android application following Googl
     \item \textbf{Database Management:} Oracle SQL Developer (for querying and ERD modeling).
     \item \textbf{Backend Server:} Node.js with the official \texttt{oracledb} driver to handle RESTful APIs.
     \item \textbf{Frontend Application:} Android Studio (Java) using \texttt{Retrofit} for network calls and \texttt{MPAndroidChart} for visual Radar Charts.
-    \item \textbf{AI Integration:} Google Gemini LLM API combined with Android Speech-to-Text for voice-controlled tactical assistance.
+    \item \textbf{Data Visualization \& Analytics:} Hexagonal multi-attribute radar plots and an automated KPI statistics dashboard.
 \end{itemize}
 
 \section{Related Work}
@@ -141,8 +145,8 @@ The most common method for small clubs is using Microsoft Excel or Google Sheets
 \subsection{Existing Sports Management Applications}
 There are some commercial apps out there, like TeamSnap or Spond. These are great for scheduling practices and sending group messages. However, they act like a "black box." Users cannot touch the underlying database, write custom SQL queries, or track detailed FIFA-style player stats. By building our own system on Oracle, we have full control over the data structure and can run complex PL/SQL procedures that commercial apps simply do not offer.
 
-\subsection{Integration of AI in Sports Analytics}
-Lately, big professional teams (like those in the Premier League) have been using AI and computer vision cameras to analyze matches. But that costs millions of dollars, which is impossible for grassroots football. Our project brings AI to amateur teams for free. By taking the player and match data from our Oracle database and feeding it into a Large Language Model (Google Gemini API), our system acts as a 24/7 virtual tactical assistant for the coach.
+\subsection{Integration of Data Analytics in Sports Management}
+In modern athletics, professional teams rely on data-driven metrics to optimize team performance, prevent injuries, and assess tactical readiness. However, commercial enterprise sports systems are complex and unaffordable for grassroots amateur clubs. Our project bridges this gap by marrying an enterprise Oracle DBMS with intuitive mobile analytics. By querying pre-aggregated views and computing real-time KPIs, coaches can quickly assess squad fitness distributions, track player progression through FIFA-standard skill polygons, and make informed tactical decisions directly on their smartphones.
 
 \section{Oracle database management system}\label{sec:problem_formulation}
 To support professional sports administration, the system is architected around four primary application functions:
@@ -450,8 +454,8 @@ Figure \ref{fig:app_stats} displays the dedicated Statistics Dashboard. Instead 
 \textbf{4. Empirical Verification with Distinct Test Data Samples:}
 To validate robustness, the database and mobile layer were tested against two distinct datasets:
 \begin{itemize}
-    \item \textbf{Sample 1 (Boundary \& Invalid Input):} We submitted anomalous inputs designed to test defensive constraints: a player record with empty name, illegal position code \texttt{'XX'}, Pace set to \texttt{150} (violating \texttt{CHECK (pac BETWEEN 1 AND 99)}), negative salary (\texttt{-5,000,000}), and duplicate jersey number \texttt{\#9}. The DBMS immediately rejected the transaction with error \texttt{ORA-02290} and custom trigger exception \texttt{ORA-20001}. No corrupt rows were committed, verifying data integrity.
-    \item \textbf{Sample 2 (Operational Business Lifecycle):} We registered forward player ``Nguyen Van A'' (Jersey \texttt{\#9}, OVR 82, PAC 88, SHO 84, PAS 79, DRI 83, DEF 42, PHY 75, Status: \textit{Fit}). Following a 3--1 match victory against ``Da Nang FC'', the coach recorded 2 goals and 1 assist via the mobile client. Trigger \texttt{trg\_after\_match\_event} automatically incremented his season record (\texttt{goals = 2}, \texttt{assists = 1}), refreshed the Radar Chart (Figure \ref{fig:app_radar}), and updated the club analytics dashboard (Figure \ref{fig:app_stats}).
+    \item \textbf{Sample 1 (Boundary \& Invalid Input):} We submitted anomalous inputs designed to test defensive constraints: a player record with empty name, illegal position code \texttt{'XX'}, Pace set to \texttt{150} (violating \texttt{CHECK (pac BETWEEN 0 AND 100)}), negative match score (\texttt{home\_score = -1}), and duplicate jersey number \texttt{\#6}. The DBMS immediately rejected the transaction with error \texttt{ORA-02290} and custom trigger exception \texttt{ORA-20001}. No corrupt rows were committed, verifying data integrity.
+    \item \textbf{Sample 2 (Operational Business Lifecycle):} We registered forward player ``Nguyen Cong Bang'' (Jersey \texttt{\#6}, OVR 72, Position: \textit{FW}, Club: \textit{Free Agent}, Status: \textit{Match Fit}, Figure \ref{fig:app_radar}). Following live match play, the coach recorded in-game performance via the mobile client. Trigger \texttt{trg\_after\_match\_event} automatically synchronized player tallies, while the aggregate analytics dashboard (Figure \ref{fig:app_stats}) dynamically updated overall club metrics: total squad headcount (10 players), team mean rating (81.9 OVR), 46 cumulative season goals, and honored top goalscorer ``Nguyen Tien Linh'' (14 goals).
 \end{itemize}
 
 \section{Conclusions}
